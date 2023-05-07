@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    
+    <title>Tables</title>
+</head>
+<body>
+     <h1>Working with tables</h1>
+
+     <pre>
+        A table is a combination of rows and columns to made to handle data
+        elements for this session are:
+            table 
+            thead 
+            tbody 
+            tfoot 
+            tr 
+            th 
+            td 
+     </pre>
+
+     <table  border="1" cellspacing="0" cellpadding="7">
+        <thead>
+            <tr>
+                <th>firstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>location</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Clinton</td>
+            <td>Templeton</td>
+            <td>19</td>
+            <td>New York</td>
+
+        </tr>
+
+        <tr>
+            <td>Alves</td>
+            <td>Baah</td>
+            <td>70</td>
+            <td>Accra</td>
+        </tr>
+
+        <tr>
+            <td>Isaac</td>
+            <td>Jang</td>
+            <td>34</td>
+            <td>Florida</td>
+        </tr>
+        </tbody>
+     </table>
+
+
+
+     <h3>Working with the rolspan and colspan attributes on a Table</h3>
+
+     <table border="1" cellpadding="13" cellspacing="0">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Award</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+
+        <tbody>
+           <tr>
+            <td>Wale</td>
+            <td>45</td>
+            <td rowspan="2">Best Rap</td>
+            <td>2006</td>
+           </tr>
+
+           <tr>
+            <td>Blacko</td>
+            <td>23</td>
+            <td rowspan="2">2023</td>
+           </tr>
+
+           <tr>
+            <td colspan="2">Bosom</td>
+            <td>Best hip pop</td>
+           </tr>
+        </tbody>
+     </table>
+</body>
+</html>
