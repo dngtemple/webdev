@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>forms</title>
+</head>
+<body>
+    <h1>Working with forms</h1>
+
+    <pre>
+        A form is used to retrieve data from a user by asking them to 
+        provide certain information
+        some elements for this session:
+        form
+        input - some input types are text,email,number,checkbox,radio,color,date,time
+                some attributes are min, max , maxlenght , required, min lenght , placeholder
+                important ones are value , readonly , disabled
+        select
+        textarea
+        button
+    </pre>
+            <h3>some simple examples</h5>
+    <form>
+        <input type="text" placeholder="FirstName" required minlength="3 " maxlenght="15">
+        <br>
+        <br>
+        <input type="text" placeholder="LastName " required minlenght="3 " maxlenght="15">
+        <br>
+        <br>
+        <input type="email" placeholder="Please enter your email" required >
+        <br>
+        <br>
+        <input type="date" >
+        <br>
+        <br>
+        <input type="number" placeholder="Please enter your number" max="9999999999">
+        <br>
+        <br>
+        <input type="password" required placeholder="Please enter your password">
+        <br>
+        <select>
+            <option>BMW</option>
+            <option>Ford</option>
+            <option>Kia</option>
+            <option>Mclaren</option>
+        </select>
+
+        <button>SEND</button>
+        <br>
+        <textarea rows="5" cols="5"></textarea>
+    </form>
+</body>
+</html>
