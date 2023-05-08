@@ -33,5 +33,16 @@ and using a selector
 p{
     color:red;
 }
-This will make all <p> tag contents red 
+This will make all <p> tag contents red
+
 incase you want a specific one you must give it a name
+by using a class or id
+
+      class 
+<p class="one">
+to call this particular p
+ 
+     .one{
+        color:green;
+     }
+
