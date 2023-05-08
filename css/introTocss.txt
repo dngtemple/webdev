@@ -1,0 +1,37 @@
+INTRODUCTION TO CASCADING STYLE SHEET (CSS)
+
+CSS is used together with html elements to make them look good by;
+-changing color
+-changing size
+=changing font
+    and so on...
+
+
+The format for writting css is
+      property:value;
+
+
+There are 3 main ways to apply css on an element
+
+-inline
+-internal
+-external
+
+         INLINE
+This is done by typing in the tag
+<elemet style="color:red; font-family:calibri"></element>
+Note: With inline you can't use another tags style for another tag
+      It must always be written
+
+
+
+
+         INTERNAL
+This is done by putting the <style></style> in the head tag
+and using a selector
+
+p{
+    color:red;
+}
+This will make all <p> tag contents red 
+incase you want a specific one you must give it a name
