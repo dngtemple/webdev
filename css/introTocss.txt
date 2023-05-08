@@ -55,3 +55,7 @@ to call this particular p
       #two{
         color:blue:
       }
+
+
+
+But in my journey always use CLASS and not Id
