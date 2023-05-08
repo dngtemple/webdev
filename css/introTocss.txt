@@ -58,5 +58,13 @@ to call this particular p
 
 
 
+           EXTERNAL
+This is same as internal
+but it is only written in a different page
+To make easy accessible
+and good looking
+
+
+
 But in my journey always use CLASS and not Id
                   always use External
