@@ -1,0 +1,14 @@
+.shape {
+    height: 300px;
+    width: 300px;
+    background-color:aqua;
+    display:inline-block;
+
+}
+
+/* .shape2{
+    height: 400px;
+    width: 400px;
+    background-color:blueviolet;
+    padding:30px;
+} */
