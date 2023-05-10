@@ -6,9 +6,19 @@
 
 }
 
-/* .shape2{
+.shape2{
     height: 400px;
     width: 400px;
     background-color:blueviolet;
-    padding:30px;
-} */
+
+    /* padding: 30px; */
+    /* padding: 20px 30px; */
+    /* padding: 30px 30px 20px 20px; */
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+
