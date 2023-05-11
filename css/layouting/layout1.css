@@ -54,3 +54,12 @@
     height:400px;
     width:50%;
 }
+
+
+.circle{
+    height: 350px;
+    width: 350px;
+    background-color:orange;
+    margin-top:30px;
+    border-radius:190px;
+}
