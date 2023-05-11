@@ -38,4 +38,19 @@
     background-color:indigo;
     margin-top:20px;
 
+
+
+}
+
+
+.shape5{
+    background-color:black;
+    height: auto;
+    width: 400px;
+}
+
+.shape6{
+    background-color:blue;
+    height:400px;
+    width:50%;
 }
