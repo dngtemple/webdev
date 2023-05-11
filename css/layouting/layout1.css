@@ -24,7 +24,7 @@
 
 .shape3{
     height:300px;
-    width:3405px;
+    width:340px;
     background-color:green;
 
 
@@ -32,3 +32,10 @@
 }
 
 
+.shape4{
+    height: 500px;
+    width:200px;
+    background-color:indigo;
+    margin-top:20px;
+
+}
