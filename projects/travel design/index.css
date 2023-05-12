@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    height: 40px;
+    width:100%;
+    background-color:gray;
+    display:inline-block;
+}
+
+
+.container{
+    background-color:orangered;
+    height:40px;
+    width:80%;
+    margin-left:10%;
+}
