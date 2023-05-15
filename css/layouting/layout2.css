@@ -2,10 +2,13 @@ body{
     margin: 0px;
 }
 
+
+
+  /*  Css for header section */
 .header{
     /* height:30px; */
     width:100%;
-    background-color:#dfb8b8;
+    background-color:#b3c8d7;
 }
 
 .container{
@@ -17,11 +20,11 @@ body{
 }
 
 .logo{
-    height:30px;
+    height:40px;
     width:20%;
     /* background-color:gray; */
-    line-height:30px;
-    font-family:segoe ui;
+    line-height:40px;
+    font-family:italics;
     text-align:center;
     display:inline-block;
     vertical-align:top;
@@ -47,10 +50,101 @@ body{
 .nav-list{
     display:inline-block;
     height:30px;
-    line-height:30px;
+    line-height:40px;
     width:18%;
     text-align:center;
     font-size:16px;
     /* background-color:green; */
 }
+
+
+
+/* css for banner */
+
+.banner{
+    width:100%;
+    height:500px;
+    overflow:hidden;
+    font-size:0px;
+}
+
+.banner_image{
+    width:100%;
+    margin-top:-450px;
+    /* height:400px; */
+}
+
+
+
+/*  css for places section*/
+
+.places_section{
+    width:100%;
+    /* height:400px; */
+    background-color:#cfccce;
+    font-size:0px;
+}
+
+.places{
+    width:80%;
+    /* height:400px; */
+    /* background-color:burlywood; */
+    margin-left:10%;
+    font-size: 0px;
+    vertical-align:top;
+    
+}
+
+.place{
+    width:15%;
+    height:400px;
+    /* background-color:bisque; */
+    margin-left:1.5%;
+    vertical-align:top;
+    display:inline-block;
+    font-size:0px;
+}
+
+.place_image{
+    display:inline-block;
+    width:100%;
+    height:250px;
+    vertical-align:top;
+}
+
+.image{
+    width:100%;
+    height: 250px;
+}
+
+.desc{
+    width: 100%;
+    height:150px;
+    background-color:white;
+    font-size:0px;
+    display:inline-block;
+}
+
+.h_desc{
+    width:100%;
+    font-family:calibri;
+    text-align:center;
+    font-size:20px;
+    line-height:10px;
+}
+
+.p_desc{
+    font-size:17px;
+    text-align:center;
+}
+
+.btn{
+    width:70%;
+    font-size:18px;
+    background-color:pink;
+    text-align:center;
+    margin-left:15%;
+}
+  
+
 
