@@ -148,3 +148,110 @@ body{
   
 
 
+/* css for about section */
+
+.about{
+    background-color:white;
+    width:100%;
+    height:400px;
+    font-size:0px;
+}
+
+.about_text{
+    width:40%;
+    height:400px;
+    display:inline-block;
+    font-size:16px;
+    vertical-align:top;
+    background-color:coral;
+}
+
+.about_mission{
+    height:400px;
+    width:30%;
+    display:inline-block;
+    vertical-align:top;
+    font-size:16px;
+}
+
+.about_image{
+    /* background-color:blue; */
+    width:30%;
+    height:400px;
+    /* display:inline-block; */
+}
+
+.about_desc1{
+    font-size:20px;
+    margin:40px;
+}
+
+.about_desc2{
+    font-size:16px;
+    margin:35px;
+    color:coral;
+
+}
+
+.highlight{
+    font-family:segoe ui;
+    text-transform:capitalize;
+    font-weight:600;
+    font-size:22px;
+}
+
+
+.mission_title{
+    line-height:10px;
+    font-size:30px;
+    font-weight:300;
+    font-family:calibri;
+    text-align:center;
+    text-transform:capitalize;
+}
+
+
+
+/* css for booking */
+.booking{
+    width:100%;
+    height:90px;
+    background-color:#cfccce;
+    margin-top:1px;
+}
+
+.booking_title{
+    text-align:center;
+    font-size:30px;
+    /* padding-top:5px; */
+    font-family:calibri;
+
+
+}
+.booking_text{
+    text-align:center;
+    background-color:pink;
+    font-size:22px;
+    width:10%;
+    margin-left:45%;
+    border-radius:10px;
+    margin-top:15px;
+
+}
+
+
+
+
+/* css for gallery */
+
+.gallery{
+    width:100%;
+    height:500px;
+    background-color: aqua;
+    font-size:0px;
+}
+
+.images{
+    width:20%;
+    height:250px;
+}
