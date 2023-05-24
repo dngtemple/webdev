@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>position</title>
+    <style>
+
+        /* css for relative position */
+        *{
+            margin:0px;
+            padding:0px;
+        }
+
+        .parent{
+            height:500px;
+            width:500px;
+            margin:40px;
+            border: 10px solid black;
+        }
+
+        .one{
+            height:100px;
+            width:100px;
+            background-color:aqua;
+
+        }
+
+        .two{
+            height:100px;
+            width:100px;
+            background-color:brown;
+            position:relative;
+            left:400px;
+            bottom:100px;
+        
+        }
+
+        .three{
+            height:100px;
+            width:100px;
+            background-color:yellow;
+            position:relative;
+            left:100px;
+            bottom:100px;
+           
+        }
+
+        .four{
+            height:100px;
+            width:100px;
+            background-color:green;
+            position:relative;
+            left:300px;
+            bottom:200px;
+           
+        }
+
+        .five{
+            height:100px;
+            width:100px;
+            background-color:orange;
+            position:relative;
+            left:200px;
+            bottom:200px;
+           
+        }
+        .six{
+            height:100px;
+            width:100px;
+            background-color:rgb(255, 0, 0);
+            position:relative;
+            left:100px;
+            bottom:200px;
+           
+        }
+        .seven{
+            height:100px;
+            width:100px;
+            background-color:rgb(0, 255, 98);
+            position:relative;
+            bottom:200px;
+           
+        }
+        .eight{
+            height:100px;
+            width:100px;
+            background-color:blue;
+            position:relative;
+            bottom:400px;
+            left:300px;
+           
+        }
+        .nine{
+            height:100px;
+            width:100px;
+            background-color:rgb(0, 255, 149);
+            position:relative;
+            left:400px;
+            bottom:400px
+           
+        }
+
+        /* css for absolute position */
+
+        .master{
+            height:400px;
+            width:40%;
+            border: 5px ridge brown;
+            margin:40px;
+            position:relative;
+        }
+
+        .st1{
+            height:100px;
+            width:150px;
+            background-color:green;
+            position:absolute;
+            /* z-index:3; */
+
+
+        }
+
+        .st2{
+            height:100px;
+            width:100px;
+            background-color:brown;
+            position:absolute;
+            top:0;
+            left:0;
+
+        }
+
+        /* css for testing with image */
+
+        .banner{
+            width:100%;
+            height:400px;
+            position:relative;
+
+        }
+
+        .image{
+            width:100%;
+            height:400px;
+            position:absolute;
+
+
+        }
+
+        .text{
+            height:50px;
+            width:300px;
+            font-size:30px;
+            font-family:segoe UI;
+            background-color:rgba(0,0,0,0.5);
+            position:absolute;
+            color:aliceblue;
+            top:100px;
+            left:60px;
+
+
+            /* margin-top:150px;
+            margin-left:50px; */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- working with   relative position -->
+
+    <div class="parent">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+        <div class="six"></div>
+        <div class="seven"></div>
+        <div class="eight"></div>
+        <div class="nine"></div>
+    </div>
+
+
+    <!-- working with absolute position -->
+
+    <div class="master">
+        <div class="st1"></div>
+        <div class="st2"></div>
+        <div class="st3"></div>
+    </div>
+
+
+
+    <!-- testing position with backgrond image -->
+
+    <section class="banner">
+        <img class="image" src="C:\Users\Temple\OneDrive\Pictures\Screenshots\2022-10-14.png">
+
+        <div class="text">my c++ program</div>
+    </section>
+
+
+    <!-- with fixed position it is always positioned
+         to the body and gets stuck when the 
+        page is scrolled -->
+
+</body>
+</html>
