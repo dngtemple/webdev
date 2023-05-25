@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>flexbox</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+
+        }
+
+        /* css to arrange flexible elements in rows and colums */
+
+        .parent{
+            background-color:gray;
+            margin-bottom:30px;
+            width:100%;
+            height:400px;
+            display:flex;
+            flex-direction:row;
+        }
+
+        .one{
+            background-color:blue;
+            width:200px;
+            height:100px;
+
+        }
+
+        .two{
+            background-color:black;
+            width:200px;
+            height:100px;
+            
+        }
+
+        .three{
+            background-color:blueviolet;
+            width:200px;
+            height:100px;
+            
+        }
+
+        /* css for working with axis */
+        .main{
+            background-color:gray;
+            margin-bottom:30px;
+            width:100%;
+            height:400px;
+            display:flex;
+            flex-direction:column; 
+            justify-content:flex-start;
+            align-items:flex-end;
+        }
+
+        .child1{
+            background-color:orange;
+            width:200px;
+            height:100px;
+
+        }
+
+        .child2{
+            background-color:cyan;
+            width:200px;
+            height:100px;
+            
+        }
+
+        .child3{
+            background-color:pink;
+            width:200px;
+            height:100px;
+            
+        }
+
+        /* css for wrap */
+        .box{
+            background-color:gray;
+            margin-bottom:30px;
+            width:70%;
+            height:400px;
+            display:flex;
+            flex-direction:row; 
+            flex-wrap:wrap;
+            /* align-content:flex-start; */
+        }
+
+        .item1{
+            background-color:orange;
+            width:200px;
+            height:100px;
+
+        }
+
+        .item2{
+            background-color:cyan;
+            width:200px;
+            height:100px;
+            
+        }
+
+        .item3{
+            background-color:pink;
+            width:200px;
+            height:100px;
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+   <!-- WORKING with flex direction(row and column) -->
+    <section class="parent">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </section>
+
+
+    <!-- working with main and cross axis-->
+
+    <!-- When the direction is row            When the  direction is column
+        X is the main axis                     Y is the main axis 
+        Y is the cross axis                    X is the cross axis  -->
+
+
+    <!-- justify content is use to work with the main axis only -->
+    <!-- align items is use to work with the cross axis only -->
+
+
+    <section class="main">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+    </section>
+
+
+
+    <!-- working with flex wrap -->
+
+    <!-- by default flex box will not let the items overflow the width of the parent
+         but makes the items width smaller -->
+
+    <!-- if dont want changes with the items width and want them move below
+         use
+        
+        flex-wrap:wrap-->
+
+
+        <section class="box">
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <div class="item3"></div>
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <div class="item3"></div>
+        </section>
+
+    <!-- use align-content to close the gap between the lines -->
+
+
+    
+       
+
+
+    
+</body>
+</html>
