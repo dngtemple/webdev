@@ -119,7 +119,7 @@
 /* css for product section */
 
 .product_section{
-    background-color:#97ced7;
+    background-color:pink;
     width:100%;
     padding:20px 0px;
 }
@@ -201,4 +201,46 @@
 }
 .product:nth-child(8){
     background-image:url("./images/pro_11.jpeg");
+}
+
+
+
+/* css for ad section */
+
+.ad_section{
+    width:100%;
+    height:500px;
+    background-color:brown;
+    display:flex;
+}
+
+.image{
+    width:50%;
+    height:500px;
+    overflow:hidden;
+    background-image:url("./images/gall_1.webp");
+    background-size:cover;
+    background-position: 0px -170px;
+
+}
+
+
+.details{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:20px;
+
+}
+
+.new_title{
+    font-family:calibri;
+    font-size:30px;
+
+}
+
+.new_text{
+    font-family:segoe ui;
+    font-size:30px;
+    font-weight:400;
 }
