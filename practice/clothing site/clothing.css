@@ -119,7 +119,7 @@
 /* css for product section */
 
 .product_section{
-    background-color:pink;
+    background-color:white;
     width:100%;
     padding:20px 0px;
 }
@@ -204,43 +204,113 @@
 }
 
 
+/* css for new products */
 
-/* css for ad section */
-
-.ad_section{
+.new_products_section{
     width:100%;
-    height:500px;
-    background-color:brown;
-    display:flex;
-}
-
-.image{
-    width:50%;
-    height:500px;
+    height:700px;
+    background-color:red;
+    position:relative;
     overflow:hidden;
-    background-image:url("./images/gall_1.webp");
-    background-size:cover;
-    background-position: 0px -170px;
+  
+}
+
+.new_product{
+    width:100%;
+    height:700px;
+    display:flex;
+    align-items:center;
+    position:absolute;
+    transition: .5s;
+    cursor:pointer;
+}
+
+.product_1{
+    background-color:yellow;
 
 }
 
+.product_2{
+    background-color:blue;
+    margin-left:20%;
+}
 
-.details{
+.product_3{
+    background-color:green;
+    margin-left:42%;
+}
+
+.product_4{
+    background-color:orange;
+    margin-left:71%;
+}
+
+
+.product_4:hover{
+    margin-left:0px;
+}
+
+.product_3:hover{
+    margin-left:0px;
+}
+
+.product_3:hover ~ .product_4{
+    margin-left: 100%;
+}
+
+.product_2:hover{
+    margin-left:0px;
+}
+
+.product_2:hover ~ .product_3{
+    margin-left:100%;
+}
+
+.product_2:hover ~ .product_4{
+    margin-left:100%;
+}
+
+.product_1:hover{
+    margin-left:0px;
+
+}
+
+.product_1:hover ~ .product_2{
+    margin-left:100%;
+}
+
+.product_1:hover ~ .product_3{
+    margin-left:100%;
+}
+
+.product_1:hover ~ .product_4{
+    margin-left:100%;
+}
+
+
+
+
+
+.product_image{
+    height:90%;
+}
+
+.prod_details{
+    width:70%;
+    height:700px;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding:20px;
-
 }
 
-.new_title{
+.product_head{
+    font-size:45px;
+    font-weight:300;
     font-family:calibri;
-    font-size:30px;
-
+    color:black;
 }
-
-.new_text{
-    font-family:segoe ui;
-    font-size:30px;
-    font-weight:400;
+.product_text{
+    font-size:20px;
+    color:black;
+    font-family:calibri;
 }
