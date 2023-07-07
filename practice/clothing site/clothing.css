@@ -509,3 +509,17 @@
     background-color:rgba(0,0,0,1);
     border:none;
 }
+
+
+/* css for copyright */
+
+.copy{
+    width:100%;
+    background-color:black;
+    color:white;
+    font-size:11px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    font-family:segoe UI;
+}
