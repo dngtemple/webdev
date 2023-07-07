@@ -119,7 +119,7 @@
 /* css for product section */
 
 .product_section{
-    background-color:gray;
+    background-color:rgba(0,0,0,0.2);
     width:100%;
     padding:20px 0px;
 }
@@ -325,7 +325,7 @@
 
 .contact_section{
     width:100%;
-    background-color:gray;
+    background-color:rgba(0,0,0,0.2);
     height:305px;
 }
 .contact_container{
@@ -350,13 +350,19 @@
     font-weight:200;
     margin-top:10px;
     border-radius:7.5px;
-    border: 0.2px solid black;
+    border: 0px solid black;
     text-indent:10px;
+    outline:none;
+    align-self:center;
 }
 
 .form_feild:nth-child(4){
     height:100px;
     width:40%;
+}
+
+.form_feild:focus{
+    box-shadow: 0px 0px 7px skyblue;
 }
 
 .contact_btn{
