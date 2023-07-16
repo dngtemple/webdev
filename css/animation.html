@@ -5,19 +5,19 @@
 
     <style>
 
-        .one{
+         .one{
             width:100px;
             height:100px;
             background-color:aquamarine;
 
 
             animation-name:one;
-            animation-duration: 1s;
-            /* animation-iteration-count: 2; */
+            animation-duration: 6s;
+            /* animation-iteration-count:infinite; */
             
         }
 
-        @keyframes one{
+        /* @keyframes one{
             10%{
                 margin-top:300px;
             }
@@ -30,8 +30,94 @@
                 margin-top:700px;
             }
 
+        }  */
+
+
+        /* css for slider animation */
+
+        .slider_section{
+            width:100%;
+            height:300px;
+            overflow:hidden;
+            background-color:red;
         }
 
+        .slider{
+            width:500%;
+            height:300px;
+            background-color:blue;
+            display:flex;
+            
+
+            animation-name:slider;
+            animation-duration:10s;
+            animation-iteration-count:infinite;
+        }
+
+
+        @keyframes slider{
+            12.5%{
+                margin-left:-100%;
+            }
+
+            25%{
+                margin-left:-100%;
+            }
+
+            37.5%{
+                margin-left:-200%;
+            }
+
+            50%{
+                margin-left:-200%;
+            }
+
+            62.5%{
+                margin-left:-300%;
+            }
+
+            75%{
+                margin-left:-300%;
+            }
+
+            87.5%{
+                margin-left:-400%;
+            }
+
+            100%{
+                margin-left:-400%;
+            }
+        }
+
+        .slide{
+            width:20%;
+            height:600px;
+
+            background-size:cover;
+            background-position:bottom;
+
+            
+        }
+
+        .slide:nth-child(1){
+            background-image:url("https://images.pexels.com/photos/8471784/pexels-photo-8471784.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+
+        .slide:nth-child(2){
+            background-image:url("https://images.pexels.com/photos/8471850/pexels-photo-8471850.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+
+        .slide:nth-child(3){
+            background-image:url("https://images.pexels.com/photos/3800848/pexels-photo-3800848.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+        
+        .slide:nth-child(4){
+            background-image:url("https://images.pexels.com/photos/236598/pexels-photo-236598.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
+
+        .slide:nth-child(5){
+            background-image:url("https://images.pexels.com/photos/8471784/pexels-photo-8471784.jpeg?auto=compress&cs=tinysrgb&w=600");
+        }
     </style>
 </head>
 <body>
@@ -39,6 +125,33 @@
     <div class="one">
 
     </div>
+
+    <!-- slider animation section -->
+    <section class="slider_section">
+        <div class="slider">
+
+            <div class="slide">
+                
+            </div>
+    
+            <div class="slide">
+    
+            </div>
+    
+            <div class="slide">
+    
+            </div>
+    
+            <div class="slide">
+    
+            </div>
+    
+            <div class="slide">
+    
+            </div>
+        </div>
+
+    </section>
     
 </body>
 </html>
