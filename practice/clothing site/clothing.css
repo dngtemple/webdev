@@ -368,6 +368,7 @@
 .subscribe_input{
     display:flex;
     justify-content:center;
+    color:white;
     
 }
 
@@ -381,6 +382,11 @@
     border-radius:10px;
     border:1px solid white;
     background-color:rgba(0,0,0,0.5);
+}
+
+.sub_btn:hover{
+    color:black;
+    background-color:white;
 }
 
 
@@ -510,6 +516,11 @@
     border:none;
 }
 
+.contact_btn:hover{
+    background-color:pink;
+    color:black;
+
+}
 
 /* css for copyright */
 
