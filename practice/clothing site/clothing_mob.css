@@ -1,0 +1,51 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+
+@media (min-width:320px) and (max-width:480px){
+    /* css for header  */
+    .header{
+        width:100%;
+        /* height:200px; */
+
+        height:40px;
+        overflow:hidden;
+    }
+
+    .container{
+        display:block;
+    }
+
+    .header_container{
+        height:200px;
+        width:100%;
+    }
+
+    .header:hover{
+        height:200px;
+
+    }
+
+    .logo{
+        width:100%;
+        height:40px;
+        font-size:20px;
+    }
+
+    .navigation{
+        width:100%;
+    }
+
+    .nav{
+        width: 100%;
+        display:block;
+    }
+
+    .nav_link{
+        width:100%;
+        height:30px;
+        font-size:13px;
+    }
+}
