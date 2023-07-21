@@ -4,11 +4,12 @@
 }
 
 
-@media (min-width:320px) and (max-width:480px){
+@media (min-width:320px) and (max-width:420px){
     /* css for header  */
     .header{
         width:100%;
         /* height:200px; */
+        background-color:rgba(0, 0, 0,0.5);
 
         height:40px;
         overflow:hidden;
@@ -51,5 +52,107 @@
 
 
     /* css for banner */
-    
+
+    .banner{
+        width:100%;
+        height:300px;
+        background-position: 0px 0px;
+    }
+
+
+    .banner_details{
+        font-size:18px;
+        width:150px;
+
+    }
+
+    .btn{
+        width:70px;
+        height:30px;
+        line-height:30px;
+        font-size:12px;
+    }
+
+
+    /* css for our products */
+
+    .product{
+        width:49%;
+        height:250px;
+        background-position:0 0px;
+    }
+
+    .product_container{
+        height:1100px;
+    }
+
+    .product_title{
+        font-size:15px;
+    }
+
+    .products{
+        height:1100px;
+    }
+
+    .product_details{
+        height:90px;
+    }
+
+    .product_details_1{
+        font-size:15px;
+    }
+
+    .product_details_2{
+        font-size:11px;
+    }
+
+
+    /* css for newletter */
+
+    .subscribe_container{
+        height:120px;
+    }
+
+    .sub_text{
+        margin-top:10px;
+        color:white;
+        font-size:15px;
+    }
+
+    .sub_input{
+        font-size:11px;
+        height:20px;
+    }
+
+    .sub_btn{
+        height:30px;
+        width:30%;
+        margin-left:35%;
+        margin-top:10px;
+    }
+
+
+
+    /* css for footer */
+
+    .footer{
+        width:100%;
+        height:950px;
+
+    }
+
+    .footer_container{
+        height:950px;
+    }
+
+    .footer_child{
+        width:50%;
+        font-size:10px;
+        height:50px;
+    }
+
+    .footer_title{
+        font-size:11px;
+    }
+
 }

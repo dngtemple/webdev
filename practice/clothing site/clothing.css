@@ -83,6 +83,10 @@
     overflow:hidden;
 }
 
+.banner_container{
+    height:50px;
+}
+
 .banner_details{
     width:300px;
     height:100px;
@@ -359,6 +363,7 @@
     text-indent:10px;
     border-radius:15px;
     font-size:19px;
+    color:white;
 }
 
 .sub_input::placeholder{
