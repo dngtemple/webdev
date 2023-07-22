@@ -106,6 +106,30 @@
         font-size:11px;
     }
 
+    /* css for new products */
+
+    .new_products_section{
+        width:100%;
+        height:300px;
+    }
+
+    .new_product{
+        width:100%;
+        height:300px;
+    }
+
+    .product_head{
+        font-size:25px;
+        font-weight:300;
+        margin-bottom:20px;
+
+    }
+
+    .product_text{
+        font-size:12px;
+    }
+
+
 
     /* css for newletter */
 
@@ -137,13 +161,14 @@
 
     .footer{
         /* width:100%; */
-        height:800px;
+        height:700px;
 
     }
 
     .footer_container{
         width:100%;
-        height:800px;
+        height:700px;
+        /* background-color:green; */
     }
 
     .footer_child{
@@ -151,8 +176,28 @@
         height:230px;
     }
 
+    .footer_child:nth-child(3){
+        margin-top:-100px;
+    }
+
     .footer_title{
+        font-size:14px;
+    }
+
+    .footer_title{
+        font-size:14px;
+    }
+
+    .quick_links{
+        margin-top:0px;
+    }
+
+    .quick_link{
         font-size:11px;
+    }
+
+    .blog_how{
+        font-size:20px;
     }
 
 
@@ -174,6 +219,14 @@
 
     .form_feild:nth-child(4){
         width:100%;
+    }
+
+    .form_feild::placeholder{
+        font-size:12px;
+    }
+
+    .blog_text{
+        font-size:12px;
     }
 
 
