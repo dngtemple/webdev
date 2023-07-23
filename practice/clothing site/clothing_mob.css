@@ -59,7 +59,6 @@
         background-position: 0px 0px;
     }
 
-
     .banner_details{
         font-size:18px;
         width:150px;
@@ -74,12 +73,18 @@
     }
 
 
+
+
     /* css for our products */
 
     .product{
         width:49%;
         height:250px;
         background-position:0 0px;
+    }
+
+    .product p{
+        display:none;
     }
 
     .product_container{
@@ -95,7 +100,10 @@
     }
 
     .product_details{
-        height:90px;
+        width:100%;
+        height:30px;
+        background-color:#dbb7be;
+        color:black;
     }
 
     .product_details_1{
