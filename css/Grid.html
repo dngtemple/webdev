@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+
+        }
+
+
+        /* IMPORTANT GRID PROPERTIES */
+
+        /* display:grid
+        grid-template-column
+        grid-template-row
+
+        grid-column-start
+        grid-column-end
+
+        grid-row-start
+        grid-row-end */
+
+        .grid{
+            background-color:blue;
+
+            display:grid;
+
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 300px 300px 300px 300px;
+
+            gap:5px;
+        }
+
+        .child{
+            font-size:20px;
+            background-color:green;
+        }
+
+        .item1{
+            grid-column:1/4;
+        }
+
+        .item2{
+            grid-row:2/4;
+        }
+
+        .item3{
+            grid-column:2/4;
+            grid-row:2/4;
+        }
+    </style>
+</head>
+<body>
+    <section class="grid">
+        <div class="child item1">1</div>
+        <div class="child item2">2</div>
+        <div class="child item3">3</div>
+        <div class="child item4">4</div>
+        <div class="child item5">5</div>
+        <div class="child item6">6</div>
+        <div class="child item7">7</div>
+        <div class="child item8">8</div>
+        <div class="child item9">9</div>
+    </section>
+    
+</body>
+</html>
