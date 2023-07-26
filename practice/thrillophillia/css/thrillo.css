@@ -1,0 +1,65 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+/* REUSEABLE CSS */
+
+.container{
+    width:80%;
+    background-color:bisque;
+}
+
+.flex{
+    display:flex;
+    justify-content:center;
+
+}
+
+.header{
+    background-color:red;
+    width:100%;
+}
+
+.header_container{
+    padding:10px 0px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.logo{
+    width:39%;
+    padding:19px 0px;
+    background-color:brown;
+    background-image:url("../media/images/logo.png");
+    background-position: 0px -186px;
+    /* background-size:cover; */
+}
+
+.header_left{
+    width:45%;
+    display:flex;
+}
+
+.search_bar{
+    width:61%;
+    padding:10px 0px;
+    background-color:aqua;
+    display:flex;
+}
+
+.search{
+    width:100%;
+}
+
+.navigation{
+    width:20%;
+    background-color:aqua;
+}
+
+.nav{
+    list-style-type:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
