@@ -7,7 +7,7 @@
 
 .container{
     width:80%;
-    background-color:bisque;
+    /* background-color:bisque; */
 }
 
 .flex{
@@ -16,27 +16,33 @@
 
 }
 
+/* --------------------------------- */
+
 .header{
-    background-color:red;
+    /* background-color:red; */
     width:100%;
+    position:fixed;
+    
 }
 
 .header_container{
-    padding:10px 0px;
+    
     display:flex;
     justify-content:space-between;
+    border-bottom: 1px solid white;
 }
 
 .logo{
     width:39%;
     padding:19px 0px;
-    background-color:brown;
+    /* background-color:brown; */
     background-image:url("../media/images/logo.png");
     background-position: 0px -186px;
     /* background-size:cover; */
 }
 
 .header_left{
+    padding:10px 0px;
     width:45%;
     display:flex;
 }
@@ -44,22 +50,42 @@
 .search_bar{
     width:61%;
     padding:10px 0px;
-    background-color:aqua;
+    /* background-color:aqua; */
     display:flex;
 }
 
 .search{
     width:100%;
+    border-radius:5px;
 }
 
 .navigation{
-    width:20%;
-    background-color:aqua;
+    width:24%;
+    /* background-color:aqua; */
+    display:flex;
 }
 
 .nav{
+    width:100%;
     list-style-type:none;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    color:white;
+}
+
+.link:hover{
+    border-bottom: 2px solid orange;
+}
+
+/* css for banner section */
+
+.banner{
+    height:100vh;
+    width:100%;
+    background-image:url("../media/images/banner.jpg");
+    background-blend-mode:saturation;
+    background-color:rgba(0,0,0,0.4);
+    background-size:cover;
+    background-position:center ;
 }
