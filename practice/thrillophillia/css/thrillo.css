@@ -57,7 +57,13 @@
 .search{
     width:100%;
     border-radius:5px;
+    border:1px solid transparent;
+    background-color:transparent;
+    color:white;
+    text-indent:20px;
+    outline:none;
 }
+
 
 .navigation{
     width:24%;
@@ -74,9 +80,14 @@
     color:white;
 }
 
+.link{
+    padding:19px 0px;
+}
+
+
 .link:hover{
     border-bottom: 2px solid orange;
-}
+} 
 
 /* css for banner section */
 
