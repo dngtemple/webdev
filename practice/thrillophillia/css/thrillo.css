@@ -84,6 +84,16 @@
     padding:19px 0px;
 }
 
+.new{
+    width:10%;
+    color:white;
+    background-color:orange;
+    height:10px;
+    padding:5px;
+    font-size:10px;
+    margin-top:5px;
+}
+
 
 .link:hover{
     border-bottom: 2px solid orange;
