@@ -101,6 +101,10 @@
     line-height:7px;
 }
 
+.header_icon{
+    font-size:20px;
+}
+
 
 .link:hover{
     border-bottom: 2px solid #ff5300;
