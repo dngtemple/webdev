@@ -1,3 +1,7 @@
+/* font imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+
 *{
     margin:0px;
     padding:0px;
@@ -22,6 +26,8 @@
     /* background-color:red; */
     width:100%;
     position:fixed;
+    font-family:poppins;
+    font-size:12px;
     
 }
 
@@ -87,16 +93,17 @@
 .new{
     width:10%;
     color:white;
-    background-color:orange;
-    height:10px;
+    background-color:#ff5300;
+    height:7px;
     padding:5px;
     font-size:10px;
     margin-top:5px;
+    line-height:7px;
 }
 
 
 .link:hover{
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid #ff5300;
 } 
 
 /* css for banner section */
@@ -109,4 +116,193 @@
     background-color:rgba(0,0,0,0.4);
     background-size:cover;
     background-position:center ;
+}
+
+.banner_container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+}
+
+.banner_details{
+    width:90%;
+    height:300px;
+    color:white;
+    font-family:poppins;
+    position:absolute;
+    margin-top:-100px;
+    /* background-color:white; */
+}
+
+.banner_details >h1{
+    font-size:40px;
+    text-align:center;
+    overflow:hidden;
+
+
+}
+
+.banner_slider{
+    height:100px;
+    overflow:hidden;
+}
+
+.slider{
+    height:500px;
+    overflow:hidden;
+
+    animation-name:slider;
+    animation-duration: 15s;
+    animation-iteration-count:infinite;
+    animation-delay: 2s;
+    
+}
+
+@keyframes slider{
+    12.5%{
+        margin-top:-100px;
+    }
+    25%{
+        margin-top:-100px;
+    }
+    37.5%{
+        margin-top:-200px;
+    }
+    50%{
+        margin-top:-200px;
+    }
+    62.5%{
+        margin-top:-300px;
+    }
+    75%{
+        margin-top:-300px;
+    }
+    87.5%{
+        margin-top:-400px;
+    }
+    100%{
+        margin-top:-400px;
+    }
+}
+
+
+.slider > h1{
+    height:100px;
+    width: 100%;
+    /* background-color:red; */
+    text-align:center;
+    font-size:80px;
+}
+
+
+.banner_services{
+    width:100%;
+    height:90px;
+    margin-top:55px;
+    /* background-color:greenyellow; */
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.service{
+    width:60%;
+    height:40px;
+    /* background-color:white; */
+    border-radius:10px;
+    overflow:hidden;
+    align-self:center;
+    
+}
+
+.service_nav{
+    width:100%;
+    height:40px;
+    list-style-type:none;
+    display:flex;
+    background-color:white;
+    column-gap:1px;
+}
+
+.service_nav > li{
+    width:20%;
+    height:40px;
+    line-height:40px;
+    background-color:#3d3836;
+    text-align:center;
+    font-size:12px;
+}
+
+.service_nav > li:nth-child(1){
+    background-color:#ff5300;
+}
+
+.service_nav > li:hover{
+    background-color:#ff5300;
+}
+.banner_search{
+    width:100%;
+    height:60px;
+    background-color:white;
+    align-self:flex-start;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    justify-content:space-between;
+}
+
+.banner_search > input{
+    width:90%;
+    height:60px;
+    font-size:20px;
+    text-indent:20px;
+    outline:none;
+    border:none;
+
+}
+
+.banner_search  p{
+    width:10%;
+    height:60px;
+    line-height:60px;
+    color:black;
+    font-size:26px;
+    text-align:center;
+    font-weight:ligther;
+}
+
+.banner_footer{
+    margin-top:550px;
+    width:80%;
+    height:70px;
+    /* background-color:#3d3836; */
+    display:flex;
+    color:white;
+    
+
+}
+
+.ban_footer{
+    width:25%;
+    /* background-color:aqua; */
+    height:70px;
+    font-size:12px;
+    font-family:poppins;
+    font-weight:200;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:.7;
+
+}
+
+.footer_icon{
+    font-size:30px;
+    margin-right:10px;
+}
+
+.ban_footer:hover{
+    opacity:1;
 }
