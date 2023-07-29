@@ -70,6 +70,10 @@
     outline:none;
 }
 
+/* .search_icon{
+    color:white;
+} */
+
 
 .navigation{
     width:24%;
@@ -102,7 +106,7 @@
 }
 
 .header_icon{
-    font-size:20px;
+    font-size:18px;
 }
 
 
@@ -309,4 +313,39 @@
 
 .ban_footer:hover{
     opacity:1;
+}
+
+
+/* css for perfect escape */
+
+.perfect{
+    padding: 20px 0px;
+    background-color:#ff5300;
+}
+
+.perfect_container{
+    height:362px;
+    background-color:white;
+    display:flex;
+    align-items:center;
+
+}
+
+.perf_text{
+    width:20%;
+    height:200px;
+    background-color:green;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.perf_text > h1{
+    font-size:28px;
+    
+}
+.perf_text > p{
+    font-size:16px;
+    
 }
