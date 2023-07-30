@@ -319,33 +319,77 @@
 /* css for perfect escape */
 
 .perfect{
+    margin-top:70px;
+    margin-bottom:70px;
     padding: 20px 0px;
-    background-color:#ff5300;
+    /* background-color:#ff5300; */
 }
 
 .perfect_container{
     height:362px;
-    background-color:white;
+    /* background-color:white; */
     display:flex;
     align-items:center;
 
 }
 
 .perf_text{
-    width:20%;
+    width:30%;
     height:200px;
-    background-color:green;
+    /* background-color:green; */
     display:flex;
     flex-direction:column;
     justify-content:center;
+    font-family:poppins
 
 }
 
 .perf_text > h1{
-    font-size:28px;
+    font-size:30px;
     
 }
 .perf_text > p{
     font-size:16px;
+    color:gray;
+    
+}
+.perf_text > hr{
+    width:60px;
+    margin: 10px 0px;
+    height:2px;
+    background-color:orange;
+    border:none;
+    outline:none;
+    
+}
+
+.perf_images{
+    width:65%;
+    margin-left:5%;
+    /* background-color:green; */
+    height:362px;
+    display:flex;
+    column-gap:2%;
+
+
+}
+
+.perf_image{
+    width:32%;
+    height:362px;
+    /* background-color:aquamarine; */
+    background-image:url("../media/images/perfect_escape_1.jpg");
+    background-size:cover;
+    border-radius:10px;
+    
+}
+
+.perf_image:nth-child(2){
+    background-image:url("../media/images/perfect_escape_2.png");
+    
+}
+
+.perf_image:nth-child(3){
+    background-image:url("../media/images/perfect_escape_3.png");
     
 }
