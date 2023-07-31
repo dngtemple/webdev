@@ -393,3 +393,49 @@
     background-image:url("../media/images/perfect_escape_3.png");
     
 }
+
+
+/* css for find best */
+
+.find_best{
+    padding-top:50px;
+    padding-bottom:50px;
+    /* background-color:aquamarine; */
+}
+
+.find_best_container{
+    /* background-color:green; */
+    height:588px;
+    display:flex;
+}
+
+.book{
+    width:55%;
+    /* background-color:red; */
+    height:588px;
+}
+
+.countries{
+    width:45%;
+    background-color:blue;
+    height:588px;
+}
+
+.book_1{
+    height:200px;
+    background-color:gray;
+    background-image:url("../media/images/find_best.jpg");
+    background-size:cover;
+    border-radius: 10px;
+}
+
+
+
+.book_2{
+    margin-top:28px;
+    height:360px;
+    background-color:pink;
+    border-radius: 10px;
+    background-image:url("../media/images/dubai.jpg");
+    background-size:cover;
+}
