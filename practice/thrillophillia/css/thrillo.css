@@ -410,16 +410,13 @@
 }
 
 .book{
-    width:55%;
+    width:53%;
     /* background-color:red; */
     height:588px;
+    margin-right:2%;
 }
 
-.countries{
-    width:45%;
-    background-color:blue;
-    height:588px;
-}
+
 
 .book_1{
     height:200px;
@@ -427,6 +424,44 @@
     background-image:url("../media/images/find_best.jpg");
     background-size:cover;
     border-radius: 10px;
+    display:flex;
+    font-family:poppins;
+    flex-direction:column;
+    justify-content:center;
+    color:white;
+    opacity:1;
+    
+}
+
+.book_1:hover{
+    opacity:.8;
+}
+
+.book_1 > h2{
+
+    margin-left:20px;
+}
+
+.book_1> p{
+    margin-left:20px;
+    font-size:15px;
+}
+
+.book_1 > button{
+    width:120px;
+    height:40px;
+    font-family:poppins;
+    color:black;
+    background-color:yellow;
+    border-radius:10px;
+    font-size:18px;
+    padding:10px;
+    border:none;
+    outline:none;
+    margin-left:20px;
+    line-height:20px;
+    text-align:center;
+    margin-top:10px;
 }
 
 
@@ -438,4 +473,91 @@
     border-radius: 10px;
     background-image:url("../media/images/dubai.jpg");
     background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:white;
+    font-family:poppins;
+    font-weight:bold;
+    transition:.3s;
+    opacity:1;
+}
+
+
+.country{
+    width:45%;
+    /* background-color:blue; */
+    height:588px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.countries{
+    width:31%;
+    height:200px;
+    background-color:red;
+    border-radius:10px;
+    background-size:cover;
+    background-position:center;
+    font-family:poppins;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:1;
+    transition: .3s;
+}
+
+.countries_1{
+    background-image:url("../media/images/singapore.jpg");
+}
+
+.countries_2{
+    height:150px;
+    background-image:url(../media/images/amsterdam.jpg);
+}
+
+.countries_3{
+    background-image:url("../media/images/thailand.jpg");
+}
+
+.countries_4{
+    margin-top:28px;
+    height:150px;
+    background-image:url("../media/images/italy.jpg");
+}
+.countries_7{
+    margin-top:25px;
+    height:185px;
+    background-image:url("../media/images/paris.jpg");
+}
+.countries_8{
+    margin-top:25px;
+    height:185px;
+    background-image:url("../media/images/malaysia.jpg");
+}
+.countries_9{
+    margin-top:25px;
+    height:185px;
+    background-image:url("../media/images/usa.jpg");
+}
+.countries_5{
+    margin-top:-30px;
+    height:210px;
+    background-image:url("../media/images/abudhabi.jpg");
+}
+.countries_6{
+    margin-top:28px;
+    height:150px;
+    background-image:url("../media/images/australia.jpg");
+}
+
+.countries:hover{
+    opacity:.8;
+}
+
+.book_2:hover{
+    opacity:.8;
 }
