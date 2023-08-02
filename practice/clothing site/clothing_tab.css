@@ -1,0 +1,209 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+@media (min-width:421px) and (max-width:870px){
+    /* css for header section */
+
+    .header{
+        width: 100%;
+        height:50px;
+        overflow:hidden;
+    }
+
+    .header_container{
+        display:block;
+    }
+
+    .logo{
+        width:100%;
+        font-size:25px;
+    }
+
+    .navigation{
+        width:100%;
+        height:40px;
+
+        
+    }
+    
+    .nav{
+        display:block;
+
+    }
+
+    .nav_link{
+        width:100%;
+
+        line-height:40px;
+        
+    }
+
+    .header:hover{
+        height:240px;
+    }
+
+    /* css for banner section */
+
+    .banner{
+        height:460px;
+    
+    }
+
+    .banner_details{
+        width:200px;
+        font-size:28px;
+    }
+
+    .rotate{
+        height:300px;
+        width:40%;
+        left:-335px;
+        transform:rotateZ(30deg);
+    }
+
+
+    .btn{
+        width:80px;
+        height:30px;
+        line-height:30px;
+        font-size:17px;
+
+    }
+
+    /* css for product section */
+
+    .product_container{
+        height:650px;
+    }
+
+    .products{
+        height:650px;
+    }
+
+    .product{
+        height:300px;
+        width:24%;
+        background-position:0 0px;
+    }
+
+    .product_details_1{
+        font-size:16px;
+    }
+
+    .product_details_2{
+        font-size:12px;
+    }
+
+    .product_details{
+        height:100px;
+        font-family:segoe ui;
+    }
+
+    .product_details > p{
+        font-size:12px;
+    }
+
+    .product:hover{
+        opacity:.8;
+    }
+
+    /* css for new_products */
+
+    .new_products_section{
+        height:400px;
+        font-family:segoe ui;
+    }
+    
+    .new_product{
+        height:400px;
+    }
+
+    .product_head{
+        font-size:25px;
+        font-family:segoe ui;
+        margin-bottom:20px;
+
+    }
+
+    .product_text{
+        font-size:13px;
+        font-family:segoe ui;
+    }
+
+    /* css for newsletter */
+
+    .subscribe_container{
+        height:200px;
+    }
+
+    .sub_btn{
+        height:30px;
+        width:100px;
+        color:white;
+        line-height:30px;
+        font-family:segoe ui;
+    }
+
+    /* css for footer */
+
+    .footer{
+        padding-top:20px;
+        font-size:11px;
+    }
+
+    .blog_how{
+        font-size:25px;
+    }
+
+    .blog_text{
+        font-size:11px;
+    }
+
+    .quick_link{
+        font-size:11px;
+    }
+
+    .blog_btn{
+        width:70px;
+        height:20px;
+        line-height:20px;
+        font-size:12px;
+        margin-top:10px;
+    }
+
+    .blog_img{
+        width:20px;
+    }
+
+    .footer_title{
+        font-size:14px;
+    }
+
+    /* css for contact */
+
+    .form_feild{
+        width:90%;
+        font-size:16px;
+    }
+
+    .form_feild::placeholder{
+        font-size:12px;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .contact_btn{
+        font-size:13px;
+    }
+
+    /* css for copy */
+
+    .copy{
+        height:20px;
+        line-height:20px;
+    }
+}
