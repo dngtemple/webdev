@@ -564,4 +564,484 @@
 
 
 
-/* css for section */
+/* css for  carousel section */
+
+.carousel_section{
+    width:100%;
+    height:300px;
+    /* background-color:gray; */
+    margin-bottom:40px;
+    
+}
+.carousel_container{
+    background-color:aquamarine;
+    height:300px;
+    overflow:hidden;
+    border-radius:10px;
+    position:relative;
+    display:flex;
+}
+
+.carousel_slider{
+    width:500%;
+    height:300px;
+    display:flex;
+
+    animation-name:carousel;
+    animation-iteration-count:infinite;
+    animation-duration: 16s;
+    animation-delay: 2s;
+}
+
+.carousel_slider img{
+    width:100%;
+    height:300px;
+}
+
+@keyframes carousel{
+
+    6.5%{
+        margin-left:-100%;
+    }
+
+    16.5%{
+        margin-left:-100%;
+
+    }
+
+    22.5%{
+        margin-left:-200%;
+        
+    }
+
+    33%{
+        margin-left:-200%;
+
+    }
+
+    39.5%{
+        margin-left:-300%;
+    }
+
+    49.5%{
+        margin-left:-300%;
+
+    }
+
+    55.5%{
+        margin-left:-400%;
+    }
+
+    66%{
+        margin-left:-400%;
+
+    }
+
+    72.5%{
+        margin-left:-500%;
+    }
+
+    82.5%{
+        margin-left:-500%;
+
+    }
+
+    88.5%{
+        margin-left:-600%;
+    }
+
+    100%{
+        margin-left:-600%;
+    }
+}
+
+.dots{
+    width:100%;
+    height:40px;
+    /* background-color:red; */
+    position:absolute;
+    bottom: 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    column-gap:3px;
+}
+
+.dot{
+    width:5px;
+    height:5px;
+    border-radius:5px;
+    background-color:white;
+
+    animation-iteration-count:infinite;
+    animation-duration: 16s;
+    animation-delay:2s;
+   
+}
+
+.dot:nth-child(1){
+    animation-name:dot1;
+    background-color:#ff5300;
+}
+.dot:nth-child(2){
+    animation-name:dot2;
+    
+}
+.dot:nth-child(3){
+    animation-name:dot3;
+    
+}
+.dot:nth-child(4){
+    animation-name:dot4;
+    
+}
+.dot:nth-child(5){
+    animation-name:dot5;
+    
+}
+.dot:nth-child(6){
+    animation-name:dot6;
+    
+}
+
+@keyframes dot1{
+    6.5%{
+        background-color:white;
+        
+    }
+
+    16.5%{
+        background-color:white;
+
+    }
+
+    22.5%{
+        background-color:white;
+    }
+
+    33%{
+        background-color:white;
+
+    }
+
+    39.5%{
+        background-color:white;
+    }
+
+    49.5%{
+        background-color:white;
+
+    }
+
+    55.5%{
+        background-color:white;
+    }
+
+    66%{
+        background-color:white;
+
+    }
+
+    72.5%{
+        background-color:white;
+    }
+
+    82.5%{
+        background-color:white;
+
+    }
+
+    88.5%{
+       background-color:#ff5300;
+    }
+
+    100%{
+        background-color:#ff5300;
+    }
+
+}
+
+
+@keyframes dot2{
+    6.5%{
+        background-color:#ff5300;
+        
+    }
+
+    16.5%{
+        background-color:#ff5300
+
+    }
+
+    22.5%{
+        background-color:white;
+    }
+
+    33%{
+        background-color:white;
+
+    }
+
+    39.5%{
+        background-color:white;
+    }
+
+    49.5%{
+        background-color:white;
+
+    }
+
+    55.5%{
+        background-color:white;
+    }
+
+    66%{
+        background-color:white;
+
+    }
+
+    72.5%{
+        background-color:white;
+    }
+
+    82.5%{
+        background-color:white;
+
+    }
+
+    88.5%{
+       background-color:white;
+    }
+
+    100%{
+        background-color:whit;
+    }
+
+}
+@keyframes dot3{
+    6.5%{
+        background-color:white;
+        
+    }
+
+    16.5%{
+        background-color:white;
+
+    }
+
+    22.5%{
+        background-color:#ff5300;
+    }
+
+    33%{
+        background-color:#ff5300;
+
+    }
+
+    39.5%{
+        background-color:white;
+    }
+
+    49.5%{
+        background-color:white;
+
+    }
+
+    55.5%{
+        background-color:white;
+    }
+
+    66%{
+        background-color:white;
+
+    }
+
+    72.5%{
+        background-color:white;
+    }
+
+    82.5%{
+        background-color:white;
+
+    }
+
+    88.5%{
+       background-color:white;
+    }
+
+    100%{
+        background-color:white;
+    }
+
+}
+@keyframes dot4{
+    6.5%{
+        background-color:white;
+        
+    }
+
+    16.5%{
+        background-color:white;
+
+    }
+
+    22.5%{
+        background-color:white;
+    }
+
+    33%{
+        background-color:white;
+
+    }
+
+    39.5%{
+        background-color:#ff5300;
+    }
+
+    49.5%{
+        background-color:#ff5300;
+
+    }
+
+    55.5%{
+        background-color:white;
+    }
+
+    66%{
+        background-color:white;
+
+    }
+
+    72.5%{
+        background-color:white;
+    }
+
+    82.5%{
+        background-color:white;
+
+    }
+
+    88.5%{
+       background-color:white;
+    }
+
+    100%{
+        background-color:white;
+    }
+
+}
+
+@keyframes dot5{
+    6.5%{
+        background-color:white;
+        
+    }
+
+    16.5%{
+        background-color:white;
+
+    }
+
+    22.5%{
+        background-color:white;
+    }
+
+    33%{
+        background-color:white;
+
+    }
+
+    39.5%{
+        background-color:white;
+    }
+
+    49.5%{
+        background-color:white;
+
+    }
+
+    55.5%{
+        background-color:#ff5300;
+    }
+
+    66%{
+        background-color:#ff5300;
+
+    }
+
+    72.5%{
+        background-color:white;
+    }
+
+    82.5%{
+        background-color:white;
+
+    }
+
+    88.5%{
+       background-color:white;
+    }
+
+    100%{
+        background-color:white;
+    }
+
+}
+
+
+
+@keyframes dot6{
+    6.5%{
+        background-color:white;
+        
+    }
+
+    16.5%{
+        background-color:white;
+
+    }
+
+    22.5%{
+        background-color:white;
+    }
+
+    33%{
+        background-color:white;
+
+    }
+
+    39.5%{
+        background-color:white;
+    }
+
+    49.5%{
+        background-color:white;
+
+    }
+
+    55.5%{
+        background-color:white;
+    }
+
+    66%{
+        background-color:white;
+
+    }
+
+    72.5%{
+        background-color:#ff5300;
+    }
+
+    82.5%{
+        background-color:#ff5300;
+
+    }
+
+    88.5%{
+       background-color:white;
+    }
+
+    100%{
+        background-color:white;
+    }
+}
