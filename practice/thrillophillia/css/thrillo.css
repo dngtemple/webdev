@@ -1045,3 +1045,90 @@
         background-color:white;
     }
 }
+
+
+/* css for destination neat you */
+
+.destination{
+    /* background-color:azure; */
+    height:300px;
+    width:100%;
+}
+
+.destination_container{
+    height:300px;
+    /* background-color:red; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.destination_container > h2{
+    font-family:poppins;
+    font-size:30px;
+
+}
+
+.destination_container > hr{
+    width:6%;
+    height:2px;
+    background-color:#ff5300;
+    border:none;
+    margin-top:10px;
+}
+
+.destination_places{
+    width:60%;
+    height:30px;
+    /* background-color:green; */
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    font-family:poppins;
+}
+
+.destination_places div{
+    font-size:12px;
+    height:30px;
+    line-height:30px;
+    /* background-color:red; */
+    color:#949494;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:20px;
+    border:1px solid #949494;
+    font-weight:500;
+
+}
+
+.destination_places div:nth-child(7){
+    border-color:#ff5300;
+    color:#ff5300;
+    
+}
+
+.destination_places div:hover{
+    border-color:#ff5300;
+    color:#ff5300;
+}
+
+.destination_location{
+    width:100%;
+    background-color:aqua;
+    height:60px;
+    margin-top:30px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.destination_loc{
+    width:22%;
+    background-color:beige;
+    height:60px;  
+}
+
+.destination_loc img{
+    width:60px;
+    height:60px;
+    border-radius:8px;
+}
