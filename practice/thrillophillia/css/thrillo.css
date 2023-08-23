@@ -1185,20 +1185,23 @@
 /* css for experience section */
 
 .experience{
-    background-color:gray;
+    /* background-color:gray; */
     width:100%;
     height:600px;
 }
 
 .experience_container{
     height:600px;
-    background-color:aqua;
+    /* background-color:aqua; */
+    overflow:hidden;
 }
 
 .experience_container h2{
     font-size:30px;
     font-family:poppins;
     text-align:center;
+  
+
 }
 
 .experience_container hr{
@@ -1211,26 +1214,88 @@
     
 }
 
-.experience_cards{
-    width:100%;
+.experience_slider{
+    width:200%;
     height:440px;
-    background-color:red;
+    column-gap:1%;
+    /* overflow:hidden; */
+    display:flex;
+}
+
+.experience_cards{
+    width:200%;
+    height:440px;
+    /* background-color:red; */
     margin-top:20px;
     font-family:poppins;
+    display:flex;
+    overflow:hidden;
+    
 }
 
 .experience_card{
-    width:20%;
+    width:10%;
     height:320px;
 }
 
 .experience_img{
-    background-image:url("../media/images/experience_1.avif");
     background-position:cover;
     height:300px;
+    border-radius:12px;
+}
+
+.experience_img_1{
+    background-image:url("../media/images/experience_1.avif");
+
+}
+.experience_img_2{
+    background-image:url("../media/images/experience_2.avif");
+
+}
+.experience_img_3{
+    background-image:url("../media/images/experience_3.avif");
+
+}
+.experience_img_4{
+    background-image:url("../media/images/experience_4.avif");
+
+}
+.experience_img_5{
+    background-image:url("../media/images/experience_5.avif");
+
 }
 
 .experience_details{
     height:120px;
     font-size:13px;
+}
+
+.star{
+    margin-top:10px;
+    color:#ffc527;
+}
+
+.star_review{
+    font-family:poppins;
+    color:#949494;
+    font-size:12px;
+}
+
+.experience_price{
+    font-family:poppins;
+
+}
+
+.strike{
+    text-decoration:line-through;
+    font-size:10px;
+    font-family:poppins;
+    color:#949494;
+
+}
+
+.price{
+    font-family:poppins;
+    font-weight:200;
+    color:#000;
 }
