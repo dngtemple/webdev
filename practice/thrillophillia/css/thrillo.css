@@ -1569,3 +1569,56 @@
     border-radius:10px;
     transition: 0.2s;
 }
+
+
+
+/* css for patners section */
+.patners_container{
+    height:350px;
+    /* background-color:gray; */
+    font-family:poppins;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.patners_container h1{
+    font-size:27px;
+
+}
+
+.patners_container hr{
+    width:6%;
+    height:2px;
+    border:none;
+    background-color:#ff5300;
+    margin-top:5px;
+}
+
+.patners_container h3{
+    margin-top:5px;
+    color:#949494;
+    font-size:16px;
+}
+
+.patners{
+    width:100%;
+    height:230px;
+    
+    transition:.4s;
+    margin-top:30px;
+    column-gap:30px;
+    row-gap:30px;
+}
+
+.patners_img:hover{
+    filter:none;
+}
+
+.patners_img{
+    width:110px;
+    height:30px;
+    margin:20px;
+    filter:grayscale(100%);
+}
