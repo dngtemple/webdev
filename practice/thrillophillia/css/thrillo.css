@@ -395,6 +395,9 @@
 }
 
 
+
+
+
 /* css for find best */
 
 .find_best{
@@ -564,6 +567,270 @@
 
 
 
+/* css for special group */
+.special_container{
+    /* background-color:green; */
+    height:120px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    border:1px solid #ff5300;
+    box-shadow: 0px 0px 10px 2px rgba(243,112,34,0.3);
+    
+}
+
+.special_img{
+    width:100px;
+    height:100px;
+    margin-left:10px;
+}
+
+.special_container h1{
+    font-family:poppins;
+    margin-left:10px;
+    font-size:22px;
+}
+
+.special_container p{
+    font-size:14px;
+    margin-top:6px;
+}
+
+.special_button{
+    margin-left:20%;
+    height:50px;
+    width:200px;
+    line-height:50px;
+    font-size:17px;
+    color:white;
+    border-radius:10px;
+    background-color:#ff5300;
+    font-family:poppins;
+    border:none;
+
+}
+
+.special_button:hover{
+    background-color:white;
+    color:#ff5300;
+    border:1px solid #ff5300;
+}
+
+
+/* css for best of india  */
+
+.india_container{
+    height:400px;
+    /* background-color:blue; */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:50px;
+    font-family:poppins;
+
+}
+
+.india_container h1{
+    font-size:27px;
+}
+
+.india_container hr{
+    margin-top:5px;
+    width:6%;
+    border:none;
+    height:2px;
+    background-color:#ff5300;
+}
+
+.indian{
+    width:100%;
+    height:300px;
+    /* background-color:red; */
+    margin-top:30px;
+    overflow:hidden;
+    
+}
+
+.indian_slider{
+    width:200%;
+    height:300px;
+    display:flex;
+    column-gap:1%;
+  
+}
+
+
+.best_india{
+    width:10%;
+    height:300px;
+    background-size:cover;
+    background-position:bottom;
+    border-radius:10px;
+
+}
+
+.best_india_1{
+    background-image:url("../media/images/best_India_1.jpg");
+}
+.best_india_2{
+    background-image:url("../media/images/best_India_2.jpg");
+}
+.best_india_3{
+    background-image:url("../media/images/best_India_3.jpg");
+}
+.best_india_4{
+    background-image:url("../media/images/best_India_4.jpg");
+}
+.best_india_5{
+    background-image:url("../media/images/best_India_5.jpg");
+}
+
+
+/* css for best of asia  */
+
+.asia_container{
+    height:400px;
+    /* background-color:blue; */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:50px;
+    font-family:poppins;
+
+}
+
+.asia_container h1{
+    font-size:27px;
+}
+
+.asia_container hr{
+    margin-top:5px;
+    width:6%;
+    border:none;
+    height:2px;
+    background-color:#ff5300;
+}
+
+.asian{
+    width:100%;
+    height:300px;
+    /* background-color:red; */
+    margin-top:30px;
+    overflow:hidden;
+    
+}
+
+.asian_slider{
+    width:200%;
+    height:300px;
+    display:flex;
+    column-gap:1%;
+  
+}
+
+
+.best_asia{
+    width:10%;
+    height:300px;
+    background-size:cover;
+    background-position:bottom;
+    border-radius:10px;
+
+}
+
+.best_asia_1{
+    background-image:url("../media/images/best_asia_1.jpg");
+}
+.best_asia_2{
+    background-image:url("../media/images/best_asia_2.jpg");
+}
+.best_asia_3{
+    background-image:url("../media/images/best_asia_3.jpg");
+}
+.best_asia_4{
+    background-image:url("../media/images/best_asia_4.jpg");
+}
+.best_asia_5{
+    background-image:url("../media/images/best_asia_5.jpg");
+}
+
+
+/* css for best of europe  */
+
+.europe_container{
+    height:400px;
+    /* background-color:blue; */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-top:50px;
+    font-family:poppins;
+
+}
+
+.europe_container h1{
+    font-size:27px;
+}
+
+.europe_container hr{
+    margin-top:5px;
+    width:6%;
+    border:none;
+    height:2px;
+    background-color:#ff5300;
+}
+
+.european{
+    width:100%;
+    height:300px;
+    /* background-color:red; */
+    margin-top:30px;
+    overflow:hidden;
+    
+}
+
+.european_slider{
+    width:200%;
+    height:300px;
+    display:flex;
+    column-gap:1%;
+  
+}
+
+
+.best_europe{
+    width:10%;
+    height:300px;
+    background-size:cover;
+    background-position:bottom;
+    border-radius:10px;
+
+}
+
+.best_europe_1{
+    background-image:url("../media/images/europe_1.jpg");
+}
+.best_europe_2{
+    background-image:url("../media/images/europe_2.jpg");
+}
+.best_europe_3{
+    background-image:url("../media/images/europe_3.jpg");
+}
+.best_europe_4{
+    background-image:url("../media/images/europe_4.jpg");
+}
+.best_europe_5{
+    background-image:url("../media/images/europe_5.jpg");
+}
+
+
+
+
+
+
 /* css for  carousel section */
 
 .carousel_section{
@@ -571,6 +838,7 @@
     height:300px;
     /* background-color:gray; */
     margin-bottom:40px;
+    margin-top:50px;
     
 }
 .carousel_container{
