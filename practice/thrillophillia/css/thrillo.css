@@ -336,8 +336,8 @@
 }
 
 .perfect_container{
-    height:362px;
-    /* background-color:white; */
+    height:400px;
+    /* background-color:blue; */
     display:flex;
     align-items:center;
 
@@ -379,10 +379,10 @@
     /* background-color:green; */
     height:362px;
     display:flex;
-    column-gap:2%;
-
+    column-gap:2%;  
 
 }
+
 
 .perf_image{
     width:32%;
