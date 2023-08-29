@@ -105,4 +105,14 @@
         font-size:25px;
     }
 
+    /* css for perfect escape */
+
+   
+    .perfect_container{
+        flex-direction:column;
+    }
+
+    .perf_text{
+        width:100%;
+    }
 }
