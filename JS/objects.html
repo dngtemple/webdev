@@ -51,6 +51,10 @@
 
 
 
+    //   ----------------------
+
+
+
 
        let schools=[
 
@@ -58,7 +62,13 @@
             name:"Adisadel",
             location:"Cape Coast",
             year:1839,
-            region:"Central"
+            region:"Central",
+            address:{
+                city:"Accra",
+                street:"Kn",
+                number:18
+            },
+            hobby:["baseball","football","table tennis"]
         },
         {
             name:"Mfantsipim",
@@ -80,6 +90,12 @@
        for (let a=0;a<schools.length;a++){
         console.log(schools[a].year);
        }
+
+       for(let i=0;i<schools.length;i++){
+        console.log(schools[i]);
+       }
+
+       console.log(schools[0].address.city);
 
 
     </script>
