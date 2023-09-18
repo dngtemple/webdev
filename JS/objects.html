@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>objects</title>
+</head>
+<body>
+
+
+
+
+
+
+    <script>
+        // objects
+        // contains properties(data/variables) and behaviour(function)
+
+
+        let student1={
+            name:"clinton",  /* key -- value*/
+            age:19,
+            year:1,
+            address:"Acrra"
+        }
+
+
+        let student2={
+            name:"Templeton",
+            age:20,
+            year:4,
+            address:"Kumasi"
+        }
+
+        let student3={
+            name:"Keynes",
+            age:22,
+            year:1,
+            address:"Dansoman"
+        }
+
+        console.log(student1);
+        console.log(student2);
+        console.log(student3);
+
+
+        console.log(student1.name);
+        console.log(student2.name);
+
+       student1.gender="Kojo";
+
+       console.log(student3["name"]);
+
+
+
+
+       let schools=[
+
+        {
+            name:"Adisadel",
+            location:"Cape Coast",
+            year:1839,
+            region:"Central"
+        },
+        {
+            name:"Mfantsipim",
+            location:"Cape Coast",
+            year:1957,
+            region:"Central"
+        },
+        {
+            name:"Augustine",
+            location:"Cape Coast",
+            year:1990,
+            region:"Central"
+
+        }
+
+       ]
+
+   
+       for (let a=0;a<schools.length;a++){
+        console.log(schools[a].year);
+       }
+
+
+    </script>
+    
+</body>
+</html>
