@@ -28,6 +28,8 @@
 
 
 
+
+
     <script>
         // learning about events handling
 
@@ -45,7 +47,31 @@
 
         
 
+     
 
+        // the THIS KEYWORD
+
+        // IT is used to specify a context to which a variable is been used
+        // in case there are many variables in a code and you want to use a specific one
+
+
+
+        let name="Clinton";
+
+        let man={
+            name:"Baah",
+            age:69,
+            gender:"male",
+            description:function(){
+                console.log(this.name);
+            }
+
+            // this keyword was used to print the name in the object man
+        }
+
+        // if the this keyword is not use it will print the name "clinton"
+
+        man.description();
         
 
 
