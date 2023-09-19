@@ -18,22 +18,37 @@
         // create of array of 10 numbers and sum the total using a loop
 
 
-        let number=[4,52,78,99,10,300,85,94,21,12,];
+        let number=[4,52,78,99,10,300,85,94,21,12];
         let sum=0;
         let count=0;
   
         number.forEach(function(a,i){
             count++;
+            sum=sum+number[i];
         }
         )
 
         console.log(count);
-
-        for(let i = 0;i<count;i++){
-            sum=sum+number[i];
-        }
-
         console.log(sum);
+
+
+
+
+        // question 2
+        // create an array of 10 numbers and print the numbers that divisible by 3
+
+
+        let num=[9,8,23,21,89,81,32,76,23,4];
+        let counting=0;
+
+        num.forEach(function(a,i){
+            counting++;
+            if (num[i]%3===0){
+                console.log(num[i]);
+            }
+        })
+
+
     </script>
     
 </body>
