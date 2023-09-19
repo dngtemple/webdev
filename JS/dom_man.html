@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document object manipulation</title>
+</head>
+<body>
+
+
+    <button class="one">
+
+    </button>
+      
+    <button id="two">
+        no
+    </button>
+
+    <p>
+        Lorem ipsum dolor, sit amet
+         consectetur adipisicing elit.
+          Voluptatum sed nesciunt vitae facere
+           praesentium ratione cum iusto iure asperiores
+            ea! Iusto mollitia ipsum dolore ducimus
+         fugiat vel consectetur iure sunt?
+
+    </p>
+
+    <p>
+        Lorem ipsum dolor, sit amet
+         consectetur adipisicing elit.
+          Voluptatum sed nesciunt vitae facere
+           praesentium ratione cum iusto iure asperiores
+            ea! Iusto mollitia ipsum dolore ducimus
+         fugiat vel consectetur iure sunt?
+
+    </p>
+
+
+
+
+
+    <script>
+        // learning about dom manipulation
+
+        // document object is the parent of all html tree
+            //    and this object helps you to manipulate the tree
+
+        // window the major parent of all html files
+
+        // document and console are also chlldren of the window
+
+        // console also helps you to work in the console
+
+
+        console.log(console);
+        console.log(document);
+
+       
+        
+
+        // how to select and element
+        // there are three ways 
+        // . by ID 
+        // . by Class 
+        // . by TAG 
+
+
+        // by class
+        console.log(document.getElementsByClassName("one"));
+
+        let one=document.getElementsByClassName("one");
+        one[0].innerText="Yes";
+
+
+        // by id
+        let two=document.getElementById("two");
+        console.log(two);
+
+
+        two.innerHTML="<h1>HI</h1>";
+
+        // by tag
+
+        let three=document.getElementsByTagName("p");
+
+
+        console.log(three);
+
+        three[1].innerText="bye";
+
+        
+    </script>
+    
+</body>
+</html>
