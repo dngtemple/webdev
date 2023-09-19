@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>events handling</title>
+</head>
+<body>
+
+    <!-- events handling is the interaction that is performed by user
+    events is    clicking double-clicking hover and etc
+    events handler    all the elements that are used to perform the events
+    events lister     the internal interaction that  is perform after the event is being created like a function -->
+
+
+    <button onclick="yes(event)">
+        yes
+    </button>
+
+    <button  onclick="no(event)">
+        no
+    </button>
+
+
+
+    <!-- to use the event object to know info about that particular event 
+         pass 'event' as the argument when called in the element and print in console event -->
+
+
+
+
+
+    <script>
+        // learning about events handling
+
+
+        function no(e){
+            console.log("The user clicked no");
+            console.log(event);
+        }
+
+        function yes(event){
+            console.log("The user clicked yes");
+            console.log(event);
+        }
+        
+
+        
+
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>
