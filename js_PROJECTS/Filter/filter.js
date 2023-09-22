@@ -43,6 +43,47 @@ let products=[
 ]
 
 
+
+function displayData(){
+
+    products.forEach(function(product,index){
+        let row=document.createElement("tr");
+
+        let idTD=document.createElement("td");
+        idTD.append(product.id);
+
+        let nameTD=document.createElement("td");
+        nameTD.append(product.name);
+
+        let caterogyTD=document.createElement("td");
+        caterogyTD=append(product.caterogy);
+
+        let quantityTD=document.createElement("td");
+        quantityTD=append(product.quantity);
+
+        let priceTD=document.createElement("td");
+        priceTD=append(product.price);
+
+        let imageTD=document.createElement("td");
+        let pictureTD=document.createElement("img");
+        pictureTD.setAttribute("src",product.image);
+        imageTD.appendChild(pictureTD);
+
+        row.appendChild(idTD);
+        row.appendChild(nameTD);
+        row.appendChild(caterogyTD);
+        row.appendChild(quantityTD);
+        row.appendChild(priceTD);
+        row.appendChild(imageTD);
+
+        document.getElementById("data").appendChild(row);
+
+    })
+}
+
+displayData();
+
+
 let filterStatus=false;
 function pullOut(){
 

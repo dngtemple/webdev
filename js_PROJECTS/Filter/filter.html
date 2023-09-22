@@ -12,17 +12,50 @@
     <section class="filteration">
         <div id="left_box"  >
 
+            <select class="cat">
+                <option value="">Please choose category</option>
+                <option value="food">food</option>
+                <option value="school">school</option>
+                <option value="drinks">drinks</option>
+                <option value="electronic">computer</option>
+                <option value="electronic">Keyboard</option>
+                <option value="furniture">table</option>
+                <option value="food">vegetables</option>
+                <option value="school">books</option>
+
+
+            </select>
+
+            <input  class="quant" type="number" placeholder="Please enter quantity">
+
+
+            <div class="px">
+
+                <h1>Please select price</h1>
+                <span>min</span>
+                <input type="range" min="0" max="150">
+    
+                <span>max</span>
+                <input type="range" min="0" max="150">
+            </div>
+
+
+
+            <button>filter</button>
+
+
+
         </div>
 
 
-        <div class="details">
+        <div class="details" id="details">
             <div class="head">
                 <h2>Our Products</h2>
                 <button  onclick="pullOut()">filter</button>
             </div>
 
 
-            <table>
+            <table id="data">
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
