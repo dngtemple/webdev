@@ -12,36 +12,30 @@
     <section class="filteration">
         <div id="left_box"  >
 
-            <select class="cat">
+            <select class="cat" id="cat" onchange="setFilters('category',this.value)">
                 <option value="">Please choose category</option>
                 <option value="food">food</option>
                 <option value="school">school</option>
                 <option value="drinks">drinks</option>
-                <option value="electronic">computer</option>
-                <option value="electronic">Keyboard</option>
-                <option value="furniture">table</option>
-                <option value="food">vegetables</option>
                 <option value="school">books</option>
-
-
             </select>
 
-            <input  class="quant" type="number" placeholder="Please enter quantity">
+            <input  class="quant"  id="quantity"  placeholder="Please enter quantity" onkeyup="setFilters('quantity',this.value)">
 
 
             <div class="px">
 
                 <h1>Please select price</h1>
                 <span>min</span>
-                <input type="range" min="0" max="150">
+                <input type="range" min="0" max="150" id="minPrice" onchange="setFilters('minPrice',this.value)">
     
                 <span>max</span>
-                <input type="range" min="0" max="150">
+                <input type="range" min="0" max="150" id="maxPrice" onchange="setFilters('maxPrice',this.value)">
             </div>
 
 
 
-            <button>filter</button>
+            <button onclick="setFilters()">filter</button>
 
 
 

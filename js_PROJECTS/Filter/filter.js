@@ -37,8 +37,8 @@ let products=[
         caterogy:"food",
         quantity:40,
         price:32,
-        image:"C:\Users\PC\Desktop\webdev\js_PROJECTS\Filter\images\milk.png"
-    },
+        image:"C:\Users\PC\Desktop\webdev\js_PROJECTS\Filter\images\milk.png",
+    }
 
 ]
 
@@ -56,13 +56,13 @@ function displayData(){
         nameTD.append(product.name);
 
         let caterogyTD=document.createElement("td");
-        caterogyTD=append(product.caterogy);
+        caterogyTD.append(product.caterogy);
 
         let quantityTD=document.createElement("td");
-        quantityTD=append(product.quantity);
+        quantityTD.append(product.quantity);
 
         let priceTD=document.createElement("td");
-        priceTD=append(product.price);
+        priceTD.append(product.price);
 
         let imageTD=document.createElement("td");
         let pictureTD=document.createElement("img");
@@ -98,3 +98,43 @@ function pullOut(){
 
     }
 }
+
+
+let filters={
+    caterogy:null,
+    quantity:null,
+    minPrice:null,
+    maxPrice:null
+}
+
+// function setFilters(property,value){
+    
+//     let caterogy=document.getElementById("cat").value;
+//     console.log(caterogy);
+
+//     let quantity=document.getElementById("quantity").value;
+//     console.log(quantity);
+
+
+//     let miPrice=document.getElementById("minPrice").value;
+//     console.log(miPrice)
+
+//     let mPrice=document.getElementById("maxPrice").value;
+//     console.log(mPrice);
+// }
+
+// setFilters();
+
+
+function setFilters(property,value){
+    if(value !==""){
+        filters[property]=value;
+    }
+    else{
+        filters[property]=null;
+    }
+
+    console.log(filters);
+
+}
+
