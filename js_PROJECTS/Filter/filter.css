@@ -15,7 +15,7 @@
 #left_box{
     width:20%;
     height:100vh;
-    background-color:#c9bf79;
+    background-color:white;
     position:fixed;
     margin-left:-30%;
     transition: .4s;
@@ -27,7 +27,7 @@
 
 .cat{
     width:90%;
-    padding:5px;
+    padding:10px;
     border-radius: 10px;
     border:1px solid gray;
     outline:none;
@@ -36,7 +36,7 @@
 
 .quant{
     width:90%;
-    padding:5px;
+    padding:10px;
     border-radius: 10px;
     border:1px solid gray;
     outline:none;
@@ -77,17 +77,13 @@
 
 .px input{
     width:90%;
-    padding:2px;
+    padding:10px;
     margin-bottom: 10px;
-    height:2px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    /* height:2px; */
 }
 
-.px span{
-    align-self: flex-start;
-    margin-left: 5%;
-    margin-bottom: 10px;
-    font-style: italic;
-}
 
 .details{
     width: 100%;

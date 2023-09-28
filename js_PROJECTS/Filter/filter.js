@@ -46,6 +46,8 @@ let products=[
 
 function displayData(){
 
+    // document.getElementById("data").innerHTML="";
+
     products.forEach(function(product,index){
         let row=document.createElement("tr");
 
@@ -101,40 +103,56 @@ function pullOut(){
 
 
 let filters={
-    caterogy:null,
+    category:null,
     quantity:null,
     minPrice:null,
     maxPrice:null
 }
-
-// function setFilters(property,value){
-    
-//     let caterogy=document.getElementById("cat").value;
-//     console.log(caterogy);
-
-//     let quantity=document.getElementById("quantity").value;
-//     console.log(quantity);
-
-
-//     let miPrice=document.getElementById("minPrice").value;
-//     console.log(miPrice)
-
-//     let mPrice=document.getElementById("maxPrice").value;
-//     console.log(mPrice);
-// }
-
-// setFilters();
 
 
 function setFilters(property,value){
     if(value !==""){
         filters[property]=value;
     }
+       
     else{
         filters[property]=null;
     }
 
     console.log(filters);
-
 }
 
+
+
+// function filterProducts(){
+//     let filtData=products;
+
+//     if(filters.category!==null){
+//         filtData=filtData.filter((product,index)=>{
+//             return products.category.toUpperCase()===filters.category.toUpperCase();
+//         })
+//     }
+
+//     if(filters.quantity!==null){
+//         filtData=filtData.filter((product,index)=>{
+//             return products.quantity>=filters.quantity;
+//         })
+//     }
+
+//     if(filters.minPrice!==null){
+//         filtData=filtData.filter((product,index)=>{
+//             return Number(filters.minPrice)<=products.price;
+//         })
+//     }
+
+//     if(filters.maxPrice!==null){
+//         filtData=filtData.filter((product,index)=>{
+//             return Number(filters.maxPrice)>=products.price;
+//         })
+
+
+//     }
+//     displayData(filtData);
+// }
+
+// filterProducts();
