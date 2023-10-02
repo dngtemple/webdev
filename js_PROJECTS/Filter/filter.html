@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>filterProject</title>
+    <link rel="stylesheet" href="./filter.css">
+</head>
+<body>
+
+    <section class="container">
+        <div class="left" id="left">
+            <select class="cat" onchange="setFilters('category',this.value)">
+                <option value="">Please Select Caterogy</option>
+                <option value="food">food</option>
+                <option value="drink">drink</option>
+                <option value="cosmetics">cosmetics</option>
+            </select>
+
+            <input type="number" placeholder="Please enter quantity" onkeyup="setFilters('quantity',this.value)">
+
+            <input type="number" placeholder="Enter minimum price" onchange="setFilters('minPrice',this.value)">
+
+            <input type="number" placeholder="Enter maximum price" onchange="setFilters('maxPrice',this.value)">
+
+            <button>Filter</button>
+
+        </div>
+
+        <div class="board_info">
+            <div class="header">
+                <h2>
+                    Our Products
+                </h2>
+
+                <button onclick="pullOut()">
+                    filter
+                </button>
+
+            </div>
+
+
+            <table id="data">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Color</th>
+                </tr>
+            </table>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <script src="./filter.js"></script>
+    
+</body>
+</html>
