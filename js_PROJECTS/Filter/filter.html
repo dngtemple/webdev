@@ -22,7 +22,7 @@
 
             <input type="number" placeholder="Enter maximum price" onchange="setFilters('maxPrice',this.value)">
 
-            <button>Filter</button>
+            <button onclick="filt()">Filter</button>
 
         </div>
 
@@ -39,7 +39,7 @@
             </div>
 
 
-            <table id="data">
+            <table >
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -48,6 +48,9 @@
                     <th>Price</th>
                     <th>Color</th>
                 </tr>
+                <tbody id="data">
+
+                </tbody>
             </table>
 
 
