@@ -149,9 +149,13 @@ function filt(){
     }
 
     if (filters.maxPrice!==null){
-        filterData=filterData.filter(function(ele,index){
-            return filters.maxPrice >=ele.price;
-        })
+        
+        if(filters.maxPrice>filters.minPrice){
+            filterData=filterData.filter(function(ele,index){
+                return filters.maxPrice >=ele.price;
+            }) 
+        }
+        
     }
 
     displayInfo(filterData);

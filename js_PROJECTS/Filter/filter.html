@@ -16,11 +16,11 @@
                 <option value="cosmetics">cosmetics</option>
             </select>
 
-            <input type="number" placeholder="Please enter quantity" onkeyup="setFilters('quantity',this.value)">
+            <input type="number"  placeholder="Please enter quantity" onkeyup="setFilters('quantity',this.value)">
 
             <input type="number" placeholder="Enter minimum price" onchange="setFilters('minPrice',this.value)">
 
-            <input type="number" placeholder="Enter maximum price" onchange="setFilters('maxPrice',this.value)">
+            <input  id="maxP" type="number" placeholder="Enter maximum price" onchange="setFilters('maxPrice',this.value)">
 
             <button onclick="filt()">Filter</button>
 
