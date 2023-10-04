@@ -61,9 +61,11 @@ let products=[
     }
 ]
 
-function displayInfo(){
+function displayInfo(arr){
 
-    products.forEach(function(product,index){
+    document.getElementById("data").innerHTML='';
+
+    arr.forEach(function(product,index){
         let row=document.createElement("tr");
 
         let numberTD=document.createElement("td");
@@ -99,7 +101,7 @@ function displayInfo(){
 
 }
 
-displayInfo();
+displayInfo(products);
 
 
 let filters={
@@ -119,6 +121,40 @@ function setFilters(property,value){
         filters[property]=null;
     }
 
-    console.log(filters);
+    // console.log(filters);
 
+}
+
+
+function filt(){
+    let filterData=products;
+
+    if(filters.category!==null)
+    {
+        filterData=products.filter(function(ele,index){
+            return filters.category===ele.category;
+        })
+    }
+
+    if (filters.quantity!==null){
+        filterData=filterData.filter(function(ele,index){
+            return ele.quantity>=filters.quantity;
+        })
+    }
+
+    if (filters.minPrice!==null){
+        filterData=filterData.filter(function(ele,index){
+            return filters.minPrice <=ele.price;
+        })
+    }
+
+    if (filters.maxPrice!==null){
+        filterData=filterData.filter(function(ele,index){
+            return filters.maxPrice >=ele.price;
+        })
+    }
+
+    displayInfo(filterData);
+
+    // console.log(filterData);
 }
