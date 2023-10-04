@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>filter function</title>
+</head>
+<body>
+
+
+
+    <script>
+
+        // using the filter function on simple array
+
+        let arr=[23,45,23,89,12,45,20,12,94,20,78];
+
+        let filt=arr.filter(function(num,index){
+            return num===20;
+
+        })
+
+        console.log(filt);
+
+
+
+        // using the filter function on array of objects
+
+
+        let persons=[
+            {
+                name:"Clinton",
+                age:34,
+                level:300
+            },
+            {
+                name:"Keynes",
+                age:29,
+                level:100
+            },
+            {
+                name:"Templeton",
+                age:45,
+                level:200
+            }
+        ]
+
+        let filtPersons=persons.filter(function(person,index){
+            return person.level===200;
+
+        })
+
+        console.log(filtPersons);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
