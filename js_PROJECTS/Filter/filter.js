@@ -150,10 +150,13 @@ function filt(){
 
     if (filters.maxPrice!==null){
         
-        if(filters.maxPrice>filters.minPrice){
+        if(filters.maxPrice<filters.minPrice){
+            alert("Please enter a price greater than minimum"); 
+        }
+        else{
             filterData=filterData.filter(function(ele,index){
                 return filters.maxPrice >=ele.price;
-            }) 
+            })
         }
         
     }
