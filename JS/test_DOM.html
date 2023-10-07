@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>practing dom with js</title>
+
+    <style>
+        .par{
+            width:100%;
+            height: 300px;
+            background-color: gray;
+        }
+
+        #child{
+            width:50%;
+            background-color: aqua;
+            height:50px;
+        }
+
+        .one{
+            width:400px;
+            height:400px;
+            background-color: black;
+        }
+
+        .one div {
+            width:200px;
+            height:200px;
+            background-color: antiquewhite;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="par" id="par">
+         
+        <div id="child">
+
+        </div>
+
+    </div>
+
+
+    <section class="one" id="one">
+
+    </section>
+
+
+
+
+
+    <script>
+        document.getElementById("par").style.height="100px";
+
+
+
+        document.getElementById("child").style.height="10px";
+        document.getElementById("child").style.backgroundColor="green";
+        document.getElementById("child").style.width="30%";
+        
+        
+        let a = document.createElement("div");
+
+
+        document.getElementById("one").appendChild(a);
+
+
+        let head=document.createElement("hr");
+        document.getElementById("one").appendChild(head);
+
+
+    </script>
+
+    
+</body>
+</html>
