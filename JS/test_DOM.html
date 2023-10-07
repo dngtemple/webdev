@@ -20,13 +20,19 @@
         .one{
             width:400px;
             height:400px;
-            background-color: black;
+            background-color: aquamarine;
         }
 
         .one div {
             width:200px;
             height:200px;
             background-color: antiquewhite;
+        }
+
+        .one h2{
+            color:white;
+            font-size: 20px;
+            font-family: segoe ui;
         }
 
 
@@ -70,6 +76,11 @@
 
         let head=document.createElement("hr");
         document.getElementById("one").appendChild(head);
+
+        let title=document.createElement("h2");
+        let tiltetext="how you are?";
+        title.append(tiltetext);
+        document.getElementById("one").appendChild(title);
 
 
     </script>
