@@ -220,3 +220,33 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BZWRlNDdkNzItMzhlZC00YTdmLWIwNjktYjY5NjQ1ZmQ3N2FkXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY500_CR0,0,373,500_AL_.jpg",
   }
 ];
+
+
+function DisplayData(movies){
+  movies.forEach(function(movie,index){
+
+    let row=document.createElement("tr");
+
+    let number=document.createElement("td");
+    number.append(index+1);
+
+    let title=document.createElement("td");
+    title.append(movie.title);
+
+    let releaseDate=document.createElement("td");
+    releaseDate.append(movie.releaseDate);
+
+
+    let genres=document.createElement("td");
+    movies.genres.forEach(function(a,b){
+      genres.append(a);
+    })
+
+    let imdbRating=document.createElement("td");
+    imdbRating.append(movie.imdbRating)
+    
+  });
+}
+
+
+
