@@ -18,7 +18,7 @@
   /* background-color: aqua; */
   font-size: 23px;
   font-family: fira sans;
-  text-align: center;
+  /* text-align: center; */
   line-height: 30px;
 }
 
@@ -38,4 +38,23 @@
 
 .header button:active {
   background-color: lightblue;
+}
+
+.data{
+  margin-top:10px;
+  padding: 0px 5%;
+  height:500px;
+  background-color: lightgray;
+}
+
+table{
+  width:100%;
+  font-family: fira sans;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+table,th,tr{
+  border: 1px solid gray;
+  border-collapse: collapse;
 }
