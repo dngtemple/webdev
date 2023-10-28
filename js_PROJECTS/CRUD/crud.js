@@ -222,8 +222,8 @@ let movies = [
 ];
 
 
-function DisplayData(movies){
-  movies.forEach(function(movie,index){
+function DisplayData(moviesArr){
+  moviesArr.forEach(function(movie,index){
 
     let row=document.createElement("tr");
 
@@ -238,15 +238,52 @@ function DisplayData(movies){
 
 
     let genres=document.createElement("td");
-    movies.genres.forEach(function(a,b){
-      genres.append(a);
-    })
+    movie.genres.forEach(function(a,b){
+      genres.append(a +". ");
+    });
 
     let imdbRating=document.createElement("td");
-    imdbRating.append(movie.imdbRating)
-    
+    imdbRating.append(movie.imdbRating);
+
+    let duration=document.createElement("td");
+    duration.append(movie.duration);
+
+    let actions=document.createElement("td");
+
+    let view=document.createElement("i");
+    view.classList.add("fa-solid");
+    view.classList.add("fa-eye");
+    actions.appendChild(view);
+
+    let edit=document.createElement("i");
+    edit.classList.add("fa-solid");
+    edit.classList.add("fa-pen-to-square");
+    actions.appendChild(edit);
+
+    let trash=document.createElement("i");
+    trash.classList.add("fa-solid");
+    trash.classList.add("fa-trash");
+    actions.appendChild(trash);
+
+    actions.classList.add("actions");
+
+
+    row.appendChild(number);
+    row.appendChild(title);
+    row.appendChild(releaseDate);
+    row.appendChild(genres);
+    row.appendChild(imdbRating);
+    row.appendChild(duration);
+    row.appendChild(actions);
+
+    document.getElementById("displayTable").appendChild(row);
+
   });
+
 }
+
+
+DisplayData(movies);
 
 
 
