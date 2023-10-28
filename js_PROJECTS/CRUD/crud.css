@@ -6,7 +6,7 @@
 }
 
 .header {
-  background-color: gray;
+  background-color: lightcyan;
   padding: 10px 5%;
   display: flex;
   justify-content: space-between;
@@ -41,10 +41,10 @@
 }
 
 .data{
-  margin-top:10px;
+  /* margin-top:10px; */
   padding: 0px 5%;
   height:500px;
-  background-color: lightgray;
+  /* background-color: #87e3de; */
 }
 
 table{
@@ -52,9 +52,43 @@ table{
   font-family: fira sans;
   font-weight: 100;
   font-size: 13px;
+  margin-top:10px;
 }
 
-table,th,tr{
+
+table,th,tr,td{
   border: 1px solid gray;
   border-collapse: collapse;
+}
+
+table th{
+  height:40px;
+}
+
+table td{
+  height:40px;
+  padding-left:10px;
+}
+
+table tr:nth-child(even){
+  background-color: #e5e5e5;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.actions i{
+  margin-right:10px;
+  line-height: 40px;
+}
+
+.actions i:nth-child(3){
+  color:#f12323;
+}
+
+.actions i:nth-child(2){
+  color:blue;
 }
