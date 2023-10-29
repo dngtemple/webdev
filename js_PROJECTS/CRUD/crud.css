@@ -83,6 +83,16 @@ table tr:nth-child(even){
 .actions i{
   margin-right:10px;
   line-height: 40px;
+  transition: .3s;
+}
+
+.actions i:hover{
+  transform: scale(.9);
+
+}
+
+.actions i:active{
+  color: black;
 }
 
 .actions i:nth-child(3){
@@ -92,3 +102,82 @@ table tr:nth-child(even){
 .actions i:nth-child(2){
   color:blue;
 }
+
+
+/* css for popUp */
+
+.popUp{
+  width:100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position:fixed;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.details{
+  width:60%;
+  /* height:450px; */
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  padding: 30px;
+  font-family: fira sans;
+  position: relative;
+}
+
+.close{
+  position:absolute;
+  left:95%;
+  font-size: 20px;
+  color: red;
+}
+
+.movie_details{
+  margin-top: 20px;
+  width:100%;
+  /* background-color: #f12323; */
+  display: flex;
+}
+
+.poster{
+  width:33%;
+  height: 390px;
+  /* background-color: aqua; */
+}
+
+.movie_det{
+  width: 67%;
+  height: 390px;
+  /* background-color: gold; */
+  font-size: 11px;
+  font-family: fira sans;
+  padding:0px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.rating{
+  display:flex;
+  column-gap: 30px;
+}
+
+.image{
+  width:100%;
+  height:100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img{
+  width:100%;
+  height: 100%;
+  transition: .3s;
+}
+
+.img:hover{
+  transform: scale(1.1);
+}
+
