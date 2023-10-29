@@ -1,5 +1,6 @@
 let movies = [
   {
+    id:1,
     title: "Anand",
     year: "1971",
     genres: ["Drama"],
@@ -22,6 +23,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE0Mzk3OTk2NF5BMl5BanBnXkFtZTgwMTQ1NDk5NTE@._V1_SY250_CR0,0,187,250_AL_.jpg",
   },
   {
+    id:2,
     title: "Dangal",
     year: "2016",
     genres: ["Action", "Biography", "Drama"],
@@ -44,6 +46,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_SY500_CR0,0,356,500_AL_.jpg",
   },
   {
+    id:3,
     title: "Drishyam",
     year: "2013",
     genres: ["Crime", "Drama", "Thriller"],
@@ -66,6 +69,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BYmY3MzYwMGUtOWMxYS00OGVhLWFjNmUtYzlkNGVmY2ZkMjA3XkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_SX330_CR0,0,330,432_AL_.jpg",
   },
   {
+    id:4,
     title: "Nayakan",
     year: "1987",
     genres: ["Crime", "Drama"],
@@ -88,6 +92,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BNTI2Zjc5ODMtNGE0NC00YjU5LTk0NjktZjU4ZDRlZDFkZWU0XkEyXkFqcGdeQXVyNjc5Mjg4Nzc@._V1_SY480_SX320_AL_.jpg",
   },
   {
+    id:5,
     title: "Anbe Sivam",
     year: "2003",
     genres: ["Adventure", "Comedy", "Drama"],
@@ -110,6 +115,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BNWQxY2MyNmUtOTkxZC00MmQ3LWFkMjMtNWU3YmFlZDM5YTBhXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SX352_CR0,0,352,499_AL_.jpg",
   },
   {
+    id:6,
     title: "Gol Maal",
     year: "1979",
     genres: ["Comedy", "Romance"],
@@ -132,6 +138,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4OTczODgxNF5BMl5BanBnXkFtZTgwMDAzMTU2NDE@._V1_SY250_CR0,0,187,250_AL_.jpg",
   },
   {
+    id:7,
     title: "Black Friday",
     year: "2004",
     genres: ["Crime", "Drama", "Thriller"],
@@ -154,6 +161,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMmU1NDhjYTQtYjQxYy00MjlmLWIxMjItMjllMmE2NDRlY2ZhXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY500_SX400_AL_.jpg",
   },
   {
+    id:8,
     title: "Taare Zameen Par",
     year: "2007",
     genres: ["Drama", "Family", "Music"],
@@ -176,6 +184,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BNTVmYTk2NjAtYzY3MS00YjFjLTlkYzktYzg3YzMyZDQyOWRiXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SY500_CR0,0,346,500_AL_.jpg",
   },
   {
+    id:9,
     title: "Jaane Bhi Do Yaaro",
     year: "1983",
     genres: ["Comedy", "Drama"],
@@ -198,6 +207,7 @@ let movies = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BNzQ0MzA3NDY3Nl5BMl5BanBnXkFtZTcwOTAwMzIzMg@@._V1_SY235_CR0,0,177,235_AL_.jpg",
   },
   {
+    id:10,
     title: "3 Idiots",
     year: "2009",
     genres: ["Comedy", "Drama"],
@@ -253,6 +263,8 @@ function DisplayData(moviesArr){
     let view=document.createElement("i");
     view.classList.add("fa-solid");
     view.classList.add("fa-eye");
+    view.classList.add("viewpop");
+    view.onclick=viewPopUp.bind(this,movie.id);
     actions.appendChild(view);
 
     let edit=document.createElement("i");
@@ -281,9 +293,32 @@ function DisplayData(moviesArr){
   });
 
 }
-
-
 DisplayData(movies);
+
+
+function closePopUp(){
+  document.getElementById("popUp").style.display="none";
+
+}
+
+function viewPopUp(movieid){
+
+  let movie=movies.find(function(movie,ind){
+    return movie.id===movieid;
+  })
+
+  document.getElementById("title").innerText=movie.title;
+  document.getElementById("storyline").innerText=movie.storyline;
+  document.getElementById("releaseDate").innerText=movie.releaseDate;
+  document.getElementById("actors").innerText=movie.actors;
+  document.getElementById("genres").innerText=movie.genres;
+  document.getElementById("idmb").innerText=movie.imdbRating;
+
+
+  document.getElementById("popUp").style.display="flex";
+
+
+}
 
 
 
