@@ -181,3 +181,68 @@ table tr:nth-child(even){
   transform: scale(1.1);
 }
 
+
+/* css for add movie popUp */
+
+.popUp_2{
+  width:100%;
+  height:100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  font-family: fira sans;
+}
+
+.add_details{
+  width:50%;
+  height:70vh;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+}
+
+.inputs{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top:20px;
+}
+
+.inp{
+  width:47%;
+  border:none;
+  outline: none;
+  border-radius: 10px;
+  border:1px solid gray;
+  height:40px;
+  text-indent: 20px;
+  margin-bottom: 20px;
+}
+
+.story{
+  width: 100%;
+  height: 150px;
+  text-indent: 4px;
+}
+
+.inputs button {
+ border-radius: 10px;
+  border:1px solid gray;
+  outline: none;
+  background-color: #1b8baf;
+  width:20%;
+  height:40px;
+  font-family: fira sans;
+}
+
+.inputs button:hover{
+  transform: scale(.9);
+}
+
+.inputs button:active{
+  background-color: #e5e5e5;
+}
+
