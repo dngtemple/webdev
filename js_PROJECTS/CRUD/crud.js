@@ -321,4 +321,13 @@ function viewPopUp(movieid){
 }
 
 
+function closePopUp2(){
+  document.getElementById("popUp_2").style.display="none";
+}
+
+function viewAdd(){
+  document.getElementById("popUp_2").style.display="flex";
+}
+
+
 
