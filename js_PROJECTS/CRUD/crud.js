@@ -227,12 +227,15 @@ let movies = [
     actors: ["Aamir Khan", "Madhavan", "Mona Singh"],
     imdbRating: 8.4,
     posterurl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BZWRlNDdkNzItMzhlZC00YTdmLWIwNjktYjY5NjQ1ZmQ3N2FkXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY500_CR0,0,373,500_AL_.jpg",
+      "://images-httpsna.ssl-images-amazon.com/images/M/MV5BZWRlNDdkNzItMzhlZC00YTdmLWIwNjktYjY5NjQ1ZmQ3N2FkXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY500_CR0,0,373,500_AL_.jpg",
   }
 ];
 
 
 function DisplayData(moviesArr){
+
+  document.getElementById("displayTable").innerHTML="";
+  
   moviesArr.forEach(function(movie,index){
 
     let row=document.createElement("tr");
@@ -296,8 +299,8 @@ function DisplayData(moviesArr){
 DisplayData(movies);
 
 
-function closePopUp(){
-  document.getElementById("popUp").style.display="none";
+function closePopUp(modal){
+  document.getElementById(modal).style.display="none";
 
 }
 
@@ -321,12 +324,48 @@ function viewPopUp(movieid){
 }
 
 
-function closePopUp2(){
-  document.getElementById("popUp_2").style.display="none";
-}
-
 function viewAdd(){
   document.getElementById("popUp_2").style.display="flex";
+}
+
+
+function createMovie(){
+
+  let lastId=movies[movies.length-1].id;
+
+  let movie={
+    ratings:[],
+    id:lastId+1
+  }
+
+  movie.title=document.getElementById("add_title").value;
+  movie.releaseDate=document.getElementById("add_releaseDate").value;
+  movie.duration=document.getElementById("add_duration").value;
+  movie.actors=document.getElementById("add_actors").value.split(",");
+  movie.genres=document.getElementById("add_genres").value.split(",");
+  movie.imdbRating=document.getElementById("add_idmbrating").value;
+  movie.posterurl=document.getElementById("add_poster").value;
+  movie.storyline=document.getElementById("add_storyline").value;
+
+  movies.push(movie);
+  DisplayData(movies);
+
+  closePopUp('popUp_2');
+
+  
+
+
+  console.log(movie);
+}
+
+
+
+function convertTODate(){
+  document.getElementById("add_releaseDate").type="date";
+}
+
+function convertTONumber(){
+  document.getElementById("add_idmbrating").type="number";
 }
 
 
