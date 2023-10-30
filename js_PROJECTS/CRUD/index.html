@@ -12,7 +12,7 @@
 
     <section class="popUp" id="popUp">
       <div class="details">
-        <i class="fa-solid fa-circle-xmark close" onclick="closePopUp()"></i>
+        <i class="fa-solid fa-circle-xmark close" onclick="closePopUp('popUp')"></i>
         <h2 id="title">The Darkest Minds</h2>
 
         <div class="movie_details">
@@ -93,30 +93,32 @@
 
     <section class="popUp_2" id="popUp_2">
       <div class="add_details">
-        <i class="fa-solid fa-circle-xmark close" onclick="closePopUp2()"></i>
+        <i class="fa-solid fa-circle-xmark close" onclick="closePopUp('popUp_2')"></i>
 
 
         <h2>Create Movie</h2>
 
         <div class="inputs"> 
-          <input  class="inp" type="text" placeholder="Enter title">
+          <input  class="inp" type="text" placeholder="Enter title" id="add_title">
 
-          <input  class="inp" type="date" placeholder="Enter release date">
+          <input  class="inp" type="text" placeholder="Enter release date" id="add_releaseDate"  onfocus="convertTODate()">
 
-          <input class="inp" type="text" placeholder="Enter duration">
+          <input class="inp" type="text" placeholder="Enter duration" id="add_duration">
 
-          <input class="inp" type="text" placeholder="Enter actors">
+          <input class="inp" type="text" placeholder="Enter actors" id="add_actors">
 
-          <input class="inp" type="text" placeholder="Enter genres">
+          <input class="inp" type="text" placeholder="Enter genres" id="add_genres">
 
-          <input type="text" class="inp" placeholder="Enter Poster URL">
+          <input class="inp" type="text" placeholder="Enter idmbRating" id="add_idmbrating" onfocus="convertTONumber()" >
 
-          <textarea  class="inp  story" placeholder="Please type storyline">
+          <input type="url" class="inp url" placeholder="Enter Poster URL" id="add_poster">
+
+          <textarea  class="inp  story" placeholder="Please type storyline" id="add_storyline">
 
           </textarea>
 
 
-          <button>CREATE</button>
+          <button onclick="createMovie()">CREATE</button>
 
 
         </div>
@@ -125,7 +127,6 @@
       </div>
     </section>
 
-    <
     <section class="header">
       <div class="logo">Movies</div>
 
