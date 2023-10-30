@@ -217,7 +217,7 @@ table tr:nth-child(even){
   outline: none;
   border-radius: 10px;
   border:1px solid gray;
-  height:40px;
+  height:30px;
   text-indent: 20px;
   margin-bottom: 20px;
 }
@@ -233,8 +233,8 @@ table tr:nth-child(even){
   border:1px solid gray;
   outline: none;
   background-color: #1b8baf;
-  width:20%;
-  height:40px;
+  width:16%;
+  height:30px;
   font-family: fira sans;
 }
 
@@ -246,3 +246,6 @@ table tr:nth-child(even){
   background-color: #e5e5e5;
 }
 
+.url{
+  width:100%;
+}
