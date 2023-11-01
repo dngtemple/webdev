@@ -70,8 +70,12 @@ table td{
   padding-left:10px;
 }
 
-table tr:nth-child(even){
+/* table tr:nth-child(){
+} */
+
+tbody tr:nth-child(even){
   background-color: #e5e5e5;
+
 }
 
 .actions{
@@ -193,6 +197,7 @@ table tr:nth-child(even){
   align-items: center;
   position: fixed;
   font-family: fira sans;
+  display: none;
 }
 
 .add_details{
