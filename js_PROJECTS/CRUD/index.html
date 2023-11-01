@@ -98,30 +98,32 @@
 
         <h2>Create Movie</h2>
 
-        <div class="inputs"> 
-          <input  class="inp" type="text" placeholder="Enter title" id="add_title">
-
-          <input  class="inp" type="text" placeholder="Enter release date" id="add_releaseDate"  onfocus="convertTODate()">
-
-          <input class="inp" type="text" placeholder="Enter duration" id="add_duration">
-
-          <input class="inp" type="text" placeholder="Enter actors" id="add_actors">
-
-          <input class="inp" type="text" placeholder="Enter genres" id="add_genres">
-
-          <input class="inp" type="text" placeholder="Enter idmbRating" id="add_idmbrating" onfocus="convertTONumber()" >
-
-          <input type="url" class="inp url" placeholder="Enter Poster URL" id="add_poster">
-
-          <textarea  class="inp  story" placeholder="Please type storyline" id="add_storyline">
-
-          </textarea>
-
-
-          <button onclick="createMovie()">CREATE</button>
-
-
-        </div>
+        <form id="add_form">
+            <div class="inputs"> 
+              <input  class="inp" type="text" placeholder="Enter title" id="add_title">
+    
+              <input  class="inp" type="text" placeholder="Enter release date" id="add_releaseDate"  onfocus="convertTODate()">
+    
+              <input class="inp" type="text" placeholder="Enter duration" id="add_duration">
+    
+              <input class="inp" type="text" placeholder="Enter actors" id="add_actors">
+    
+              <input class="inp" type="text" placeholder="Enter genres" id="add_genres">
+    
+              <input class="inp" type="text" placeholder="Enter idmbRating" id="add_idmbrating" onfocus="convertTONumber()" >
+    
+              <input type="url" class="inp url" placeholder="Enter Poster URL" id="add_poster">
+    
+              <textarea  class="inp  story" placeholder="Please type storyline" id="add_storyline">
+    
+              </textarea>
+    
+    
+              <button  type="button" onclick="createMovie()">CREATE</button>
+    
+    
+            </div>
+        </form>
         
 
       </div>
@@ -134,7 +136,7 @@
     </section>
 
     <section class="data">
-      <table id="displayTable">
+      <table>
         <tr>
           <th>#</th>
           <th>Title</th>
@@ -144,6 +146,10 @@
           <th>Duration</th>
           <th>Actions</th>
         </tr>
+
+        <tbody id="displayTable">
+
+        </tbody>
 
       </table>
     </section>
