@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>local storage testing</title>
+</head>
+<body>
+
+
+
+    <script>
+        let data=[2,4];
+
+        function add(){
+            let lastNum;
+
+            if(data.length>0){
+               lastNum=data[data.length-1]+1;
+            }
+            else{
+                lastNum=1;
+            }
+
+            data.push(lastNum);
+
+            localStorage.setItem("data",data);
+
+            console.log(data);
+        }
+        add();
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
