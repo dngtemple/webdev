@@ -57,6 +57,7 @@ function DisplayData(moviesArr){
     let trash=document.createElement("i");
     trash.classList.add("fa-solid");
     trash.classList.add("fa-trash");
+    trash.onclick=deleteMovie.bind(this,movie.id);
     actions.appendChild(trash);
 
     actions.classList.add("actions");
@@ -110,7 +111,7 @@ function createMovie(){
 
   let lastId;
 
-  if(lastId!==0){
+  if(movies.length!==0){
     lastId=movies[movies.length-1].id;
   }
   else{
@@ -153,5 +154,18 @@ function convertTONumber(){
   document.getElementById("add_idmbrating").type="number";
 }
 
+function deleteMovie(id){
+
+  let index=movies.findIndex(function(movie,b){
+    return movie.id===id;
+  })
+
+  movies.splice(index,1);
+  localStorage.setItem("movies",JSON.stringify(movies));
+
+  DisplayData(movies);
+
+
+}
 
 
