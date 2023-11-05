@@ -11,6 +11,9 @@ else{
 
 
 
+
+// function to display movies
+
 function DisplayData(moviesArr){
 
   document.getElementById("displayTable").innerHTML="";
@@ -52,6 +55,7 @@ function DisplayData(moviesArr){
     let edit=document.createElement("i");
     edit.classList.add("fa-solid");
     edit.classList.add("fa-pen-to-square");
+    edit.onclick=setUpdate.bind(this,movie.id);
     actions.appendChild(edit);
 
     let trash=document.createElement("i");
@@ -84,6 +88,11 @@ function closePopUp(modal){
 
 }
 
+
+
+
+// function to view movie details
+
 function viewPopUp(movieid){
 
   let movie=movies.find(function(movie,ind){
@@ -96,6 +105,7 @@ function viewPopUp(movieid){
   document.getElementById("actors").innerText=movie.actors;
   document.getElementById("genres").innerText=movie.genres;
   document.getElementById("idmb").innerText=movie.imdbRating;
+  document.getElementById("img").src=movie.posterurl;
 
   document.getElementById("popUp").style.display="flex";
 
@@ -107,6 +117,8 @@ function viewAdd(){
 }
 
 
+
+// function to create new movie
 function createMovie(){
 
   let lastId;
@@ -154,6 +166,10 @@ function convertTONumber(){
   document.getElementById("add_idmbrating").type="number";
 }
 
+
+
+
+// function to delete a MOvie
 function deleteMovie(id){
 
   let index=movies.findIndex(function(movie,b){
@@ -169,3 +185,52 @@ function deleteMovie(id){
 }
 
 
+// function to setting movie details in input fields
+
+let movie_update=null;
+
+function setUpdate(id){
+
+  let movie=movies.find(function(movie,index){
+    return movie.id===id;
+  })
+
+  movie_update=movie;
+
+  document.getElementById("update_title").value=movie.title;
+  document.getElementById("update_releaseDate").value=movie.releaseDate;
+  document.getElementById("update_duration").value=movie.duration;
+  document.getElementById("update_actors").value=movie.actors;
+  document.getElementById("update_genres").value=movie.genres;
+  document.getElementById("update_idmbrating").value=movie.imdbRating;
+  document.getElementById("update_poster").value=movie.posterurl;
+  document.getElementById("update_storyline").value=movie.storyline;
+
+
+  document.getElementById("update_modal").style="display:flex";
+
+
+}
+
+
+
+// function to Update a Movie
+function UpdateMovie(){
+
+  movie_update.title=document.getElementById("update_title").value;
+  movie_update.releaseDate=document.getElementById("update_releaseDate").value;
+  movie_update.duration=document.getElementById("update_duration").value;
+  movie_update.actors=document.getElementById("update_actors").value.split(",");
+  movie_update.genres=document.getElementById("update_genres").value.split(",");
+  movie_update.imdbRating=document.getElementById("update_idmbrating").value;
+  movie_update.posterurl=document.getElementById("update_poster").value;
+  movie_update.storyline=document.getElementById("update_storyline").value;
+
+
+  localStorage.setItem("movies",JSON.stringify(movies));
+  DisplayData(movies);
+
+  closePopUp('update_modal');
+
+
+}
