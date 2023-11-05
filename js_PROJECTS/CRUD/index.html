@@ -9,6 +9,8 @@
   </head>
   <body>
 
+    <!-- view movie section -->
+
 
     <section class="popUp" id="popUp">
       <div class="details">
@@ -18,7 +20,7 @@
         <div class="movie_details">
           <div class="poster">
             <div class="image">
-              <img  class="img" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTVmYTk2NjAtYzY3MS00YjFjLTlkYzktYzg3YzMyZDQyOWRiXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SY500_CR0,0,346,500_AL_.jpg">
+              <img  class="img" id="img" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTVmYTk2NjAtYzY3MS00YjFjLTlkYzktYzg3YzMyZDQyOWRiXkEyXkFqcGdeQXVyNjQ2MjQ5NzM@._V1_SY500_CR0,0,346,500_AL_.jpg">
             </div>
 
           </div>
@@ -91,6 +93,9 @@
     </section>
 
 
+    <!-- add new movie section -->
+
+
     <section class="popUp_2" id="popUp_2">
       <div class="add_details">
         <i class="fa-solid fa-circle-xmark close" onclick="closePopUp('popUp_2')"></i>
@@ -120,6 +125,48 @@
     
     
               <button  type="button" onclick="createMovie()">CREATE</button>
+    
+    
+            </div>
+        </form>
+        
+
+      </div>
+    </section>
+
+
+
+    <!-- edit movie section -->
+
+    <section class="update_modal" id="update_modal">
+      <div class="add_details">
+        <i class="fa-solid fa-circle-xmark close" onclick="closePopUp('update_modal')"></i>
+
+
+        <h2>Update  Movie</h2>
+
+        <form id="add_form">
+            <div class="inputs"> 
+              <input  class="inp" type="text" placeholder="Enter title" id="update_title">
+    
+              <input  class="inp" type="text" placeholder="Enter release date" id="update_releaseDate"  onfocus="convertTODate()">
+    
+              <input class="inp" type="number" placeholder="Enter duration" id="update_duration">
+    
+              <input class="inp" type="text" placeholder="Enter actors" id="update_actors">
+    
+              <input class="inp" type="text" placeholder="Enter genres" id="update_genres">
+    
+              <input class="inp" type="text" placeholder="Enter idmbRating" id="update_idmbrating" onfocus="convertTONumber()" >
+    
+              <input type="url" class="inp url" placeholder="Enter Poster URL" id="update_poster">
+    
+              <textarea  class="inp  story" placeholder="Please type storyline" id="update_storyline">
+    
+              </textarea>
+    
+    
+              <button  type="button" onclick="UpdateMovie()">UPDATE</button>
     
     
             </div>
