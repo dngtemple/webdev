@@ -46,6 +46,21 @@ function previousPage(){
   document.getElementById("currentpage").innerText=currentPage;
 }
 
+function inputPage(pageNum){
+  if(pageNum !=="" && pageNum >=1 && pageNum <=totalPages){
+    
+    currentPage=pageNum;
+    start=(currentPage-1)*10;
+    end=(currentPage)*10;
+
+    pagination=movies.slice(start,end);
+    DisplayData(pagination);
+  }
+
+  document.getElementById("currentpage").innerText=currentPage;
+
+}
+
 
 
 
