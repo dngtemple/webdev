@@ -295,3 +295,9 @@ tbody tr:nth-child(even){
   outline:none;
   text-indent: 20px;
 }
+
+.pages{
+  font-size: 13px;
+  height:40px;
+  line-height: 40px;
+}
