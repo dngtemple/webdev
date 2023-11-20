@@ -32,7 +32,6 @@ function nextPage(){
   document.getElementById("currentpage").innerText=currentPage;
 }
 
-
 function previousPage(){
   if (currentPage>1){
   currentPage--;
@@ -58,9 +57,17 @@ function inputPage(pageNum){
   }
 
   document.getElementById("currentpage").innerText=currentPage;
-
 }
 
+function numLinkPages(){
+  for(let i =1;i<=totalPages;i++){
+    let link=document.createElement("a");
+    link.append(i);
+    link.onclick=inputPage.bind(this,i);
+    document.getElementById("page").appendChild(link);
+  }
+}
+numLinkPages();
 
 
 
