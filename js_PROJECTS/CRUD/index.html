@@ -200,6 +200,32 @@
         </tbody>
 
       </table>
+
+
+      <div class="pagination">
+        <div class="controls">
+          <button onclick="previousPage()">
+            <i class="fa-solid fa-angles-left"></i>
+
+            Prev
+          </button>
+
+          <button onclick="nextPage()">
+            Next
+
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+
+          <input type="number" placeholder="Enter Page number"/>
+
+        </div>
+
+        <div class="pages">
+          page <span id="currentpage">1</span> of <span id="totalpages">4</span>
+
+        </div>
+
+      </div>
     </section>
 
     <script src="./crud.js"></script>
