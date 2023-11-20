@@ -8,6 +8,43 @@ else{
   localStorage.setItem("movies",JSON.stringify(movies));
 }
 
+// pagination
+let start=0;
+let end=10;
+let pagination=movies.slice(start,end);
+let currentPage=1;
+let totalPages=Math.ceil(movies.length/10);
+
+
+document.getElementById("totalpages").innerText=totalPages;
+
+
+function nextPage(){
+  if (currentPage<totalPages){
+  currentPage++;
+  start+=10;
+  end+=10;
+
+  pagination=movies.slice(start,end);
+  DisplayData(pagination);
+  }
+
+  document.getElementById("currentpage").innerText=currentPage;
+}
+
+
+function previousPage(){
+  if (currentPage>1){
+  currentPage--;
+  start-=10;
+  end-=10;
+
+  pagination=movies.slice(start,end);
+  DisplayData(pagination);
+  }
+
+  document.getElementById("currentpage").innerText=currentPage;
+}
 
 
 
@@ -80,7 +117,7 @@ function DisplayData(moviesArr){
   });
 
 }
-DisplayData(movies);
+DisplayData(pagination);
 
 
 function closePopUp(modal){
@@ -149,7 +186,7 @@ function createMovie(){
 
   DisplayData(movies);
 
-  document.getElementById("add_form").reset();
+  // document.getElementById("add_form").reset();
 
   closePopUp('popUp_2');
 
@@ -234,3 +271,4 @@ function UpdateMovie(){
 
 
 }
+
