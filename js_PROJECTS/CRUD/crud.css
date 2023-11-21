@@ -310,11 +310,12 @@ tbody tr:nth-child(even){
 
 .page a{
   font-size:13px;
-  width:10%;
+  width:20%;
   height:20px;
   line-height: 20px;
   cursor: pointer;
   color: red;
+  text-align: center;
 }
 
 .page a:hover{
