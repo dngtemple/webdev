@@ -54,20 +54,38 @@ function inputPage(pageNum){
 
     pagination=movies.slice(start,end);
     DisplayData(pagination);
+
+    for (let a =1;a<=totalPages;a++){
+      let li=document.getElementById(a);
+      if(li){
+        li.style.color="red";
+      }
+    }
+
+    let lin=document.getElementById(pageNum);
+    if(lin){
+      lin.style.color="black";
+    }
+
+    document.getElementById("currentpage").innerText=currentPage;
+
   }
 
-  document.getElementById("currentpage").innerText=currentPage;
+
 }
 
 function numLinkPages(){
   for(let i =1;i<=totalPages;i++){
     let link=document.createElement("a");
     link.append(i);
+    link.id=i;
     link.onclick=inputPage.bind(this,i);
     document.getElementById("page").appendChild(link);
   }
 }
 numLinkPages();
+
+
 
 
 
