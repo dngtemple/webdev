@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>timer function</title>
+
+    <style>
+
+        *{
+            margin:0px;
+            padding:0px;
+            font-family: segoe ui;
+        }
+
+        input{
+            padding:10px;
+            outline: none;
+            border:1px solid gray;
+            border-radius: 10px;
+            width:30%;
+        }
+
+        button{
+            padding:10px;
+            outline:none;
+            border-radius: 10px;
+            border:1px solid gray;
+
+        }
+
+        .message{
+            width:20%;
+            padding:10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            font-size: 17px;
+            position: fixed;
+            top:90vh;
+            right:-30%;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="f_name" placeholder="Enter your first Name"/>
+
+    <button onclick="outputMessage()">SEND</button>
+
+    <div class="message" id="message">
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        // timer functions
+
+
+        // settimer
+
+        function outputMessage(){
+            if(document.getElementById("f_name").value ===""){
+                setTimeout(function(){
+
+                    document.getElementById("message").innerText="Please fill out the name section";
+                    document.getElementById("message").style.right="0%";
+
+                },500);
+            }
+            else{
+                document.getElementById("message").style.right="-30%";
+
+            }
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
