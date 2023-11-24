@@ -102,8 +102,24 @@
         //     margin+=100;
         //     document.getElementById("circle").style.marginLeft=margin+"px";
         // },1000)
-        
 
+
+
+        // requestAnimationFrame
+
+
+        let marg=0;
+
+        function move(){
+            
+            if(marg<=1000){
+                marg+=50;
+                document.getElementById("circle").style.marginLeft=marg+"px";
+            }
+            requestAnimationFrame(move);
+        }
+
+        requestAnimationFrame(move);
 
     </script>
     
