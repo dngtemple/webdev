@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans");
+
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: fira sans;
+}
+
+section{
+    width:100%;
+    padding:50px;
+    /* background-color: aqua; */
+}
+
+.movies_title{
+    font-size:17px;
+    font-weight: 200;
+}
+
+.all_movies{
+    width:100%;
+    padding:30px;
+    /* background-color: blanchedalmond; */
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.5%;
+    row-gap: 10px;
+}
+
+.card{
+    width:18%;
+    height:350px;
+    /* background-color: green; */
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 0px;
+    
+}
+
+.card_image{
+    width:100%;
+    height:250px;
+}
+
+.card_details{
+    width:100%;
+    height:100px;
+    background-color: #d5d3d3;
+}
+
+.movie_title{
+    text-align: center;
+    font-size:13px;
+}
+
+.button{
+    width:40%;
+    height:30px;
+    border:1px solid gray;
+    outline:none;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 30%;
+    background-color: white;
+    border:none;
+}
