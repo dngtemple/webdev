@@ -67,3 +67,26 @@ section{
     background-color: white;
     border:none;
 }
+
+
+.rating_star{
+    height:20px;
+    width:90px;
+    /* background-color:red ; */
+}
+
+.whitestars{
+    height:20px;
+    /* background-color:green; */
+    width:73.5px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.icon{
+    font-size:13px;
+    color:black;
+}
+
