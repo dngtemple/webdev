@@ -25,12 +25,16 @@ function moviesDisplay(arr){
         movie_title.classList.add("movie_title");
         movie_title.innerText=ele.title;
         card_details.appendChild(movie_title);
+     
 
         let rating=document.createElement("div");
         rating.classList.add("rating");
 
         let rating_stars=document.createElement("div");
         rating_stars.classList.add("rating_star");
+
+
+        // generating white stars
 
         let whitestars=document.createElement("div");
         whitestars.classList.add("whitestars");
@@ -45,6 +49,8 @@ function moviesDisplay(arr){
         rating.appendChild(rating_stars);
         card_details.appendChild(rating);
 
+        // generating yellow stars
+
         let yellowstars=document.createElement("div");
         yellowstars.classList.add("yellowstars");
         for(let c=0;c<5;c++){
@@ -53,10 +59,31 @@ function moviesDisplay(arr){
           icon.classList.add("fa-solid");
           icon.classList.add("fa-star");
           yellowstars.appendChild(icon);
-        }    
+        }
+
         rating_stars.appendChild(yellowstars);
         rating.appendChild(rating_stars);
         card_details.appendChild(rating);
+
+        let rates=document.createElement("div");
+        rates.classList.add("rates");
+
+        let h=document.createElement("p");
+        h.classList.add("h");
+        h.innerText=" ( 4.4 ) ";
+        rates.appendChild(h);
+        rating.appendChild(rates);
+
+        if(ele.ratings.length === 0){
+          h.innerText="( 0.0 )";
+          yellowstars.style.width=0+"px";
+        }
+
+
+        let rateNow=document.createElement("h4");
+        rateNow.classList.add("rateNow");
+        rateNow.append("Rate Now");
+        card_details.appendChild(rateNow);
 
 
         let button=document.createElement("button");
@@ -69,6 +96,7 @@ function moviesDisplay(arr){
 
         document.getElementById("all_movies").appendChild(card);
     })
+
 
 }
 
