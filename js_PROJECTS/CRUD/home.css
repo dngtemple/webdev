@@ -15,7 +15,7 @@ section{
 }
 
 .movies_title{
-    font-size:17px;
+    font-size:20px;
     font-weight: 200;
 }
 
@@ -56,37 +56,97 @@ section{
 }
 
 .button{
-    width:40%;
+    width:35%;
     height:30px;
     border:1px solid gray;
     outline:none;
     border-radius: 5px;
     text-align: center;
     line-height: 30px;
-    margin-left: 30%;
+    margin-left: 32.5%;
     background-color: white;
     border:none;
+    font-size: 11px;
+    margin-top:5px;
+}
+
+.rating{
+    margin-top:5px;
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
 }
 
 
 .rating_star{
+    margin-left:55px;
     height:20px;
-    width:90px;
+    width:75px;
+    position: relative;
     /* background-color:red ; */
 }
 
-.whitestars{
+.whitestars,.yellowstars{
     height:20px;
     /* background-color:green; */
     width:73.5px;
     display: flex;
     align-items: center;
+    position:absolute;
+    font-size:13px;
+    color:white;
+    overflow: hidden;
 
 }
 
+.yellowstars{
+    color:gold;
+}
 
-.icon{
-    font-size:13px;
+.h{
+    font-size: 13px;
+}
+
+.rates{
+    display: flex;
+    height:20px;
+    align-items: center;
+}
+
+.rateNow{
+    font-size: 13px;
     color:black;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* css for modal */
+
+.modal{
+    width:100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position:fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_box{
+    width:40%;
+    height:30vh;
+    background-color: white;
+    border-radius: 10px;
+    padding:20px;
+}
+
+.modal_title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal_title i{
+    color:red;
+    font-size:18px;
 }
 
