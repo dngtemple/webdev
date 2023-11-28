@@ -102,3 +102,46 @@ function moviesDisplay(arr){
 
 moviesDisplay(movies);
 
+// function to close Modal
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+// function to select rating
+let submission=true;
+function chooseRating(event){
+  let choose=event.target.getAttribute("num");
+  let stars=document.getElementsByClassName("rate_star");
+
+  for(let i =0;i<choose;i++){
+    stars[i].style.color="gold";
+  }
+}
+
+function confirming(event){
+  if(submission===true){
+    submission=false;
+    clearRating();
+  }
+
+  submission=true;
+  let choose=event.target.getAttribute("num");
+  let stars=document.getElementsByClassName("rate_star");
+
+  for(let i =0;i<choose;i++){
+    stars[i].style.color="gold";
+  }
+}
+
+function clearRating(){
+
+  if(submission===false){
+    let stars=document.getElementsByClassName("rate_star");
+
+    for(let i =0;i<stars.length;i++){
+      stars[i].style.color="gray";
+    }
+  }
+
+}
+
