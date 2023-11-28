@@ -7,12 +7,24 @@
 </head>
 <body>
 
-    <section class="modal">
+    <section class="modal" id="modal">
         <div class="modal_box">
             <div class="modal_title">
                <h1 id="rate_title">hi</h1>
-               <i class="fa-solid fa-circle-xmark close"></i>
+               <i class="fa-solid fa-circle-xmark close" onclick="closeModal()"></i>
             </div>
+
+            <div class="ratings">
+               <i class="fa-solid fa-star rate_star" num="1" onmouseout="clearRating()" onmouseover="chooseRating(event)"></i>
+               <i class="fa-solid fa-star rate_star" num="2" onmouseout="clearRating()" onmouseover="chooseRating(event)"></i>
+               <i class="fa-solid fa-star rate_star" num="3" onmouseout="clearRating()" onmouseover="chooseRating(event)"></i>
+               <i class="fa-solid fa-star rate_star" num="4" onmouseout="clearRating()" onmouseover="chooseRating(event)"></i>
+               <i class="fa-solid fa-star rate_star" num="5" onmouseout="clearRating()" onmouseover="chooseRating(event)"></i>
+            </div>
+
+            <button>Summit Rating</button>
+
+
         </div>
     </section>
 
