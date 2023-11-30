@@ -8,8 +8,18 @@ else{
   localStorage.setItem("movies",JSON.stringify(movies));
 }
 
+// global variables
+let movietorate=null;
+let choose=null;
+let average=null;
+
+
+
 
 function moviesDisplay(arr){
+
+  document.getElementById("all_movies").innerHTML="";
+
     arr.forEach(function(ele,index){
         let card=document.createElement("div");
         card.classList.add("card");
@@ -78,11 +88,20 @@ function moviesDisplay(arr){
           h.innerText="( 0.0 )";
           yellowstars.style.width=0+"px";
         }
+        else{
+          let ave=averageR(ele.ratings);
+          yellowstars.style.width=ave*20+"%";
+          h.innerText=`( ${ave.toFixed(1)} )`;
+        }
 
 
         let rateNow=document.createElement("h4");
         rateNow.classList.add("rateNow");
         rateNow.append("Rate Now");
+        rateNow.onclick=function(){
+          movietorate=ele;
+          openModal();
+        };
         card_details.appendChild(rateNow);
 
 
@@ -107,10 +126,16 @@ function closeModal(){
   document.getElementById("modal").style.display="none";
 }
 
+// function to open Modal
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("rate_title").innerText=movietorate.title;
+}
+
 // function to select rating
 let submission=true;
 function chooseRating(event){
-  let choose=event.target.getAttribute("num");
+  choose=event.target.getAttribute("num");
   let stars=document.getElementsByClassName("rate_star");
 
   for(let i =0;i<choose;i++){
@@ -125,7 +150,7 @@ function confirming(event){
   }
 
   submission=true;
-  let choose=event.target.getAttribute("num");
+  choose=event.target.getAttribute("num");
   let stars=document.getElementsByClassName("rate_star");
 
   for(let i =0;i<choose;i++){
@@ -138,10 +163,30 @@ function clearRating(){
   if(submission===false){
     let stars=document.getElementsByClassName("rate_star");
 
-    for(let i =0;i<stars.length;i++){
+    for(let i =0;i<5;i++){
       stars[i].style.color="gray";
     }
   }
 
 }
 
+
+// function to submit ratings
+function submitRating(){
+
+  movietorate.ratings.push(Number(choose));
+  closeModal();
+  moviesDisplay(movies);
+  localStorage.setItem("movies",JSON.stringify(movies));
+
+
+}
+
+function averageR(arr){
+  let sum=0;
+  arr.forEach(function(num,index){
+    sum+=num
+  })
+
+  return sum/arr.length;
+}
