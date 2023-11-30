@@ -118,6 +118,7 @@ section{
     color:black;
     text-align: center;
     font-weight: 400;
+    cursor: pointer;
 }
 
 /* css for modal */
@@ -127,7 +128,7 @@ section{
     height:100vh;
     background-color: rgba(0, 0, 0, 0.3);
     position:fixed;
-    display:flex;
+    display:none;
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -147,6 +148,10 @@ section{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+.modal_title h1{
+    font-size: 15px;
 }
 
 .modal_title i{
