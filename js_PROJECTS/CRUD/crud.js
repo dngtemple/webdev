@@ -224,9 +224,9 @@ function createMovie(){
 
   localStorage.setItem("movies",JSON.stringify(movies));
 
-  DisplayData(movies);
+  DisplayData(pagination);
 
-  // document.getElementById("add_form").reset();
+  document.getElementById("add_form").reset();
 
   closePopUp('popUp_2');
 
@@ -256,8 +256,7 @@ function deleteMovie(id){
   movies.splice(index,1);
   localStorage.setItem("movies",JSON.stringify(movies));
 
-  DisplayData(movies);
-
+  DisplayData(pagination);
 
 }
 
@@ -305,7 +304,7 @@ function UpdateMovie(){
 
 
   localStorage.setItem("movies",JSON.stringify(movies));
-  DisplayData(movies);
+  DisplayData(pagination);
 
   closePopUp('update_modal');
 
