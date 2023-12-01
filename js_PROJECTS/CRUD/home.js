@@ -179,6 +179,8 @@ function submitRating(){
   moviesDisplay(movies);
   localStorage.setItem("movies",JSON.stringify(movies));
 
+  submission=false;
+  clearRating();
 
 }
 
