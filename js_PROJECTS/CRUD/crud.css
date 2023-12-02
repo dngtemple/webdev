@@ -321,3 +321,20 @@ tbody tr:nth-child(even){
 .page a:hover{
   background-color: gray;
 }
+
+/* css for blocked */
+
+.check{
+  font-size: 11px;
+  width:70px;
+  height:10px;
+  display: flex;
+}
+
+.checked{
+  height:6px;
+  width:6px;
+  border-radius:50%;
+  background-color:chartreuse;
+  margin-top:15px;
+}
