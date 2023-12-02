@@ -2,7 +2,11 @@ let movies = [];
 
 if (localStorage.getItem("movies")!==null){
 
-  movies=JSON.parse(localStorage.getItem("movies"));
+  let all_movies=JSON.parse(localStorage.getItem("movies"));
+
+  movies=all_movies.filter(function(movie,index){
+    return movie.blocked===false;
+  })
 }
 else{
   localStorage.setItem("movies",JSON.stringify(movies));
