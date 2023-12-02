@@ -8,6 +8,8 @@ else{
   localStorage.setItem("movies",JSON.stringify(movies));
 }
 
+
+
 // pagination
 let start=0;
 let end=10;
@@ -87,8 +89,6 @@ numLinkPages();
 
 
 
-
-
 // function to display movies
 
 function DisplayData(moviesArr){
@@ -141,6 +141,12 @@ function DisplayData(moviesArr){
     trash.onclick=deleteMovie.bind(this,movie.id);
     actions.appendChild(trash);
 
+    if(movie.blocked===true){
+      let checked=document.createElement("div");
+      checked.classList.add("checked");
+      actions.appendChild(checked);
+    }
+
     actions.classList.add("actions");
 
 
@@ -164,7 +170,6 @@ function closePopUp(modal){
   document.getElementById(modal).style.display="none";
 
 }
-
 
 
 
@@ -209,7 +214,8 @@ function createMovie(){
 
   let movie={
     ratings:[],
-    id:lastId+1
+    id:lastId+1,
+    blocked:false,
   }
   movie.title=document.getElementById("add_title").value;
   movie.releaseDate=document.getElementById("add_releaseDate").value;
@@ -282,6 +288,14 @@ function setUpdate(id){
   document.getElementById("update_poster").value=movie.posterurl;
   document.getElementById("update_storyline").value=movie.storyline;
 
+  if(movie.blocked===true)
+  {
+    document.getElementById("checkbox").checked=true;
+  }
+  else{
+    document.getElementById("checkbox").checked=false;
+  }
+
 
   document.getElementById("update_modal").style="display:flex";
 
@@ -301,6 +315,13 @@ function UpdateMovie(){
   movie_update.imdbRating=document.getElementById("update_idmbrating").value;
   movie_update.posterurl=document.getElementById("update_poster").value;
   movie_update.storyline=document.getElementById("update_storyline").value;
+
+  if(document.getElementById("checkbox").checked){
+    movie_update.blocked=true;
+  }
+  else{
+    movie_update.blocked=false;
+  }
 
 
   localStorage.setItem("movies",JSON.stringify(movies));
