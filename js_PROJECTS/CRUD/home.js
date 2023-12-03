@@ -111,6 +111,7 @@ function moviesDisplay(arr){
 
         let button=document.createElement("button");
         button.classList.add("button");
+        button.onclick=viewPopUp.bind(this,ele.id);
         button.innerText="DETAILS";
         card_details.appendChild(button);
 
@@ -126,8 +127,8 @@ function moviesDisplay(arr){
 moviesDisplay(movies);
 
 // function to close Modal
-function closeModal(){
-  document.getElementById("modal").style.display="none";
+function closeModal(modal){
+  document.getElementById(modal).style.display="none";
 }
 
 // function to open Modal
@@ -179,7 +180,7 @@ function clearRating(){
 function submitRating(){
 
   movietorate.ratings.push(Number(choose));
-  closeModal();
+  closeModal('modal');
   moviesDisplay(movies);
   localStorage.setItem("movies",JSON.stringify(movies));
 
@@ -195,4 +196,23 @@ function averageR(arr){
   })
 
   return sum/arr.length;
+}
+
+
+function viewPopUp(movieid){
+
+  let movie=movies.find(function(movie,ind){
+    return movie.id===movieid;
+  })
+
+  document.getElementById("title").innerText=movie.title;
+  document.getElementById("storyline").innerText=movie.storyline;
+  document.getElementById("releaseDate").innerText=movie.releaseDate;
+  document.getElementById("actors").innerText=movie.actors;
+  document.getElementById("genres").innerText=movie.genres;
+  document.getElementById("idmb").innerText=movie.imdbRating;
+  document.getElementById("img").src=movie.posterurl;
+
+  document.getElementById("popUp").style.display="flex";
+
 }
