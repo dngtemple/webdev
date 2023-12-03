@@ -268,6 +268,8 @@ function deleteMovie(id){
     return movie.id===id;
   })
 
+  serial_num=start;
+
   movies.splice(index,1);
   localStorage.setItem("movies",JSON.stringify(movies));
 
