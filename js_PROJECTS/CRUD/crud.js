@@ -17,6 +17,8 @@ let pagination=movies.slice(start,end);
 let currentPage=1;
 let totalPages=Math.ceil(movies.length/10);
 
+let serial_num=0;
+
 
 document.getElementById("totalpages").innerText=totalPages;
 
@@ -26,6 +28,8 @@ function nextPage(){
   currentPage++;
   start+=10;
   end+=10;
+
+  serial_num=start;
 
   pagination=movies.slice(start,end);
   DisplayData(pagination);
@@ -40,6 +44,8 @@ function previousPage(){
   start-=10;
   end-=10;
 
+  serial_num=start;
+
   pagination=movies.slice(start,end);
   DisplayData(pagination);
   }
@@ -53,6 +59,8 @@ function inputPage(pageNum){
     currentPage=pageNum;
     start=(currentPage-1)*10;
     end=(currentPage)*10;
+    
+    serial_num=start;
 
     pagination=movies.slice(start,end);
     DisplayData(pagination);
@@ -100,7 +108,8 @@ function DisplayData(moviesArr){
     let row=document.createElement("tr");
 
     let number=document.createElement("td");
-    number.append(index+1);
+    number.append(serial_num+1);
+    serial_num++;
 
     let title=document.createElement("td");
     title.append(movie.title);
