@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Dom Traversal</title>
+</head>
+<body>
+
+    <section id="parent">
+        <div id="cat" >
+            <p>Food</p>
+            <p>Water</p>
+            <p>Fruits</p>
+
+        </div>
+
+        <ul id="ul">
+            <li>Clinton</li>
+            <li>Samuel</li>
+            <li>Appiah</li>
+            <li>Jeffery</li>
+        </ul>
+    </section>
+
+
+
+
+
+
+    <script>
+
+        console.log("hello");
+
+        console.log(document.getElementById("parent").children[0]);
+
+        console.log(document.getElementById("parent").children[0].children[2]);
+
+        document.getElementById("parent").firstElementChild.children[1].innerHTML=("drink");
+
+        console.log(document.getElementById("cat").parentElement);
+
+    </script>
+    
+</body>
+</html>
