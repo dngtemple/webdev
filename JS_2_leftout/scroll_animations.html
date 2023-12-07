@@ -29,11 +29,15 @@
 </head>
 <body>
 
-    <div>
+    <button id="btn">
+        SCROLL
+    </button>
+
+    <div id="one">
 
     </div>
 
-    <div>
+    <div >
 
     </div>
 
@@ -55,6 +59,22 @@
         })
 
 
+        // how to scroll automatically
+
+ 
+        document.getElementById("btn").addEventListener("click",function(){
+            window.scrollTo({
+                left:0,
+                top:500,
+                behavior:"smooth"
+            }
+            );
+        })
+
+        let one=document.getElementById("one");
+        one.addEventListener("click",function(){
+            window.scrollBy(0,50);
+        })
 
 
     </script>
