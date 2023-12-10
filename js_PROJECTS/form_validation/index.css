@@ -76,3 +76,7 @@
     margin-left:-7px;
     transform:rotateZ(60deg);
 }
+
+button{
+    cursor:not-allowed;
+}
