@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>synchronous and asynchronous</title>
+</head>
+<body>
+
+
+
+    <script>
+        // this is to help understand how js works
+        // by default js is synchronous ===== This means that js executes the code line by after each tast
+        // is completed
+        // so if a task will take about two minutes for it to finish exeuting 
+        // the next task will by default wait after two minutes
+
+
+        // Asynchronous js 
+        // this means tasks that are asynchronous will move to web API and executes there 
+        // allowing all the tasks to continue to execute and after all these tasks are executed
+        // the asynchronous tasks will later be called back(callback) and join at the end
+
+        // setTimeout is an example of asynchronous js
+        // event object logics are also examples of asynchronous js
+
+
+
+
+        console.log("1");
+        console.log("2");
+
+        setTimeout(function(){
+            console.log("3");
+
+        },1000);
+        // here setTime will be outputted last 
+        // this is not because of the time you've given to the setTimeOut
+        // even is the time is 0 it will still output last
+
+        console.log("4");
+    </script>
+</body>
+</html>
