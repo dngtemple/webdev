@@ -128,6 +128,7 @@ function checkValidation(input_Data){
             document.getElementById(input_Data.id_msg).style.display="flex";
             document.getElementById(input_Data.id_msg).innerText=message;
         }
+        input_Data.isValid=false;
     }
     else{
         document.getElementById(input_Data.id_msg).style.display="none";
