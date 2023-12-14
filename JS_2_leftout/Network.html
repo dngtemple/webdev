@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Networking</title>
+</head>
+<body>
+
+
+
+    <script>
+
+        let dataParse=null;
+        // making a network request of data form jsonplaceholder
+
+
+        let data= new XMLHttpRequest();
+        data.open("GET","https://jsonplaceholder.typicode.com/posts",true);
+
+        // true is for asynchronous 
+        // false is for synchronous
+        data.send();
+
+        
+        // using eventhandler to handle the data called
+
+        data.onreadystatechange=function(){
+            if(data.readyState===4 && data.status===200){
+                console.log(JSON.parse(data.responseText));
+            }
+        }
+    </script>
+    
+</body>
+</html>
