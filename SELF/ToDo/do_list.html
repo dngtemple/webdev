@@ -82,7 +82,7 @@
 
             .whoT{
                 width:90%;
-                height:40px;
+                height:50px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -99,19 +99,22 @@
             }
 
             .taskTitle{
+                height:30px;
+                width: 30%;
                 font-size: 13px;
-                text-indent: 30px;
                 cursor: pointer;
                 border-radius: 5px;
+                border:none;
+                background-color: white;
+                margin-left: 10px;
             }
 
             .icon{
                 color:red;
                 text-indent:-30px;
             }
-        }
 
-        .pop_for_view{
+            .pop_for_view{
             width:100%;
             height:100vh;
             background-color: rgba(0, 0, 0, 0.2);
@@ -216,6 +219,11 @@
         }
 
 
+
+
+        }
+
+       
 
     </style>
 </head>
@@ -326,7 +334,7 @@
                 whoT.classList.add("whoT");
 
 
-                let taskTitle=document.createElement("h3");
+                let taskTitle=document.createElement("button");
                 taskTitle.classList.add("taskTitle");
                 taskTitle.innerText=element.title;
                 taskTitle.onclick=viewTasks.bind(this,element.id);
