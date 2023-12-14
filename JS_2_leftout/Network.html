@@ -25,7 +25,10 @@
 
         data.onreadystatechange=function(){
             if(data.readyState===4 && data.status===200){
-                console.log(JSON.parse(data.responseText));
+                // console.log(JSON.parse(data.responseText));
+
+                dataParse=JSON.parse(data.responseText);
+                console.log(dataParse);
             }
         }
     </script>
