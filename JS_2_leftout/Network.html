@@ -31,9 +31,32 @@
 
         }
 
+        // using a callback to use different url to get data than writing same code again 
+
+        GetData("https://jsonplaceholder.typicode.com/users",function(users){
+            console.log(users);
+        });
         GetData("https://jsonplaceholder.typicode.com/posts",function(posts){
             console.log(posts);
-        })
+        });
+
+
+
+        // this will make the data be presented in order
+        // even though it is asynchronous the data may be missed up because of the time
+        // so you can do callback hell to put them in order
+
+
+        GetData("https://jsonplaceholder.typicode.com/users",function(users){
+            console.log(users);
+
+            GetData("https://jsonplaceholder.typicode.com/posts",function(posts){
+               console.log(posts);
+            });
+        });
+
+
+
 
        
 
