@@ -58,9 +58,34 @@
 
 
 
-       
 
+        // PROMISES
+        // by using promises we can request network simply
 
+        // resolve if task is true
+        // reject if task is false
+
+        // use .then if task is resolved
+        //     .catch if task is rejected
+
+        let prom=new Promise(function(resolve,reject){
+            let task=true;
+            if(task===true){
+                resolve("This is resolved");
+            }
+            else{
+                reject("Rejected,there  were some issues");
+            }
+
+            return prom;
+        });
+        prom
+        .then(function(data){
+            console.log(data);
+        })
+        .catch(function(data){
+            console.log(data);
+        })
       
     </script>
     
