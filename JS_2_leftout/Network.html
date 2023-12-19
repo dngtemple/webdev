@@ -90,7 +90,7 @@
 
 
 
-        function getData(url){
+        function getData(url,err){
             
             let p = new Promise(function(resolve,reject){
 
@@ -100,15 +100,14 @@
             
             data.onreadystatechange=function(){
 
-                if(data.status!==0){
-                    if(data.readyState===4 && data.status===200){
-                        resolve(JSON.parse(data.responseText));
-                    }
+               if(data.readyState===4){
+                if(data.status===200){
+                    resolve(JSON.parse(data.responseText));
                 }
                 else{
-                    reject("There were some issues");
-            
+                    reject("Rejected there were some problems");
                 }
+               }
             }  
             })
 
@@ -116,12 +115,12 @@
 
         }
 
-        getData("https://jsonplaceholder.typicode.com/user")
+        getData("https://jsonplaceholder.typicode.com/users")
         .then(function(users){
             console.log(users);
         })
-        .catch(function(users){
-            console.log(users);
+        .catch(function(err){
+            console.log(err);
         })
 
 
