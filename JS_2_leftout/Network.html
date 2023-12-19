@@ -16,29 +16,29 @@
         // using eventhandler to handle the data called onreadystatechange
 
 
-        function GetData(url,callback){
+        // function GetData(url,callback){
 
 
-            let data= new XMLHttpRequest();
-            data.open("GET",url,true);
-            data.send();
+        //     let data= new XMLHttpRequest();
+        //     data.open("GET",url,true);
+        //     data.send();
             
-            data.onreadystatechange=function(){
-                if(data.readyState===4 && data.status===200){
-                    callback(JSON.parse(data.responseText));
-                }
-            }
+        //     data.onreadystatechange=function(){
+        //         if(data.readyState===4 && data.status===200){
+        //             callback(JSON.parse(data.responseText));
+        //         }
+        //     }
 
-        }
+        // }
 
         // using a callback to use different url to get data than writing same code again 
 
-        GetData("https://jsonplaceholder.typicode.com/users",function(users){
-            console.log(users);
-        });
-        GetData("https://jsonplaceholder.typicode.com/posts",function(posts){
-            console.log(posts);
-        });
+        // GetData("https://jsonplaceholder.typicode.com/users",function(users){
+        //     console.log(users);
+        // });
+        // GetData("https://jsonplaceholder.typicode.com/posts",function(posts){
+        //     console.log(posts);
+        // });
 
 
 
@@ -47,13 +47,13 @@
         // so you can do callback hell to put them in order
 
 
-        GetData("https://jsonplaceholder.typicode.com/users",function(users){
-            console.log(users);
+        // GetData("https://jsonplaceholder.typicode.com/users",function(users){
+        //     console.log(users);
 
-            GetData("https://jsonplaceholder.typicode.com/posts",function(posts){
-               console.log(posts);
-            });
-        });
+        //     GetData("https://jsonplaceholder.typicode.com/posts",function(posts){
+        //        console.log(posts);
+        //     });
+        // });
 
 
 
@@ -68,24 +68,63 @@
         // use .then if task is resolved
         //     .catch if task is rejected
 
-        let prom=new Promise(function(resolve,reject){
-            let task=true;
-            if(task===true){
-                resolve("This is resolved");
-            }
-            else{
-                reject("Rejected,there  were some issues");
-            }
+        // let prom=new Promise(function(resolve,reject){
+        //     let task=false;
+        //     if(task===true){
+        //         resolve("This is resolved");
+        //     }
+        //     else{
+        //         reject("Rejected,there  were some issues");
+        //     }
 
-            return prom;
-        });
-        prom
-        .then(function(data){
-            console.log(data);
+        //     return prom;
+        // });
+        // prom
+        // .then(function(data){
+        //     console.log(data);
+        // })
+        // .catch(function(data){
+        //     console.log(data);
+        // })
+
+
+
+
+        function getData(url){
+            
+            let p = new Promise(function(resolve,reject){
+
+            let data= new XMLHttpRequest();
+            data.open("GET",url,true);
+            data.send();
+            
+            data.onreadystatechange=function(){
+
+                if(data.status!==0){
+                    if(data.readyState===4 && data.status===200){
+                        resolve(JSON.parse(data.responseText));
+                    }
+                }
+                else{
+                    reject("There were some issues");
+            
+                }
+            }  
+            })
+
+            return p;
+
+        }
+
+        getData("https://jsonplaceholder.typicode.com/user")
+        .then(function(users){
+            console.log(users);
         })
-        .catch(function(data){
-            console.log(data);
+        .catch(function(users){
+            console.log(users);
         })
+
+
       
     </script>
     
