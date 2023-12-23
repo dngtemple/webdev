@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Intro to canvas</title>
+
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas">
+
+    </canvas>
+
+
+    <script>
+        let canvas=document.getElementById("canvas");
+        canvas.width="600";
+        canvas.height="600";
+
+        let context=canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(200,200);
+        context.lineTo(400,400);
+        context.strokeStyle="green";
+        context.stroke();
+
+
+        context.beginPath();
+        context.moveTo(100,50);
+        context.lineTo(100,100);
+        context.strokeStyle="red";
+        context.stroke();
+    
+    </script>
+    
+</body>
+</html>
