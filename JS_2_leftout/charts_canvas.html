@@ -28,7 +28,7 @@
         let data=[
             {
                 name:"Room-1",
-                people:100
+                people:150
             },
             {
                 name:"Room-2",
@@ -66,17 +66,46 @@
         // drawing the line to join the points
 
         cxt.beginPath();
-        cxt.moveTo(30,260);
+        cxt.moveTo(20,270);
+        cxt.strokeStyle="red";
 
-        let plot=50;
+        let plot=60;
 
         for(let i=0;i<data.length;i++){
 
             let percentage=(data[i].people/1000)*100;
-            let xplotting=(percentage/100)*260;
-            plot+=50;
+            let xplotting=(percentage/100)*270;
+            plot+=60;
 
-            cxt.lineTo(plot,260-xplotting);
+            cxt.lineTo(plot,270-xplotting);
+        }
+
+        cxt.stroke();
+
+
+        // printing for names 
+
+        cxt.beginPath();
+        cxt.moveTo(20,270);
+        let name=60;
+        for(let i=0;i<data.length;i++){
+            cxt.fillText(data[i].name,name+35,270+10);
+            name+=60;
+            
+        }
+        cxt.stroke()
+
+        // printing numbers 
+
+        cxt.beginPath();
+        cxt.moveTo(20,270);
+
+        let digit;
+
+        for(let i=0;i<data.length;i++){
+            let percentage=(data[i].people/1000)*100;
+            let xplotting=(percentage/100)*270;
+            cxt.fillText(data[i].people,20,270-xplotting)
         }
 
         cxt.stroke();
