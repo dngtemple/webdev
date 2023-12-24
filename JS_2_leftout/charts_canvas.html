@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drawing charts with canvas</title>
+    <style>
+        canvas{
+            border: 1px solid lightblue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas" height="300" width="600">
+
+    </canvas>
+
+
+
+
+
+
+    <script>
+        let canvas=document.getElementById("canvas");
+
+        let cxt=canvas.getContext("2d");
+
+        let data=[
+            {
+                name:"Room-1",
+                people:100
+            },
+            {
+                name:"Room-2",
+                people:550
+            },
+            {
+                name:"Room-3",
+                people:250
+            },
+            {
+                name:"Room-4",
+                people:500
+            },
+            {
+                name:"Room-5",
+                people:100
+            },
+            {
+                name:"Room-6",
+                people:300
+            },
+            {
+                name:"Room-7",
+                people:200
+            }
+        ];
+
+        cxt.beginPath();
+        cxt.moveTo(20,20);
+        cxt.lineTo(20,270);
+        cxt.lineTo(580,270);
+        cxt.stroke();
+
+
+        // drawing the line to join the points
+
+        cxt.beginPath();
+        cxt.moveTo(30,260);
+
+        let plot=50;
+
+        for(let i=0;i<data.length;i++){
+
+            let percentage=(data[i].people/1000)*100;
+            let xplotting=(percentage/100)*260;
+            plot+=50;
+
+            cxt.lineTo(plot,260-xplotting);
+        }
+
+        cxt.stroke();
+
+
+
+    </script>
+    
+</body>
+</html>
