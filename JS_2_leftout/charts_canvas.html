@@ -20,6 +20,7 @@
 
 
 
+
     <script>
         let canvas=document.getElementById("canvas");
 
@@ -64,7 +65,6 @@
 
 
         // drawing the line to join the points
-
         cxt.beginPath();
         cxt.moveTo(20,270);
         cxt.strokeStyle="red";
@@ -83,8 +83,25 @@
         cxt.stroke();
 
 
-        // printing for names 
 
+
+        // drawing the values at the point
+        cxt.beginPath();
+        cxt.moveTo(20,270);
+        let text=60;
+
+        for(let i=0;i<data.length;i++){
+            let percentage=(data[i].people/1000)*100;
+            let xplotting=(percentage/100)*270;
+            
+
+            cxt.fillText(data[i].people,text+40,270-xplotting);
+            text+=60;
+        }
+        cxt.stroke();
+
+
+        // printing for names 
         cxt.beginPath();
         cxt.moveTo(20,270);
         let name=60;
@@ -95,8 +112,9 @@
         }
         cxt.stroke()
 
-        // printing numbers 
 
+
+        // printing numbers 
         cxt.beginPath();
         cxt.moveTo(20,270);
 
@@ -111,6 +129,28 @@
         cxt.stroke();
 
 
+
+        // drawing the circles
+        
+
+  
+        let circles=60;
+
+        for(let i=0;i<data.length;i++){
+
+            let percentage=(data[i].people/1000)*100;
+            let xplotting=(percentage/100)*270;
+
+            cxt.moveTo(circles,270-xplotting)
+            cxt.beginPath();
+
+            cxt.arc(circles+60,270-xplotting,2,0,Math.PI*2,false);
+            circles+=60;
+
+            cxt.fill();
+            cxt.stroke();
+
+        }
 
     </script>
     
