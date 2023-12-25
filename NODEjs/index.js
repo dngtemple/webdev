@@ -53,12 +53,12 @@ const fls=require("fs");
 
 
 
-fls.unlink("./test.js",function(err){
-    if(err===null){
-        console.log("success");
-    }
-    else{
-        console.log("failure");
-    }
-})
+// fls.unlink("./test.js",function(err){
+//     if(err===null){
+//         console.log("success");
+//     }
+//     else{
+//         console.log("failure");
+//     }
+// })
 
