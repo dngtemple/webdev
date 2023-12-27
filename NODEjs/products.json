@@ -1,5 +1,6 @@
 [
-  { "id": "1", "name": "Clinton", "age": 20 },
-  { "id": "3", "name": "Yaw", "age": 25 },
-  { "id": "4", "name": "Alves", "age": 34 }
+  { "id": "1", "name": "Coke", "price": 500 },
+  { "id": "3", "name": "Corn Flakes", "price": 250 },
+  { "id": "4", "name": "Tooth Brush", "price": 343 },
+  {  "id":"5", "name": "Bread", "price":893}
 ]

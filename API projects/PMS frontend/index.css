@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+.body{
+    padding:30px 50px;
+    font-family: segoe ui;
+}
+
+.body h2{
+    font-size: 23px;
+}
+
+i:nth-child(1){
+    color:green;
+}
+i:nth-child(2){
+    color:red ;
+}
+
+i{
+    margin:0px 10px;
+    font-size:13px;
+}
+
+tr,th,td{
+    padding:5px !important;
+}
+
+.tab{
+    text-align: center;
+    margin-top:30px
+}
+
+.f{
+    margin-top:20px;
+    row-gap: 10px;
+}
