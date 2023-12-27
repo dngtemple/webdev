@@ -1,17 +1,5 @@
 [
-    {
-        "id":"1",
-        "name":"Clinton",
-        "age":34
-    },
-    {
-        "id":"2",
-        "name":"Templeton",
-        "age":23
-    },
-    {
-        "id":"3",
-        "name":"Alves",
-        "age":67
-    }
+  { "id": "1", "name": "Clinton", "age": 20 },
+  { "id": "3", "name": "Yaw", "age": 25 },
+  { "id": "4", "name": "Alves", "age": 34 }
 ]
