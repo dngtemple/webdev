@@ -90,6 +90,8 @@ function deleteData(id){
     .catch(function(err){
         console.log(err);
     })
+
+
 }
 
 // function to add
