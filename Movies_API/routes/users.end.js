@@ -9,6 +9,7 @@ const router=express.Router();
 const bcryptjs=require("bcryptjs");
 
 
+// endpoint of post and hashing password
 router.post("/",function(req,res){
 
     let user=req.body;
@@ -35,6 +36,9 @@ router.post("/",function(req,res){
 
 
 })
+
+
+// endpoint of login
 
 router.post("/login",function(req,res){
 
