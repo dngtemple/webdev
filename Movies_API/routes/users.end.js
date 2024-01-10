@@ -1,4 +1,5 @@
 const userModel=require("../models_sch/users.model");
+const userMoviesModel=require("../models_sch/user_mov.model");
 
 const express=require("express");
 const app=express();
@@ -76,10 +77,51 @@ router.post("/login",function(req,res){
 })
 
 
-router.get("/something",verify,function(req,res){
+// endpoint for checking the play of movies and 
 
-    res.send({message:"I am the most secured endpoint"});
+router.post("/play",verify,function(req,res){
+    let user_movie=req.body;
+
+    userMoviesModel.findOne({movie:user_movie.movie},{user:user_movie.user})
+    .then(function(watchedmovie){
+
+        if(watchedmovie===null || watchedmovie===undefined){
+
+            userMoviesModel.create(user_movie)
+            .then(function(){
+                res.send({message:"play info created"});
+            })
+            .catch(function(err){
+                res.send({message:"Issues adding play info"})
+            })
+        }
+
+    })
+    .catch(function(err){
+        res.send({message:"Movie to found"})
+    })
+
 })
+
+router.put("/closeplay/:user_movie_id",function(req,res){
+    let user_movie_id=req.params.user_movie_id;
+    let dataToUpdate=req.body
+
+    userMoviesModel.updateOne({_id:user_movie_id},dataToUpdate)
+    .then(function(msg){
+        console.log({message:"watchtime updated successfully"});
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+
+})
+
+
+// router.get("/something",verify,function(req,res){
+
+//     res.send({message:"I am the most secured endpoint"});
+// })
 
 
 // middleware to vertify token

@@ -1,0 +1,4 @@
+
+
+#ignore streaming video
+NODEjs/streaming/*.mp4
