@@ -2,6 +2,7 @@
 import './App.css';
 
 import Product from './products';
+import Demo from './demo';
 
 function App() {
 
@@ -58,6 +59,8 @@ function App() {
 
       </div>
 
+
+      <Demo/>
     </div>
   );
 }
