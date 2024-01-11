@@ -1,0 +1,154 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: segoe ui;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.514);
+
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main::before{
+    content:"";
+    position:absolute;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%),url("https://assets.nflxext.com/ffe/siteui/vlv3/df6621a3-890c-4ca0-b698-90bd5152f3d1/c13489c9-1a0a-4118-af4b-783eea86ef38/GH-en-20240107-trifectadaily-perspective_alpha_website_medium.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+}
+
+.main_details{
+    width:60%;
+    height:50vh;
+    /* background-color: wheat; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 10;
+}
+
+.main_details input{
+    padding:10px 0px ;
+    border:none;
+    border:1px solid gray;
+    text-indent: 30px;
+    outline: none;
+}
+
+.main_details input:active{
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.main_detail{
+    width:100%;
+    height:50px;
+    /* background-color: aqua; */
+}
+
+
+.title{
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    margin-top:50px;
+    color:red
+}
+
+
+
+.main_buttons{
+    width:100%;
+    height:50px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main_buttons button{
+    width:70px;
+    padding:10px 0px;
+    border-radius: 10px;
+    outline: none;
+    color:black;
+    border: none;
+    border:1px solid gray;
+    background-color: white;
+    cursor: pointer;
+}
+
+.main_buttons button:hover{
+    background-color: black;
+    color:white;
+}
+
+.main_buttons button:active{
+    background-color: white;
+    color:black;
+}
+
+/* section for watch */
+.watch{
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    margin-top:10px;
+    display: flex;
+}
+
+.watch_details{
+    width:50%;
+    padding:100px 30px;
+
+}
+
+.watch_details h2{
+    font-size: 35px;
+    color:white
+}
+
+.watch_details p{
+    margin-top: 10px;
+    font-size: 20px;
+    color:white
+
+}
+
+.watch_vid{
+    width:50%;
+    /* background-color: white; */
+    height: 400px;
+    position: relative;
+    display: flex;
+
+}
+
+.watch_vid img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 20;
+}
+
+.watch_vid video{
+    position:absolute;
+    /* z-index: 20; */
+    width:380px;
+    height:420px;
+    left:65px;
+    top:-20px;
+}

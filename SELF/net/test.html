@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to right, #3494e6, #ec6ead);
+      background-blend-mode: overlay; /* Use the blending mode you prefer */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('your-background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.7; /* Adjust the opacity to control the blending effect */
+    }
+
+    .content {
+      z-index: 1; /* Ensure content appears above the background image */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-image"></div>
+  <div class="content">
+    <h1>Your Content Here</h1>
+    <p>This is a sample text.</p>
+  </div>
+</body>
+</html>
