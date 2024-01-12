@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: segoe ui;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main::before{
+    content: "";
+    position: absolute;
+    background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/df6621a3-890c-4ca0-b698-90bd5152f3d1/c13489c9-1a0a-4118-af4b-783eea86ef38/GH-en-20240107-trifectadaily-perspective_alpha_website_medium.jpg");
+    width: 100%;
+    height: 100%;
+    opacity: 1.1;
+}
+
+.login{
+    width:35%;
+    height:70vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login h2{
+    color:white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.inp{
+    margin-top:40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input{
+    width:70%;
+    padding:10px 0px;
+    background-color: #7f7d7d;
+    margin-bottom: 10px;
+    outline: none;
+    border:1px solid #7f7d7d;
+    border-radius: 5px;
+    text-indent: 10px;
+}
+
+.input::placeholder{
+    color:white;
+}
+
+.btn{
+    margin-top: 20px;
+    width:70%;
+    padding:10px 5px;
+    background-color: red;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    font-size: 15px;
+    color:white;
+}
+
+
+.inp div{
+    width: 70%;
+    height: 20px;
+    /* background-color: aqua; */
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    margin-top:10px;
+    color:white;
+    align-items: center;
+}
+
+.check{
+    height: 10px;
+}
+
+.newto{
+    width:70%;
+    color:#7f7d7d;
+    /* background-color:black; */
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.newto span{
+    color:white;
+    font-size: 16px;
+    text-decoration:underline;
+}
