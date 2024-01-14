@@ -3,6 +3,11 @@ import './App.css';
 
 import Product from './products';
 import Demo from './demo';
+import Login from './login';
+
+
+// routing in react
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 
 function App() {
 
@@ -60,8 +65,35 @@ function App() {
       </div>
 
 
-      <Demo/>
+      {/* <Demo/> */}
+
+      {/* <Login/> */}
+
+
+      <BrowserRouter>
+
+        <ul>
+          <li>
+            <Link to="/demo">demo</Link>
+          </li>
+          <li>
+            <Link to="/login">login</Link>
+          </li>
+        </ul>
+
+         <Routes>
+         {/* this makes a component loads on default or on the root */}
+          <Route path='/' element={<Login/>}></Route>  
+
+
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/demo' element={<Demo/>}></Route>
+         </Routes>
+      </BrowserRouter>
+
+
     </div>
+
   );
 }
 

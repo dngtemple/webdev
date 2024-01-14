@@ -1,5 +1,11 @@
 /* css for products component */
 
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+
 .container{
   background-color: lightblue;
   padding:30px;
@@ -24,11 +30,24 @@
 
 .demo{
   padding:30px 10px;
-  background-color: lightblue;
+  background-color: lightpink;
 }
 
 .demo button{
   background-color: wheat;
   border-radius: 4px;
   padding:10px 20px;
+}
+
+.login_container{
+  display: flex;
+  flex-direction: column;
+  padding:30px 30px;
+}
+
+.login_container button{
+  background-color: wheat;
+  border-radius: 4px;
+  padding:10px 20px;
+
 }

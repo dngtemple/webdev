@@ -11,7 +11,7 @@ function Demo(){
     }
 
 
-    // using useRef variable            // with ref the page does re render
+    // using useRef variable            // with ref the page does not re render
     let user=useRef("User_1");
     // console.log(user.current);
     function ChangeUser(){
