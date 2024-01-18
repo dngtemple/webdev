@@ -1,7 +1,7 @@
 const http=require("http");
 const fs=require("fs");
 const url=require("url");
-const { json } = require("node:stream/consumers");
+
 
 
 http.createServer(function(req,res){
@@ -10,16 +10,20 @@ http.createServer(function(req,res){
     let products=fs.readFileSync("./products.json",{encoding:"utf-8"});
     let pro=JSON.parse(products);
 
-
-    res.writeHead(200,{
-        "Access-Control-Allow-Origin":"*",
-        "Access-Control-Allow-Methods":"DELETE,POST,PUT",
-        "Access-Control-Allow-Headers":"*"
-    })
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "DELETE, POST, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "*");
 
 
-    // console.log(parsedUrl);
-    if(req.method==="GET" && parsedUrl.pathname==="/products"){
+    if (req.method === "OPTIONS" && parsedUrl.pathname==="/products") {
+        res.writeHead(200,{
+            "Access-Control-Allow-Origin":"*",
+            "Access-Control-Allow-Methods":"DELETE,POST,PUT",
+            "Access-Control-Allow-Headers":"*"
+        });
+        res.end();
+    }
+    else if(req.method==="GET" && parsedUrl.pathname==="/products"){
 
         let id=parsedUrl.query.id;
 
@@ -140,6 +144,7 @@ http.createServer(function(req,res){
         }
        
     }
+    
 
 }).listen(8000,function(){
     console.log("Running successfully");

@@ -10,19 +10,23 @@ function getData(){
     })
     .then(function(data){
         allproducts=data;
+        console.log(allproducts);
+
         displayData(allproducts);
     })
     .catch(function(err){
         console.log(err);
     })
+
 }
+
 
 
 function displayData(data){
 
     document.getElementById("add").innerHTML="";
     
-        data.forEach(function(product,index){
+    data.forEach(function(product,index){
 
             let tr=document.createElement("tr");
 
@@ -49,22 +53,24 @@ function displayData(data){
             upIcon.classList.add("fa-regular");
             upIcon.classList.add("fa-pen-to-square");
             upIcon.onclick=function(){
-                setupdate(product.id);
-            }
+                setupdate(Number(product.id));
+            };
             actionTd.appendChild(upIcon);
 
             let delIcon=document.createElement("i");
             delIcon.classList.add("fa-solid");
             delIcon.classList.add("fa-trash");
-            delIcon.onclick=function(){
-                deleteData(product.id);
-            }
+            delIcon.onclick=(function(){
+                deleteData(Number(product.id));
+            });
             actionTd.appendChild(delIcon);
 
             tr.appendChild(actionTd);
 
 
             document.getElementById("add").append(tr);
+
+            console.log(product);
         })
    
 };
@@ -72,27 +78,33 @@ getData();
 
 // function to delete product
 function deleteData(id){
-    fetch("http://localhost:8000/products?id="+id,
-    {
+    fetch(`http://localhost:8000/products?id=${id}`,{
         method:"DELETE",
     })
     .then(function(response){
-        return response.json();
-    }).then(function(message){
+        return response;
+    })
+    .then(function(message){
         console.log(message);
         let index=allproducts.findIndex(function(product,index){
-            return Number(product.id)===Number(ID);
+            return Number(product.id)===Number(id);
         })
+        console.log(index);
+        console.log(id);
 
-        allproducts.splice(index,1);
-        displayData(allproducts);
+        if(index !== -1){
+            (allproducts).splice(index,1);
+             displayData(allproducts);
+        }
+
+        
     })
     .catch(function(err){
         console.log(err);
     })
 
-
 }
+
 
 // function to add
 
@@ -109,10 +121,11 @@ function adddata(){
 
     fetch("http://localhost:8000/products",{
         method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
         body:JSON.stringify(product),
-        Headers:{
-            "content-type":"application/json"
-        }
+
     })
     .then(function(response){
         return response.json();
@@ -151,12 +164,15 @@ function update(){
     product.price=document.getElementById("up_price").value;
     product.quantity=document.getElementById("up_quantity").value;
 
-    fetch("http://localhost:8000/products?id="+productUpdate,{
+    console.log(product);
+
+    fetch(`http://localhost:8000/products?id=${productUpdate}`,{
         method:"PUT",
-        body:JSON.stringify(product),
         headers:{
-            "content-type":"application/json"
-        }
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(product),
+
     })
     .then(function(response){
         return response.json();
@@ -168,5 +184,4 @@ function update(){
         console.log(err);
     })
 
-    
 }
