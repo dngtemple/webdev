@@ -8,49 +8,16 @@ import Login from './login';
 
 // routing in react
 import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
+import Component1 from './component1';
 
 function App() {
 
-  let name="Clinton Templeton";
-  
-  let user={
-    name:"Alves",
-    age:20,
-  }
-
-  let students=["John","Kofi","Ama","Kwabena"];
-
-  let teachers=[
-    {
-      name:"Samuel",
-      level:200,
-    },
-    {
-      name:"Daniel",
-      level:100,
-    },
-    {
-      name:"Derrick",
-      level:300
-    }
-  ]
   return (
-    <div className="App">
-
-      <h1>{name}</h1>
-
-      <p>{user.name} {user.age}</p>
-
-      <p>{students[0]} {students[1]} {students[2]} {students[3]}</p>
+  
+    <div>
 
 
-      {
-        teachers.map(function(teacher,index){
-          return(
-            <p key={index}>{teacher.name} {teacher.level}</p>
-          )
-        })
-      }
+      <Component1 name="Clinton"/>
 
 
       <div className="container">
@@ -64,9 +31,13 @@ function App() {
 
       </div>
 
+      
+
+
+
+
 
       {/* <Demo/> */}
-
       {/* <Login/> */}
 
 
