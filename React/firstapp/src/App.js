@@ -4,20 +4,19 @@ import './App.css';
 import Product from './products';
 import Demo from './demo';
 import Login from './login';
+import Component1 from './component1';
 
 
 // routing in react
 import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
-import Component1 from './component1';
+
 
 function App() {
+
 
   return (
   
     <div>
-
-
-      <Component1 name="Clinton"/>
 
 
       <div className="container">
@@ -31,15 +30,9 @@ function App() {
 
       </div>
 
-      
-
-
-
-
-
-      {/* <Demo/> */}
-      {/* <Login/> */}
-
+      <dataContext.Provider value={data}>
+        <Component1/>
+      </dataContext.Provider>
 
       <BrowserRouter>
 

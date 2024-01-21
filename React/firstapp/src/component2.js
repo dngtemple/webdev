@@ -1,6 +1,12 @@
-function Component2(props){
+import { useContext } from "react";
+import {dataContext} from './App';
+
+
+function Component2(){
+
+    let data=useContext(dataContext);
     return(
-        <h1>component 2: {props.name}</h1>
+        <h1>component 2:{data}</h1>
 
     );
 }

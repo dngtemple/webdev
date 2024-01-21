@@ -1,12 +1,23 @@
 import Component2 from './component2';
 
+import { createContext } from 'react';
 
-function Component1(props){
+
+function Component1(){
+    let data="clinton templeton";
+
+    const dataContext=createContext();
+
+
     return(
         <div>
-            <h1>component : {props.name}</h1>
 
-            <Component2 name={props.name}/>
+            <dataContext.Provider value={data}>
+
+                <Component2/>
+
+            </dataContext.Provider>
+            
         </div>
     );
 
