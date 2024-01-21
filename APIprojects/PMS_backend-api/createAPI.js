@@ -42,7 +42,7 @@ http.createServer(function(req,res){
                  
             }
             else{
-                res.write(JSON.stringify({message:"Invalid product ID"}));
+                res.write(JSON.stringify({message:"Invalid product ID",success:false}));
                 res.end();
 
             }
@@ -63,18 +63,18 @@ http.createServer(function(req,res){
 
             fs.writeFile("./products.json",JSON.stringify(pro),function(err){
                 if(err===null){
-                    res.write(JSON.stringify({message:"Product successfully deleted"}));
+                    res.write(JSON.stringify({message:"Product successfully deleted",success:true}));
                     res.end();
                 }
                 else{
-                    res.write(JSON.stringify({message:"Error deleting product"}));
+                    res.write(JSON.stringify({message:"Error deleting product",success:false}));
                     res.end();
                 }
                 
             })
         }
         else{
-            res.write(JSON.stringify({message:"Enter Id to delete product"}));
+            res.write(JSON.stringify({message:"Enter Id to delete product",success:false}));
             res.end();
         }
 
@@ -91,11 +91,11 @@ http.createServer(function(req,res){
 
             fs.writeFile("./products.json",JSON.stringify(pro),function(err){
                 if(err===null){
-                   res.write(JSON.stringify({message:"Product successfully added"}));
+                   res.write(JSON.stringify({message:"Product successfully added",success:true}));
                    res.end();
                 }
                 else{
-                    res.write(JSON.stringify({message:"Error adding products"}));
+                    res.write(JSON.stringify({message:"Error adding products",success:false}));
                     res.end();
                 }
             })
@@ -122,24 +122,24 @@ http.createServer(function(req,res){
     
                     fs.writeFile("./products.json",JSON.stringify(pro),function(err){
                         if(err===null){
-                            res.write(JSON.stringify({message:"Data updated Successfully"}));
+                            res.write(JSON.stringify({message:"Data updated Successfully", success:true}));
                             res.end();
                         }
                         else{
-                            res.write(JSON.stringify({message:"Error Updating Data"}));
+                            res.write(JSON.stringify({message:"Error Updating Data",success:false}));
                             res.end();
                         }
                     })
                 }
                 else{
-                    res.write(JSON.stringify({message:"Enter A valid ID"}));
+                    res.write(JSON.stringify({message:"Enter A valid ID",success:false}));
                     res.end();
                 }
             })
 
         }
         else{
-            res.write(JSON.stringify({message:"There is no ID"}));
+            res.write(JSON.stringify({message:"There is no ID", success:false}));
             res.end();
         }
        
