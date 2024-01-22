@@ -6,13 +6,18 @@ import Demo from './demo';
 import Login from './login';
 import Component1 from './component1';
 
-
 // routing in react
 import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 
 
+// always export the create context
+import { createContext } from 'react';
+export const dataContext=createContext();
+
+
 function App() {
 
+  let data="clinton templeton";
 
   return (
   

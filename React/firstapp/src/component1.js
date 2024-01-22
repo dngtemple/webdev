@@ -1,22 +1,19 @@
 import Component2 from './component2';
+import { useContext } from 'react';
 
-import { createContext } from 'react';
-
+import{dataContext} from "./App";
 
 function Component1(){
-    let data="clinton templeton";
-
-    const dataContext=createContext();
 
 
+    let data=useContext(dataContext);
+ 
     return(
         <div>
 
-            <dataContext.Provider value={data}>
+         <h3>Component1 :{data} </h3>
 
-                <Component2/>
-
-            </dataContext.Provider>
+         <Component2/>
             
         </div>
     );
