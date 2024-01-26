@@ -1,6 +1,7 @@
 function Login(){
     return(
-        <h2>login</h2>
+        
+       <h1>login</h1>
     );
 }
 export default Login;
