@@ -1,6 +1,13 @@
+import { Navigate } from "react-router-dom";
+
 function Homepage(){
-    return(
-        <h3>Homepage</h3>
-    );
+
+    let token=localStorage.getItem("nflix_token");
+    console.log(token);
+    return token!==null?(
+        <h1>hi</h1>
+        
+    ):
+    <Navigate to={"/login"}/>
 }
 export default Homepage;

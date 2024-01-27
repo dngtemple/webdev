@@ -2,6 +2,8 @@ const express=require("express");
 const app=(express());
 app.use(express.json());
 const mongoose=require("mongoose");
+const cors=require("cors")
+app.use(cors());
 
 
 const movierouter = require("./routes/movies_end");
