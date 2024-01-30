@@ -1,0 +1,126 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+
+/* banner section */
+
+.banner_section{
+  width: 100%;
+  height: 95vh;
+  /* background-color: black; */
+
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://i.pinimg.com/736x/39/38/7f/39387fe5b74175e746b4995d394aaa7d.jpg");
+    /* filter: brightness(.8); */
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.image_details{
+    width:40%;
+    height: 45vh;
+    /* background-color: lightcoral; */
+    color: wheat;
+    
+}
+
+.image_details>h4{
+    font-size: 24px;
+}
+
+.image_details > button{
+    padding:5px 20px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+/* caterogy */
+
+.caterogy_section{
+    width: 100%;
+    padding:0px 4%;
+    height: 350px;
+}
+
+.caterogy_section:nth-child(odd){
+    background-color: #a8bac1;
+}
+
+.caterogy_section:nth-child(even){
+    background-color: lightblue;
+}
+
+.movie{
+    width: 200px;
+    height: 250px;
+    margin-top: 30px;
+}
+
+.cat_title{
+    text-align: center;
+}
+
+.movie_img{
+    background-image: url("https://lh5.googleusercontent.com/proxy/_qhMp9C6pMBnoW8aV2BVMCdgchiK0nvpYxAI9cevlbmbrSOVloEVc3Y8kv0GxU3JiIx2AdjqnfR1zXnhWc8uJJBl1oGugp3o85Lpm6YU");
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.movie_title{
+    font-size: 17px;
+    text-align: center;
+    color:white
+}
+
+.movie_detail{
+    background-color: rgba(0, 0, 0, 0.4);
+    width:100%;
+    height:100px;
+}
+
+.movie_detail button{
+    padding:0px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    font-size: 11px;
+    height: 25px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.movie_detail p{
+    color:white;
+}
+
+.watch{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10%;
+    margin-top: 30px;
+}
+
+.watch p{
+    font-size: 13px;
+}
+
+.watch i{
+    font-size: 20px;
+    color:yellow;
+}

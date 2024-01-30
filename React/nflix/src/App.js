@@ -4,9 +4,9 @@ import './App.css';
 
 // route
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Homepage from './components/Homepage';
-import Login from './components/Login';
-import Register from './components/Register';
+import Homepage from './pages/Homepage';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import Protect from './components/Protect';
 
 

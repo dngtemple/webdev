@@ -1,31 +1,19 @@
+import Caterogy from "../components/Caterogy";
+import Header from "../components/Header";
 import "./Homepage.css";
 
 function Homepage(){
 
     return(
-        // header section
+        
 
         <>
+  
+        {/* header */}
 
-        <header className="header_section">
-             <div className="header">
-                  <div className="logo">MoviesHUB</div> 
+        <Header/>        
 
-
-                <div className="search">
-                    <input type="text" placeholder="search movies"/>
-
-                    <i className="fa-solid fa-magnifying-glass searching" ></i>
-
-                    <i className="fa-regular fa-user user" ></i>
-                    
-                </div>
-             </div>
-            
-            
-        </header>
-
-
+       {/* banner section */}
         <section className="banner_section">
             <div className="image">
 
@@ -42,7 +30,7 @@ function Homepage(){
                     </p>
 
                     <button>
-                        View
+                        Watch Now
                     </button>
 
                 </div>
@@ -50,6 +38,15 @@ function Homepage(){
             </div>
 
         </section>
+
+        {/* caterogy section */}
+
+        <Caterogy cat_title="Top Trending"/>
+
+        <Caterogy cat_title="Action Movies"/>
+
+        <Caterogy cat_title="Drama"/>
+       
 
 
         </>
