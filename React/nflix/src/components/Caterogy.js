@@ -1,6 +1,6 @@
 function Caterogy(props){
 
-    console.log(props.movies);
+
 
     
     return(

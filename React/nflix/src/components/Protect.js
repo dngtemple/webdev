@@ -2,7 +2,9 @@ import { Navigate } from "react-router-dom";
 
 function Protect(props){
 
-    let token=JSON.parse(localStorage.getItem("nflix_user")).token;
+    let nflixData=JSON.parse(localStorage.getItem("nflix_user"));
+
+    let token = nflixData ? nflixData.token : null;
 
     return token!==null?(
         props.children
