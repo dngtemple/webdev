@@ -1,0 +1,101 @@
+[
+    {
+        "name":"Avatar",
+        "description":"Avatar derives from a Sanskrit word meaning descent and when it first appeared in English in the late 18th century, it referred to the descent of a deity to the earth—typically, the incarnation in earthly form of Vishnu or another Hindu deity.",
+        "imdbRating": 7.9,
+        "posterURL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8IaWUw6WLKyZ4gv6JvLGsqPGZSwAZ5Zwrmpjrsm0i3g&s",
+        "genres":"Action, Sci-fi",
+        "releaseDate":"2020-11-09T00:00:00.000Z",
+        "top":true,
+        "watchers":74,
+        "runtime":80
+    },
+    {
+        "name":"Batman",
+        "description":"Batman is a superhero appearing in American comic books published by DC Comics. The character was created by artist Bob Kane and writer Bill Finger, and debuted in the 27th issue of the comic book Detective Comics on March 30, 1939.",
+        "imdbRating": 7.4,
+        "posterURL":"https://i.ebayimg.com/images/g/zRAAAOSwvaJgJSg1/s-l1600.jpg",
+        "genres":"Action, Fantasy",
+        "releaseDate":"24 December 2023",
+        "top":false,
+        "watchers":39,
+        "runtime":90
+    },
+    {
+        "name":"Superman",
+        "description":"Superman is a superhero who appears in American comic books published by DC Comics. The character was created by writer Jerry Siegel and artist Joe Shuster, and debuted in the comic book Action Comics #1",
+        "imdbRating": 7.5,
+        "posterURL":"https://m.media-amazon.com/images/M/MV5BNDgzOWJjOTMtZjY4ZS00MGRkLTk0YTMtM2E3ZGQyYmMyYzkzXkEyXkFqcGdeQXVyMTA1OTEwNjE@._V1_FMjpg_UX1000_.jpg",
+        "genres":"Adventure, Action",
+        "releaseDate":"21 December 2023",
+        "top":false,
+        "watchers":12,
+        "runtime":85
+    },
+    {
+        "name":"Black Panther",
+        "description":"After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.",
+        "imdbRating": 8.3,
+        "posterURL":"https://lumiere-a.akamaihd.net/v1/images/pp_disney_blackpanther_wakandaforever_1289_d3419b8f.jpeg?region=0%2C0%2C540%2C810",
+        "genres":"Action, Drama",
+        "releaseDate":"20 December 2023",
+        "top":false,
+        "watchers":98,
+        "runtime":111
+    },
+    {
+        "name":"Cowboy",
+        "description":"Aboard the spaceship Bebop, a bounty hunter and his group of skilled comrades embark on adventures across the Solar System to capture criminals.",
+        "imdbRating": 7.3,
+        "posterURL":"https://m.media-amazon.com/images/M/MV5BNTE5YTAyZDctNjFhYi00YmJhLTg4ZGUtNDk1OTE0ZTY4NTYwL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+        "genres":"Drama, Sci-fi",
+        "releaseDate":"02 December 2023",
+        "top":false,
+        "watchers":54,
+        "runtime":129
+    },
+    {
+        "name":"Dark",
+        "description":"When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids. The mystery-drama series introduces an intricate puzzle filled with twists that includes a web of curious characters, all of whom have a connection to the town's troubled history",
+        "imdbRating": 9.1,
+        "posterURL":"https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw",
+        "genres":"Action, Adenture",
+        "releaseDate":"25 December 2023",
+        "top":false,
+        "watchers":100,
+        "runtime":100
+    },
+    {
+        "name":"Ligths Out",
+        "description":"Lights Out is based on David F. Sandberg's short story of the same name. It tells the story of a mother (Maria Bello) and daughter (Teresa Palmer) and their estranged relationship, brought about in part by the mother's mental illness and also a ghostly presence that has latched itself on to the mother.",
+        "imdbRating": 8.3,
+        "posterURL":"https://upload.wikimedia.org/wikipedia/en/d/dc/Lights_Out_2016_poster.jpg",
+        "genres":"Action, Drama",
+        "releaseDate":"17 December 2023",
+        "top":false,
+        "watchers":23,
+        "runtime":98
+    },
+    {
+        "name":"Aquaman",
+        "description":"A half-Atlantean, half-human who is reluctant to be king of the undersea nation of Atlantis. He is a member of the Justice League. He possesses superhuman strength, durability, has hydrokinetic powers, can communicate with sea creatures, and can swim at supersonic speeds.",
+        "imdbRating": 7.4,
+        "posterURL":"https://img.posterstore.com/zoom/wb0066-8aquaman-homeiscalling50x70.jpg",
+        "genres":"Adventure, Action",
+        "releaseDate":"11 December 2023",
+        "top":false,
+        "watchers":8,
+        "runtime":112
+    },
+    {
+        "name":"Nowhere",
+        "description":"Taking place in a dystopian setting, the plot follows Mia (Castillo), separated from her husband after a totalitarian government takes over their home country. The film was made available to stream on Netflix beginning 29 September 2023.",
+        "imdbRating": 8.4,
+        "posterURL":"https://resizing.flixster.com/TyKktD1uxpHabGmVa8RpYxc7BZo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2MxN2M3MzMyLTdmNDMtNGVkNS05MTdiLTU3MjA4ZWRlZGIwMi5qcGc=",
+        "genres":"Action, Drama",
+        "releaseDate":"12",
+        "top":false,
+        "watchers":45,
+        "runtime":143
+    }
+]

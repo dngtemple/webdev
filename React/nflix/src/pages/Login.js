@@ -28,7 +28,7 @@ function Login(){
                 console.log(message);
 
                 if(message.success===true){
-                    localStorage.setItem("nflix_token",message.token);
+                    localStorage.setItem("nflix_user",JSON.stringify(message));
                     navigate("/homepage");
                 }
             })

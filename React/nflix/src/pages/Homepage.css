@@ -14,23 +14,25 @@
 
 }
 
+.ban_parent{
+  position: relative;
+  height: 95vh;
+  width: 100%;
+}
+
 .image{
     width: 100%;
     height: 100%;
-    background-image: url("https://i.pinimg.com/736x/39/38/7f/39387fe5b74175e746b4995d394aaa7d.jpg");
-    /* filter: brightness(.8); */
-    display: flex;
-    align-items: flex-end;
-    background-size: cover;
-    background-position: bottom;
-}
+    position: absolute;
+} 
 
 .image_details{
     width:40%;
     height: 45vh;
     /* background-color: lightcoral; */
     color: wheat;
-    
+    position:absolute;
+    top:60vh;
 }
 
 .image_details>h4{
@@ -49,7 +51,9 @@
 .caterogy_section{
     width: 100%;
     padding:0px 4%;
-    height: 350px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
 }
 
 .caterogy_section:nth-child(odd){
@@ -58,27 +62,43 @@
 
 .caterogy_section:nth-child(even){
     background-color: lightblue;
+    height: 640px;
+}
+
+.parent{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.5%;
 }
 
 .movie{
-    width: 200px;
+    width: 18%;
     height: 250px;
     margin-top: 30px;
+    display: flex;
+    
 }
 
 .cat_title{
     text-align: center;
 }
 
-.movie_img{
-    background-image: url("https://lh5.googleusercontent.com/proxy/_qhMp9C6pMBnoW8aV2BVMCdgchiK0nvpYxAI9cevlbmbrSOVloEVc3Y8kv0GxU3JiIx2AdjqnfR1zXnhWc8uJJBl1oGugp3o85Lpm6YU");
-    background-size: cover;
-    width:100%;
+.movie_parent{
+    width: 100%;
     height: 100%;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
-    display: flex;
-    align-items: flex-end;
+
+}
+
+.movie_img{
+    width:100%;
+    height: 100%;
+    position:absolute;
+
 }
 
 .movie_title{
@@ -91,6 +111,8 @@
     background-color: rgba(0, 0, 0, 0.4);
     width:100%;
     height:100px;
+    position: absolute;
+    top:160px
 }
 
 .movie_detail button{
@@ -100,8 +122,8 @@
     border: 1px solid lightgray;
     font-size: 11px;
     height: 25px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     border: none;
 }
 

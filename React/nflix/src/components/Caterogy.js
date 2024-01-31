@@ -1,26 +1,46 @@
 function Caterogy(props){
+
+    console.log(props.movies);
+
+    
     return(
         <section className="caterogy_section">
 
             <h2 className="cat_title">{props.cat_title}</h2>
 
-            <div className="movie">
-                <div className="movie_img">
-                    <div className="movie_detail">
-                        <h4 className="movie_title">American Star</h4>
+            <div className="parent">
 
-                        <div className="watch">
-                            <button>Watch</button>
+            {
+                props.movies.map(function(movie,index){
+                    return(
+                        <div className="movie" key={index}>
+                            <div className="movie_parent">
+                                <img  className="movie_img" src={movie.posterURL}/>
+                                <div className="movie_detail">
+                                     <h4 className="movie_title">{movie.name}</h4>
 
-                            <p>
-                               <i class="fa-brands fa-mdb"></i>
-                                  8.5
-                            </p>
+                                     <div className="watch">
+                                        <button>Watch</button>
+
+                                       <p>
+                                         <i className="fa-brands fa-mdb"></i>
+                                          {movie.imdbRating}
+                                        </p>
+                                     </div>
+                                </div>
+
+                          </div>
                         </div>
-                    </div>
 
-                </div>
-            </div>
+                    )
+
+                })
+            }
+
+         </div>
+
+
+            
 
         </section>
 

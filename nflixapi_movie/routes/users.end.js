@@ -57,7 +57,7 @@ router.post("/login",function(req,res){
 
                         jsonwebtoken.sign({username:userCredentials.user},"secretkey",function(err,token){
                             if(err===null || err===undefined){
-                                res.send({success:true,token:token});
+                                res.send({success:true,token:token,username:userCredentials.username,user_id:user.id});
                             }
                         })
 

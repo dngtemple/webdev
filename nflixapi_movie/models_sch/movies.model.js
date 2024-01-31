@@ -17,8 +17,6 @@ const moviesSchema=mongoose.Schema({
     description:{
         type:String,
         required:true,
-        minlength:50,
-        maxlenght:200,
     },
     genres:{
         type:String,
@@ -27,14 +25,12 @@ const moviesSchema=mongoose.Schema({
     imdbRating:{
         type:Number,
         required:true,
-        min:1,
-        max:10,
+
     },
-    posterUrl:{
+    posterURL:{
         type:String,
         required:true,
-        unique:true,
-    }
+    },
 },{timestamps:true});
 
 const moviesModel=mongoose.model("movies",moviesSchema);

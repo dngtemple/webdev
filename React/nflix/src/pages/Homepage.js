@@ -1,8 +1,63 @@
+import { useEffect, useState } from "react";
 import Caterogy from "../components/Caterogy";
 import Header from "../components/Header";
 import "./Homepage.css";
 
 function Homepage(){
+
+    let [movies,setmovies]=useState([]);
+    let [trendingmovies,settrendingmovies]=useState([]);
+    let [dramamovies,setdramamovies]=useState([]);
+    let [actionmovies,setactionmovies]=useState([]);
+    let [topmovie,settopmovie]=useState({});
+
+    let nflix_user=JSON.parse(localStorage.getItem("nflix_user"));
+
+   useEffect(function(){
+    fetch("http://localhost:8000/movies/",{
+        method:"GET",
+        headers:{
+            "autorization":`Bearer ${nflix_user.token}`
+        }
+    })
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data);
+        setmovies(data);
+
+        let drama=data.filter(function(movie,index){
+            return movie.genres.toUpperCase().includes("drama".toUpperCase());
+        })
+        console.log(drama);
+        setdramamovies(drama)
+
+        let action=data.filter(function(movie,index){
+            return movie.genres.toUpperCase().includes("action".toUpperCase());
+        })
+        console.log(action);
+        setactionmovies(action)
+
+        let trendingmovies=data.sort(function(a,b){
+            return b.watchers-a.watchers;
+        })
+        let trending=trendingmovies.slice(0,5);
+        console.log(trending)
+        settrendingmovies(trending);
+
+        let top=data.find(function(movie,index){
+            return movie.top===true;
+        })
+
+        settopmovie(top);
+
+
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+   },[])
 
     return(
         
@@ -15,18 +70,15 @@ function Homepage(){
 
        {/* banner section */}
         <section className="banner_section">
-            <div className="image">
+            <div className="ban_parent">
+
+                <img className="image" src={topmovie.posterURL}/>
 
                 <div className="image_details">
-                    <h4>The Dark Knight</h4>
+                    <h4>{topmovie.name}</h4>
 
                     <p>
-                    The plot follows the vigilante Batman, police lieutenant James Gordon,
-                     and district attorney Harvey Dent, who form an alliance to dismantle 
-                     organized crime in Gotham City. Their efforts are derailed by the Joker
-                     , an anarchistic mastermind who seeks to test how far Batman will go to
-                      save the city from chaos.
-
+                     {topmovie.description}
                     </p>
 
                     <button>
@@ -41,12 +93,12 @@ function Homepage(){
 
         {/* caterogy section */}
 
-        <Caterogy cat_title="Top Trending"/>
+        <Caterogy cat_title="Top Trending" movies={trendingmovies}/>
 
-        <Caterogy cat_title="Action Movies"/>
+        <Caterogy cat_title="Action Movies" movies={actionmovies}/>
 
-        <Caterogy cat_title="Drama"/>
-       
+        <Caterogy cat_title="Drama" movies={dramamovies}/>
+        
 
 
         </>
