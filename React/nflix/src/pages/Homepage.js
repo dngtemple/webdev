@@ -24,26 +24,26 @@ function Homepage(){
         return response.json();
     })
     .then(function(data){
-        console.log(data);
+        // console.log(data);
         setmovies(data);
 
         let drama=data.filter(function(movie,index){
             return movie.genres.toUpperCase().includes("drama".toUpperCase());
         })
-        console.log(drama);
+        // console.log(drama);
         setdramamovies(drama)
 
         let action=data.filter(function(movie,index){
             return movie.genres.toUpperCase().includes("action".toUpperCase());
         })
-        console.log(action);
+        // console.log(action);
         setactionmovies(action)
 
         let trendingmovies=data.sort(function(a,b){
             return b.watchers-a.watchers;
         })
         let trending=trendingmovies.slice(0,5);
-        console.log(trending)
+        // console.log(trending)
         settrendingmovies(trending);
 
         let top=data.find(function(movie,index){
