@@ -58,12 +58,15 @@
 
 .caterogy_section:nth-child(odd){
     background-color: #a8bac1;
+
 }
 
 .caterogy_section:nth-child(even){
     background-color: lightblue;
-    height: 640px;
+    
 }
+
+
 
 .parent{
     width: 100%;

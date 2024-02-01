@@ -34,7 +34,7 @@ function Homepage(){
         setdramamovies(drama)
 
         let action=data.filter(function(movie,index){
-            return movie.genres.toUpperCase().includes("action".toUpperCase());
+            return movie.genres.toUpperCase().includes("adventure".toUpperCase());
         })
         // console.log(action);
         setactionmovies(action)

@@ -34,6 +34,9 @@
   height: 5vh;
   background-color:#4b8195;
   padding: 0px 10%;
+  position: fixed;
+  z-index: 10;
+
 
 }
 
@@ -79,4 +82,14 @@
 .searching{
   font-size:11px;
   margin-left: -20px;
+}
+
+
+.search_section{
+  width:100%;
+  background-color: lightgray;
+  position: fixed;
+  top:5vh;
+  z-index: 5;
+  /* display: none; */
 }

@@ -4,7 +4,7 @@ function Caterogy(props){
 
     
     return(
-        <section className="caterogy_section">
+        <section className="caterogy_section" >
 
             <h2 className="cat_title">{props.cat_title}</h2>
 
