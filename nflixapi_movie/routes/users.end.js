@@ -47,7 +47,7 @@ router.post("/login",function(req,res){
 
     userModel.findOne({username:userCredentials.username})
     .then(function(user){
-        if(user!==null || user!==undefined){
+        if(user!==null){
             bcryptjs.compare(userCredentials.password,user.password,function(err,result){
                 if(err=== null || err=== undefined){
                     if(result){
@@ -69,6 +69,9 @@ router.post("/login",function(req,res){
                 }
             })
         }
+        else{
+            res.send({message:"User not found"});
+        }
 
     })
     .catch(function(err){
@@ -79,7 +82,7 @@ router.post("/login",function(req,res){
 
 // endpoint for checking the play of movies and 
 
-router.post("/play",verify,function(req,res){
+router.post("/play",function(req,res){
     let user_movie=req.body;
 
     userMoviesModel.findOne({movie:user_movie.movie},{user:user_movie.user})
@@ -95,10 +98,13 @@ router.post("/play",verify,function(req,res){
                 res.send({message:"Issues adding play info"})
             })
         }
+        else{
+            res.send({message:"Play info already exists"});
+        }
 
     })
     .catch(function(err){
-        res.send({message:"Movie to found"})
+        res.send({message:"Movie not found"})
     })
 
 })

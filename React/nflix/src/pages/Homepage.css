@@ -33,6 +33,7 @@
     color: wheat;
     position:absolute;
     top:60vh;
+    left:5%;
 }
 
 .image_details>h4{
@@ -148,4 +149,34 @@
 .watch i{
     font-size: 20px;
     color:yellow;
+}
+
+
+.player_section{
+    width: 90%;
+    height: 80%;
+    /* background-color: red; */
+    position:absolute;
+    top:0;
+    left: 0;
+    margin-left:5%;
+    margin-top: 5%;
+}
+
+.player_details{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 5px 20px;
+    align-items: center;
+}
+
+.close{
+    font-size:25px;
+}
+
+.player_video{
+    width: 100%;
+    height: 100%;
 }
