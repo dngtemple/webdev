@@ -8,6 +8,7 @@ import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Protect from './components/Protect';
+import Player from './pages/Player';
 
 
 
@@ -26,6 +27,11 @@ function App() {
           <Route path='homepage' element={
             <Protect>
               <Homepage/>
+            </Protect>
+          }></Route>
+          <Route path='/player/:id' element={
+            <Protect>
+              <Player/>
             </Protect>
           }></Route>
         </Routes>

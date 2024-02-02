@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
+
+
 function Caterogy(props){
 
 
-
-    
     return(
         <section className="caterogy_section" >
 
@@ -20,7 +21,10 @@ function Caterogy(props){
                                      <h4 className="movie_title">{movie.name}</h4>
 
                                      <div className="watch">
-                                        <button>Watch</button>
+                                        <Link to={"/player/"+movie._id}>
+                                           <button>Watch</button>
+
+                                        </Link>
 
                                        <p>
                                          <i className="fa-brands fa-mdb"></i>

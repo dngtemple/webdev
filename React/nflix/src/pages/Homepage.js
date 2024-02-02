@@ -3,6 +3,8 @@ import Caterogy from "../components/Caterogy";
 import Header from "../components/Header";
 import "./Homepage.css";
 
+import { Link } from "react-router-dom";
+
 function Homepage(){
 
     let [movies,setmovies]=useState([]);
@@ -80,10 +82,13 @@ function Homepage(){
                     <p>
                      {topmovie.description}
                     </p>
-
-                    <button>
+                    
+                    <Link to={"/player/"+topmovie._id}>
+                      <button className="image_details_button">
                         Watch Now
-                    </button>
+                       </button>
+                    </Link>
+                    
 
                 </div>
 
