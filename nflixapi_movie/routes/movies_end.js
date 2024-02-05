@@ -1,7 +1,10 @@
 const express=require("express");
+const fs=require("fs");
+
 const router=express.Router();
 
 const moviesModel=require("../models_sch/movies.model");
+const userMoviesModel = require("../models_sch/user_mov.model");
 
 
 router.post("/",function(req,res){
@@ -37,16 +40,27 @@ router.get("/:id",function(req,res){
     })
 })
 
+let movie_id=null;
+let filepath=null;
 
-router.get("/stream/:filepath",function(req,res){
+router.get("/stream/:id", async function(req,res){
+
+    if(movie_id===null || movie_id!==req.params.id){
+        movie_id=req.params.id;
+
+        let movie= await moviesModel.findOne({_id:movie_id});
+        if(movie!==null){
+            filepath=movie.filePath;
+            
+        }
+    }
+    
     const range=req.headers.range;
-    const filepath=req.params.filepath;
-
     if(!range){
         res.send({message:"No range header mentioned"});
     }
  
-    const videoSize=fs.statSync(filepath).size;
+    const videoSize=fs.statSync("./"+filepath).size;
 
     const start=Number(range.replace(/\D/g,""));
 
@@ -61,10 +75,13 @@ router.get("/stream/:filepath",function(req,res){
         "Accept-Ranges":"bytes",
     })
 
-    const readStream=fs.createReadStream(filepath,{start,end})
+    const readStream=fs.createReadStream("./"+filepath,{start,end})
 
     readStream.on("data",function(chunk){
         res.write(chunk);
+    })
+    readStream.on("end",function(){
+        res.end();
     })
 
 })

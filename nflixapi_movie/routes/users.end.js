@@ -82,24 +82,23 @@ router.post("/login",function(req,res){
 
 // endpoint for checking the play of movies and 
 
-router.post("/play",function(req,res){
+router.post("/play",verify,function(req,res){
     let user_movie=req.body;
 
-    userMoviesModel.findOne({movie:user_movie.movie},{user:user_movie.user})
+    userMoviesModel.findOne({movie:user_movie.movie,user:user_movie.user})
     .then(function(watchedmovie){
 
-        if(watchedmovie===null || watchedmovie===undefined){
-
+        if(watchedmovie===null){
             userMoviesModel.create(user_movie)
-            .then(function(){
-                res.send({message:"play info created"});
+            .then(function(doc){
+                res.send({success:true,message:"play info created",userMovie:doc});
             })
             .catch(function(err){
                 res.send({message:"Issues adding play info"})
             })
         }
         else{
-            res.send({message:"Play info already exists"});
+            res.send({success:true,message:"play info already exists",userMovie:watchedmovie});
         }
 
     })
@@ -115,7 +114,7 @@ router.put("/closeplay/:user_movie_id",function(req,res){
 
     userMoviesModel.updateOne({_id:user_movie_id},dataToUpdate)
     .then(function(msg){
-        console.log({message:"watchtime updated successfully"});
+        res.send({success:true,message:"Movie watched time updatated"});
     })
     .catch(function(err){
         console.log(err);

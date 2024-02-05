@@ -13,7 +13,7 @@ const userMoviesSchema=mongoose.Schema({
         type:Number,
         default:0,
     }
-})
+},{timestamps:true})
 
 const userMoviesModel=mongoose.model("users_movies",userMoviesSchema);
 

@@ -31,6 +31,18 @@ const moviesSchema=mongoose.Schema({
         type:String,
         required:true,
     },
+    top:{
+        type:Boolean,
+        default:false,
+    },
+    watchers:{
+        type:Number,
+        default:0,
+    },
+    filePath:{
+        type:String,
+        required:true,
+    }
 },{timestamps:true});
 
 const moviesModel=mongoose.model("movies",moviesSchema);

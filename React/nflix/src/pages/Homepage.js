@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Homepage(){
 
-    let [movies,setmovies]=useState([]);
+    // let [movies,setmovies]=useState([]);
     let [trendingmovies,settrendingmovies]=useState([]);
     let [dramamovies,setdramamovies]=useState([]);
     let [actionmovies,setactionmovies]=useState([]);
@@ -27,7 +27,7 @@ function Homepage(){
     })
     .then(function(data){
         // console.log(data);
-        setmovies(data);
+        // setmovies(data);
 
         let drama=data.filter(function(movie,index){
             return movie.genres.toUpperCase().includes("drama".toUpperCase());
