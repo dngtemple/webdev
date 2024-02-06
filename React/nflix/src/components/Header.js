@@ -1,13 +1,19 @@
-import { useState,useEffect,} from "react";
-import Caterogy from "./Caterogy";
+import { useState,useEffect, useRef} from "react";
+import {useNavigate} from "react-router-dom";
 
 function Header(){
+    let navigate=useNavigate();
 
     let [movies,setmovies]=useState([]);
     let [filtered,setfiltered]=useState([]);
     let [modal,setmodal]=useState(false);
 
+    let [logoutmodal,setlogoutmoodal]=useState(false);
     let nflix_user=JSON.parse(localStorage.getItem("nflix_user"));
+
+    let username=nflix_user.username.toUpperCase();
+
+    let searchValue=useRef();
 
     useEffect(function(){
         fetch("http://localhost:8000/movies/",{
@@ -30,22 +36,43 @@ function Header(){
 
     function searchmovie(name){
 
-        
-
         if(name !==''){
             let filter=movies.filter(function(movie,index){
                 return movie.name.toUpperCase().includes(name.toUpperCase());
             })
-            setmodal(true);
-            setfiltered(filter);
+            if(filter.length!==0){
+                setmodal(true);
+                setfiltered(filter);
+            }
+            else{
+                setmodal(false);
+            }
+            
         }
         else{
             setfiltered([]);
             setmodal(false);
         }
     }
+
+    function gotoplayer(movie_id){
+        
+            navigate(`/player/${movie_id}`);
+            searchValue.current.value="";
+            setmodal(false);
+
+    }
+
+
+    function logout(){
+        localStorage.removeItem("nflix_user");
+        navigate("/login");
+    }
+
+
+    
     return(
-        <div>
+        <>
 
         {/* header section */}
 
@@ -55,24 +82,29 @@ function Header(){
 
 
                 <div className="search">
-                    <input type="text" placeholder="search movies" onChange={function(event){
+                    <input type="text" ref={searchValue} placeholder="search movies" onChange={function(event){
                        searchmovie(event.target.value);
 
                     }}
 
                     onFocus={function(){
                         setmodal(true);
-                    }}
-
-                    onBlur={function(){
-                        setmodal(false);
-                    }}
-                    
+                    }}                  
                     />
 
                     <i className="fa-solid fa-magnifying-glass searching" ></i>
 
-                    <i className="fa-regular fa-user user" ></i>
+                    <i className="fa-regular fa-user user"onClick={function(){
+                        if(logoutmodal===true){
+                            setlogoutmoodal(false);
+                        }
+                        else{
+                            setlogoutmoodal(true)
+                        }
+                    }}></i>
+
+                    <h6 className="username">{username}</h6>
+
                     
                 </div>
             </div>
@@ -82,18 +114,43 @@ function Header(){
 
 
         {
-            modal===true?(
-                <div className="search_section">
-                    <Caterogy cat_title="Search Results" movies={filtered}/>
+            modal===false ? null:(
+                <ul className="searching_box">
+                    {
+                        filtered.map(function(movie,index){
+                            return(
+                                
+                                   <li key={index} onClick={function(){
+                                    gotoplayer(movie._id)
+                                   }}>{movie.name}</li>
+                                
+                            )
+                        })
+                    }
+
+                </ul>
+
+            )
+        }
+
+        {
+            logoutmodal===true?(
+                <div className="logging_out">
+                    <ul className="log_out_lists">
+                        <li>Home</li>
+                        <li>Profile</li>
+                        <li onClick={function(){
+                            logout()
+                        }}>Log out</li>
+                    </ul>
                 </div>
 
             ):null
         }
         
-        
-        
-        
-        </div>
+
+        </>
+    
         
     );
 }

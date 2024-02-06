@@ -103,7 +103,7 @@ function Player(){
   
         {/* header */}
 
-        <Header/>        
+        <Header/>       
 
        {/* banner section */}
         <section className="banner_section">

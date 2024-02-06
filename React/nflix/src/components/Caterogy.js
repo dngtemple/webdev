@@ -23,7 +23,6 @@ function Caterogy(props){
                                      <div className="watch">
                                         <Link to={"/player/"+movie._id}>
                                            <button>Watch</button>
-
                                         </Link>
 
                                        <p>
@@ -42,9 +41,6 @@ function Caterogy(props){
             }
 
          </div>
-
-
-            
 
         </section>
 
