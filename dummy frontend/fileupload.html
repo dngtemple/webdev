@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file uploading</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            row-gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+        <input type="text" placeholder="EnterName" id="name"/>
+        <input type="email" placeholder="Enter email" id="email"/>
+        <input type="file" id="image"/>
+        <button onclick="upload()">Summit</button>
+    
+
+    <script>
+
+        
+
+        function upload(){
+
+            let user= new FormData();
+            user.append("name",document.getElementById("name").value);
+            user.append("email",document.getElementById("email").value);
+            user.append("image",document.getElementById("image").files[0]);
+
+
+            console.log(user);
+            
+            fetch("http://localhost:8000/uploading",{
+                method:"POST",
+                body:user
+            })
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data);
+            })
+            .catch(function(err){
+                console.log(err);
+            })
+
+        }
+  
+
+    </script>
+    
+</body>
+</html>
