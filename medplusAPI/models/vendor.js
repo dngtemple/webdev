@@ -35,5 +35,5 @@ const vendorSchema=mongoose.Schema({
 
 },{timestamps:true});
 
-const vendorModel=mongoose.model("vendor",vendorSchema);
+const vendorModel=mongoose.model("vendors",vendorSchema);
 module.exports= vendorModel;

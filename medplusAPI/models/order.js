@@ -19,5 +19,5 @@ const orderSchema=mongoose.Schema({
     }
 },{timestamps:true});
 
-const orderModel=mongoose.model("order",orderSchema);
+const orderModel=mongoose.model("orders",orderSchema);
 module.exports= orderModel;

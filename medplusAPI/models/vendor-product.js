@@ -22,5 +22,5 @@ const vendorProductSchema=mongoose.Schema({
 
 },{timestamps:true});
 
-const vendorProductModel=mongoose.model("vendor_product",vendorProductSchema);
+const vendorProductModel=mongoose.model("vendor_products",vendorProductSchema);
 module.exports= vendorProductModel;

@@ -16,6 +16,6 @@ const adminSchema=mongoose.Schema({
     }
 },{timestamps:true});
 
-const adminModel=mongoose.model("admin",adminSchema);
+const adminModel=mongoose.model("admins",adminSchema);
 
 module.exports= adminModel;
