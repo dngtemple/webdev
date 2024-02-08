@@ -15,4 +15,4 @@ const cartSchema=mongoose.Schema({
 },{timestamps:true});
 
 const cartModel=mongoose.model("cart",cartSchema);
-export default cartModel
+module.exports= cartModel

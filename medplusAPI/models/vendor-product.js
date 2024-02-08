@@ -23,4 +23,4 @@ const vendorProductSchema=mongoose.Schema({
 },{timestamps:true});
 
 const vendorProductModel=mongoose.model("vendor_product",vendorProductSchema);
-export default vendorProductModel;
+module.exports= vendorProductModel;

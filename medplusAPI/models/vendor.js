@@ -36,4 +36,4 @@ const vendorSchema=mongoose.Schema({
 },{timestamps:true});
 
 const vendorModel=mongoose.model("vendor",vendorSchema);
-export default vendorModel;
+module.exports= vendorModel;

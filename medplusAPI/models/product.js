@@ -35,4 +35,4 @@ const productSchema=mongoose.Schema({
 },{timestamps:true});
 
 const productModel=mongoose.model("product",productSchema);
-export default productModel;
+module.exports=productModel;
