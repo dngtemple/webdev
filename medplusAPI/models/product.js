@@ -30,6 +30,11 @@ const productSchema=mongoose.Schema({
     category:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"category",
+    },
+    approved:{
+        type:Boolean,
+        required:true,
+        default:false,
     }
 
 },{timestamps:true});

@@ -30,6 +30,19 @@ const vendorSchema=mongoose.Schema({
     contact:{
         type:String,
         required:true
+    },
+    approved:{
+        type:Boolean,
+        required:true,
+        default:false,
+    },
+    blocked:{
+        type:Object,
+        required:true,
+        default:{
+            block:false,
+            ts:Date.now
+        },
     }
 
 

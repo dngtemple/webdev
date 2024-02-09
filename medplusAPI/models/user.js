@@ -33,6 +33,15 @@ const userSchema=mongoose.Schema({
     address:{
         type:[String],
         required:true,
+    },
+    blocked:{
+        type:Object,
+        required:true,
+        default:{
+            block:false,
+            ts:Date.now()
+        }
+
     }
 
 },{timestamps:true});
