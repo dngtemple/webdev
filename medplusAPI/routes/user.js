@@ -1,12 +1,12 @@
 const express=require("express");
-const adminModel = require("../models/admin");
-const vendorModel = require("../models/vendor");
+const userModel = require("../models/user");
 const router=express.Router();
 
 
 
 router.post("/register",function(req,res){
     let data=req.body;
+  
 
     bcryptjs.genSalt(10,function(err,Salt){
         if(err===null){
@@ -14,8 +14,9 @@ router.post("/register",function(req,res){
                 if(err===null){
                     data.password=newpassword;
 
+                    delete data.role;
 
-                    vendorModel.create(data)
+                    userModel.create(data)
                     .then(function(){
                         res.send({success:true,message:"Registration Successful"});
                     })
@@ -40,8 +41,8 @@ router.post("/register",function(req,res){
 
 router.post("/login",function(req,res){
     let credentials=req.body
-    
-    vendorModel.findOne({email:credentials.email})
+
+    userModel.findOne({email:credentials.email})
     .then(function(user){
 
         delete credentials.role;
@@ -78,39 +79,18 @@ router.post("/login",function(req,res){
 })
 
 
-
-// endpoint where creates an admin
-
-router.post("/createadmin",function(req,res){
+// endpoint for updating profile address
+router.put("/update/:id",function(req,res){
+    let id=req.params.id;
     let data=req.body;
-    
-    bcryptjs.genSalt(10,function(err,Salt){
-        if(err===null){
-            bcryptjs.hash(data.password,Salt,function(err,newpassword){
-                if(err===null){
-                    data.password=newpassword;
 
-                    adminModel.create(data)
-                    .then(function(){
-                        res.send({success:true,message:"Admin Registration Successful"});
-                    })
-                    .catch(function(err){
-                        console.log(err);
-                        res.send({success:false,message:"Admin Registration problems"});
-                    })
-                }
-                else{
-                    console.log(err);
-                    res.send({success:false,message:"Admin Registration problems"});
-                }
-            })
-        }
-        else{
-            console.log(err);
-            res.send({success:false,message:"Admin Registration problems"});
-        }
+    userModel.updateOne({_id:id},data)
+    .then(function(info){
+        res.send({success:true,message:"Successfully Updated"});
     })
-
+    .catch(function(err){
+        console.log(err);
+        res.send({success:false,message:"Problems Updating"});
+    })  
 })
-
 module.exports=router;

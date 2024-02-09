@@ -2,6 +2,7 @@ const express=require("express");
 const router=express();
 
 const productModel=require("../models/product");
+const cartModel=require("../models/cart");
 
 // endpoint to get all products
 router.get("/allproducts",function(req,res){
@@ -41,7 +42,7 @@ router.post("/create_product",function(req,res){
         product.approved=true;
     }
 
-    productModel.create(data)
+    productModel.create(product)
     .then(function(info){
         res.send({success:true,message:"product Successfully created"});
     })
@@ -83,5 +84,38 @@ router.delete("/product_delete/:product_id",function(req,res){
     })
 })
 
+
+// endpoint for adding to cart
+
+router.post("/cart",function(req,res){
+    let data=req.body;
+
+    cartModel.create(data)
+    .then(function(info){
+        res.send({success:true,message:"product Successfully created"});
+    })
+    .catch(function(err){
+        console.log(err);
+        res.send({success:false,message:"product  creation problems"});
+    })
+})
+
+
+// endpoint for removing from cart
+
+router.put("/cart:id",function(req,res){
+    let data=req.body;
+    let id=req.params.id;
+
+    cartModelModel.updateOne({_id:id},data)
+    .then(function(info){
+        res.send({success:true,message:"product Successfully updated"});
+    })
+    .catch(function(err){
+        console.log(err);
+        res.send({success:false,message:"product update Issues"});
+    })
+
+})
 
 module.exports=router;

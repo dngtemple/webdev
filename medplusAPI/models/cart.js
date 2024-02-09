@@ -10,6 +10,10 @@ const cartSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"user"
     },
+    quantity:{
+        required:true,
+        default:1
+    }
 
 
 },{timestamps:true});

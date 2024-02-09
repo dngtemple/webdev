@@ -1,7 +1,7 @@
 const express=require("express");
-const adminModel = require("../models/admin");
-const vendorModel = require("../models/vendor");
 const router=express.Router();
+
+const supportModel=require("../models/support");
 
 
 
@@ -14,8 +14,7 @@ router.post("/register",function(req,res){
                 if(err===null){
                     data.password=newpassword;
 
-
-                    vendorModel.create(data)
+                    supportModel.create(data)
                     .then(function(){
                         res.send({success:true,message:"Registration Successful"});
                     })
@@ -41,7 +40,7 @@ router.post("/register",function(req,res){
 router.post("/login",function(req,res){
     let credentials=req.body
     
-    vendorModel.findOne({email:credentials.email})
+    supportModel.findOne({email:credentials.email})
     .then(function(user){
 
         delete credentials.role;
@@ -78,39 +77,3 @@ router.post("/login",function(req,res){
 })
 
 
-
-// endpoint where creates an admin
-
-router.post("/createadmin",function(req,res){
-    let data=req.body;
-    
-    bcryptjs.genSalt(10,function(err,Salt){
-        if(err===null){
-            bcryptjs.hash(data.password,Salt,function(err,newpassword){
-                if(err===null){
-                    data.password=newpassword;
-
-                    adminModel.create(data)
-                    .then(function(){
-                        res.send({success:true,message:"Admin Registration Successful"});
-                    })
-                    .catch(function(err){
-                        console.log(err);
-                        res.send({success:false,message:"Admin Registration problems"});
-                    })
-                }
-                else{
-                    console.log(err);
-                    res.send({success:false,message:"Admin Registration problems"});
-                }
-            })
-        }
-        else{
-            console.log(err);
-            res.send({success:false,message:"Admin Registration problems"});
-        }
-    })
-
-})
-
-module.exports=router;
