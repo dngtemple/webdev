@@ -42,7 +42,22 @@ const userSchema=mongoose.Schema({
             ts:Date.now()
         }
 
-    }
+    },
+    precription:[
+        {
+            filePath:{
+                type:String,
+            },
+            date:{
+                type:Date,
+                default:Date.now(),
+            },
+            acknowledged:{
+                type:Boolean,
+                default:false
+            }
+        }
+    ]
 
 },{timestamps:true});
 
