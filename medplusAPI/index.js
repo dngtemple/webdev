@@ -11,7 +11,13 @@ app.use(express.json());
 app.use(cors());
 
 // imported routes
-const req_login_router=require("./routes/req_login");
+const adminRouter=require("./routes/admin");
+const categoryRouter=require("./routes/caterogy");
+const productRouter=require("./routes/product");
+const supportRouter=require("./routes/support");
+const userRouter=require("./routes/user");
+const vendorProductRouter=require("./routes/vendor_product");
+const vendorRouter=require("./routes/vendor");
 
 mongoose.connect("mongodb://127.0.0.1:27017/medplus")
 .then(function(){
@@ -19,7 +25,15 @@ mongoose.connect("mongodb://127.0.0.1:27017/medplus")
 })
 
 
-app.use("/app",req_login_router);
+app.use("/admin",adminRouter);
+app.use("/category",categoryRouter);
+app.use("/product",productRouter);
+app.use("/support",supportRouter),
+app.use("/user",userRouter);
+app.use("/vendorProduct",vendorProductRouter),
+app.use("/vendor",vendorRouter);
+
+
 
 
 app.listen(PORT,function(){
