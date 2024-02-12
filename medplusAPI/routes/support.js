@@ -3,8 +3,6 @@ const router=express.Router();
 
 const supportModel=require("../models/support");
 
-
-
 router.post("/register",function(req,res){
     let data=req.body;
 
@@ -76,4 +74,4 @@ router.post("/login",function(req,res){
     })
 })
 
-
+module.exports=router;

@@ -11,8 +11,10 @@ const cartSchema=mongoose.Schema({
         ref:"user"
     },
     quantity:{
+        type:Number,
+        default:1,
         required:true,
-        default:1
+        
     }
 
 

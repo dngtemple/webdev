@@ -3,6 +3,9 @@ const userModel = require("../models/user");
 const router=express.Router();
 
 
+const bcryptjs=require("bcryptjs");
+const jsonwebtoken=require("jsonwebtoken");
+
 
 router.post("/register",function(req,res){
     let data=req.body;

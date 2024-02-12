@@ -3,6 +3,9 @@ const router=express.Router();
 
 const vendorModel = require("../models/vendor");
 
+const bcryptjs=require("bcryptjs");
+const jsonwebtoken=require("jsonwebtoken");
+
 
 // endpoint to register
 

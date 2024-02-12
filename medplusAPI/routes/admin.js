@@ -4,6 +4,10 @@ const vendorModel = require("../models/vendor");
 const router=express.Router();
 
 
+const bcryptjs=require("bcryptjs");
+const jsonwebtoken=require("jsonwebtoken");
+
+
 
 router.post("/register",function(req,res){
     let data=req.body;
@@ -15,9 +19,9 @@ router.post("/register",function(req,res){
                     data.password=newpassword;
 
 
-                    vendorModel.create(data)
+                    adminModel.create(data)
                     .then(function(){
-                        res.send({success:true,message:"Registration Successful"});
+                        res.status(200).send({success:true,message:"Registration Successful"});
                     })
                     .catch(function(err){
                         console.log(err);
@@ -41,7 +45,7 @@ router.post("/register",function(req,res){
 router.post("/login",function(req,res){
     let credentials=req.body
     
-    vendorModel.findOne({email:credentials.email})
+    adminModel.findOne({email:credentials.email})
     .then(function(user){
 
         delete credentials.role;
@@ -54,12 +58,12 @@ router.post("/login",function(req,res){
                        
                         jsonwebtoken.sign({email:credentials.email},"secretkey",function(err,token){
                             if(err===null){
-                                res.send({success:true,token:token,email:user.email,userID:user._id});
+                                res.status(200).send({success:true,token:token,email:user.email,userID:user._id});
                             }
                         })
                     }
                     else{
-                       res.send({success:false,message:"Wrong Password"});
+                       res.status(401).send({success:false,message:"Wrong Password"});
                     }
 
                 }
@@ -68,7 +72,7 @@ router.post("/login",function(req,res){
 
         }
         else{
-            res.send({success:false,message:"User Not Found"});
+            res.status(404).send({success:false,message:"User Not Found"});
         }
 
     })
