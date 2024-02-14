@@ -1,6 +1,9 @@
 const express=require("express");
 const router=express();
 
+const fs=require("fs");
+const formidable=require("formidable");
+
 const productModel=require("../models/product");
 const cartModel=require("../models/cart");
 
@@ -36,20 +39,38 @@ router.get("/product/:product_id",function(req,res){
 // endpoint to create products
 
 router.post("/create_product",function(req,res){
-    let product=req.body;
 
-    if(product.publish!==undefined && product.publish===true){
-        product.approved=true;
-    }
+    let product={images:[]};
 
-    productModel.create(product)
-    .then(function(info){
-        res.send({success:true,message:"product Successfully created"});
+    const form= new formidable.IncomingForm();
+
+    form.parse(req);
+
+    form.addListener("field",function(property,value){
+        product[property]=value;
     })
-    .catch(function(err){
-        console.log(err);
-        res.send({success:false,message:"product  creation problems"});
+       
+    form.addListener("file",function(property,file){
+
+        console.log(file);
+
+        let fileData=fs.readFileSync(file.filepath);
+        let ext=file.originalFilename.split(".")[1].toUpperCase();
+
+        let newPath="./products/"+file.newFilename+"."+ext;
+
+        if(ext==="JPG" || ext ==="JPEG" || ext==="PNG"){
+            fs.writeFileSync(newPath,fileData);
+        }
+
+        product.images.push(newPath);
     })
+
+    form.on("end",function(){
+        res.send({message:"All working"});
+        console.log(product);
+    })
+     
 
 })
 

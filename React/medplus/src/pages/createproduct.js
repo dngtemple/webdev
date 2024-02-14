@@ -1,7 +1,38 @@
-import { Link } from "react-router-dom";
+
+import { Link, } from "react-router-dom";
+
 
 function Createproduct(){
+
+    const formData =new FormData();
+
+    function readValue(property,value){
+        formData.append(property,value);
+    }
+
+    console.log(formData);
+
+
+    function create(){
+        console.log(formData);
+
+        fetch("http://localhost:8000/product/create_product",{
+            method:"POST",
+            body:formData
+        })
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data);
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    }
+
     return (
+
         <div className="panel">
 
             <div className="panel-links">
@@ -23,28 +54,51 @@ function Createproduct(){
             <h5>create product</h5>
 
             <div className="panel_inputs">
-                <input type="text" placeholder="Enter name" className="form-control"/>
-                <input type="Number" placeholder="Enter price"className="form-control"/>
-                <input type="text" placeholder="Enter description"className="form-control"/>
-                <input type="file" className="form-control"/>
-                <select className="form-control">
-                    <option>choose category</option>
-                </select>
+               
+                <input type="text" placeholder="Enter name" className="form-control" onChange={function(event){
+                    readValue("name",event.target.value);
+                }}/>
+                <input type="Number" placeholder="Enter price"className="form-control" onChange={function(event){
+                    readValue("price",event.target.value);
+                }} />
+                <input type="text" placeholder="Enter description"className="form-control" onChange={function(event){
+                    readValue("description",event.target.value);
+                }}/>
+                <input type="file" className="form-control" multiple onChange={function(event){
+                    
+                    for(let i = 0;i<event.target.files.length;i++){
+                        readValue("image"+i,event.target.files[i]);
+                    }
+                    
+                }}/>
 
-                <select className="form-control">
-                    <option>choose tags</option>
+                <input type="text" className="form-control" placeholder="Enter tags" onChange={function(event){
+                    readValue("tags",event.target.value);
+                }}/>
+                <select className="form-control" onChange={function(event){
+                    readValue("category",event.target.value);
+                }}>
+                    <option value="">choose category</option>
+                    <option value="1">pain killer</option>
                 </select>
-
 
                 <div>
                 Approved
-                <input type="checkbox"/>
+                <input type="checkbox" onChange={function(event){
+                    readValue("approved",event.target.checked);
+                }}/>
                 
                 Prescriped
-                <input type="checkbox"/>
+                <input type="checkbox" onChange={function(event){
+                    readValue("prescription_request",event.target.checked);
+                }}/>
+
+                <button className="btn btn-primary" onClick={function(){
+                    create();
+                }}>Create</button>
 
                 </div>
-                
+
                 
 
             </div>

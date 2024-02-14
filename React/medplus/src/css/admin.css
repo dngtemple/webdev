@@ -132,6 +132,11 @@
     row-gap: 10px;
 }
 
+.panel_inputs button{
+    /* width:10%; */
+    margin-top: 20px;
+}
+
 .panel_inputs input,select{
     width:49% !important;
 }
