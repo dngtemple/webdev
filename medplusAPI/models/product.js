@@ -12,8 +12,8 @@ const productSchema=mongoose.Schema({
     description:{
         type:String,
         required:true,
-        minLength:100,
-        maxLength:250,
+        minLength:50,
+        maxLength:500,
     },
     images:{
         type:[String],

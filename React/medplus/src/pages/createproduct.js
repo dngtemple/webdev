@@ -1,10 +1,12 @@
 
+import { useEffect, useState } from "react";
 import { Link, } from "react-router-dom";
 
 
 function Createproduct(){
 
     const formData =new FormData();
+    let [categories,setcategories]=useState();
 
     function readValue(property,value){
         formData.append(property,value);
@@ -14,8 +16,6 @@ function Createproduct(){
 
 
     function create(){
-        console.log(formData);
-
         fetch("http://localhost:8000/product/create_product",{
             method:"POST",
             body:formData
@@ -30,6 +30,22 @@ function Createproduct(){
             console.log(err)
         })
     }
+
+    useEffect(function(){
+        fetch("http://localhost:8000/category/allcategory",{
+            method:"GET"
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            setcategories(data);
+            console.log(categories);
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    },[])
 
     return (
 

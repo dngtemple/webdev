@@ -9,8 +9,6 @@ const categorySchema=mongoose.Schema({
     description:{
         type:String,
         required:true,
-        minLength:100,
-        maxLength:250,
     }
 
 },{timestamps:true});

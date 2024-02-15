@@ -6,6 +6,7 @@ const formidable=require("formidable");
 
 const productModel=require("../models/product");
 const cartModel=require("../models/cart");
+const categoryModel = require("../models/category");
 
 // endpoint to get all products
 router.get("/allproducts",function(req,res){
@@ -52,24 +53,38 @@ router.post("/create_product",function(req,res){
        
     form.addListener("file",function(property,file){
 
-        console.log(file);
+        // console.log(file);
 
         let fileData=fs.readFileSync(file.filepath);
         let ext=file.originalFilename.split(".")[1].toUpperCase();
 
         let newPath="./products/"+file.newFilename+"."+ext;
+        let imagePath="http://localhost:8000/uploaded/products/"+file.newFilename+"."+ext;
 
         if(ext==="JPG" || ext ==="JPEG" || ext==="PNG"){
             fs.writeFileSync(newPath,fileData);
+            product.images.push(imagePath);
         }
 
-        product.images.push(newPath);
+       
     })
 
     form.on("end",function(){
-        res.send({message:"All working"});
         console.log(product);
+
+        productModel.create(product)
+        .then(function(info){
+           res.send({success:true,message:"Product created successfully"});
+        })
+        .catch(function(err){
+            console.log(err)
+            res.send({success:true,message:"Error creating Product"});
+        })
+
     })
+
+
+    
      
 
 })
