@@ -12,7 +12,7 @@ const productSchema=mongoose.Schema({
     description:{
         type:String,
         required:true,
-        minLength:50,
+        // minLength:50,
         maxLength:500,
     },
     images:{
@@ -29,7 +29,7 @@ const productSchema=mongoose.Schema({
     },
     category:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"category",
+        ref:"categorys",
     },
     approved:{
         type:Boolean,

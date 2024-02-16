@@ -10,7 +10,7 @@ const categoryModel = require("../models/category");
 
 // endpoint to get all products
 router.get("/allproducts",function(req,res){
-    productModel.find()
+    productModel.find().populate('category')
     .then(function(data){
         res.send({success:true,data:data});
     })
@@ -70,6 +70,8 @@ router.post("/create_product",function(req,res){
     })
 
     form.on("end",function(){
+
+        product.tags=product.tags.split(",");
         console.log(product);
 
         productModel.create(product)

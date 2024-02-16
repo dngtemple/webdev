@@ -6,13 +6,14 @@ import { Link, } from "react-router-dom";
 function Createproduct(){
 
     const formData =new FormData();
-    let [categories,setcategories]=useState();
+    let [categories,setcategories]=useState([]);
+
 
     function readValue(property,value){
         formData.append(property,value);
     }
 
-    console.log(formData);
+    // console.log(formData);
 
 
     function create(){
@@ -39,13 +40,18 @@ function Createproduct(){
             return response.json();
         })
         .then(function(data){
-            setcategories(data);
-            console.log(categories);
+            if(data.success===true){
+                setcategories(data.data);
+                console.log(categories);
+            }
+           
         })
         .catch(function(err){
             console.log(err);
         })
     },[])
+
+   
 
     return (
 
@@ -95,7 +101,15 @@ function Createproduct(){
                     readValue("category",event.target.value);
                 }}>
                     <option value="">choose category</option>
-                    <option value="1">pain killer</option>
+
+                    {
+                        categories.map(function(cat,index){
+                            return(
+                                <option key={index} value={cat._id}>{cat.name}</option>
+                            )
+                        })
+                    }
+                   
                 </select>
 
                 <div>
