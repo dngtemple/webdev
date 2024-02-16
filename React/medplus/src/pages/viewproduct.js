@@ -68,7 +68,11 @@ function Viewproduct(){
                                     <td>{product.name}</td>
                                     <td>{product.category.name}</td>
                                     <td>{product.price}</td>
-                                    <td>action</td>
+                                    <td>
+                                      <i class="fa-solid fa-eye text-primart"></i>
+                                      <i class="fa-solid fa-pen-to-square text-success"></i>
+                                      <i class="fa-solid fa-trash text-danger "></i>
+                                    </td>
                                 </tr>
 
                             )
