@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import path from "../path.json";
+
 function Viewproduct(){
 
     let [products,setproducts]=useState([]);
+
 
 
     useEffect(function(){
@@ -23,6 +26,28 @@ function Viewproduct(){
             console.log(err);
         })
     },[])
+
+    function deleteproduct(product_id,product_index){
+
+        fetch(path.BASE_URL+path.PRODUCT_DELETE+product_id,{
+            method:"DELETE",
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+
+        let tempData=[...products];
+        tempData.splice(product_index,1);
+
+        setproducts(tempData);
+
+    }
 
     return (
         <div className="panel">
@@ -71,7 +96,9 @@ function Viewproduct(){
                                     <td>
                                       <i class="fa-solid fa-eye text-primart"></i>
                                       <i class="fa-solid fa-pen-to-square text-success"></i>
-                                      <i class="fa-solid fa-trash text-danger "></i>
+                                      <i class="fa-solid fa-trash text-danger " onClick={function(){
+                                        deleteproduct(product._id,index);
+                                      }}></i>
                                     </td>
                                 </tr>
 
