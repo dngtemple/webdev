@@ -8,6 +8,7 @@ function Viewproduct(){
     let [products,setproducts]=useState([]);
     let [product,setproduct]=useState([]);
     let [viewModalVisible,setviewModalVisible]=useState(false);
+    let [updateVisible,setupdateVisible]=useState(false);
 
     useEffect(function(){
         fetch(path.BASE_URL+path.ALL_PRODUCTS,{
@@ -48,6 +49,14 @@ function Viewproduct(){
         tempData.splice(product_index,1);
 
         setproducts(tempData);
+
+    }
+
+    function readValue(property,value){
+
+    }
+
+    function update(){
 
     }
 
@@ -108,6 +117,86 @@ function Viewproduct(){
                 ):null
             }
 
+
+            {/* update modal */}
+
+            {
+                updateVisible===true?(
+                    <div className="update-product-modal" onClick={function(){
+                        setupdateVisible(false);
+                    }}>
+                        <div className="update-modal" onClick={function(event){
+                            event.stopPropagation();
+
+                        }}>
+                                <input defaultValue={product.name} type="text" placeholder="Enter name" className="form-control" onChange={function(event){
+                                    readValue("name",event.target.value);
+                                }}/>
+
+                                <input defaultValue={product.price} type="Number" placeholder="Enter price"className="form-control" onChange={function(event){
+                                    readValue("price",event.target.value);
+                                }} />
+
+                                <input defaultValue={product.description} type="text" placeholder="Enter description"className="form-control" onChange={function(event){
+                                    readValue("description",event.target.value);
+                                }}/>
+
+                                <input type="file" className="form-control" multiple onChange={function(event){
+                                    
+                                    for(let i = 0;i<event.target.files.length;i++){
+                                        readValue("image"+i,event.target.files[i]);
+                                    }
+                                    
+                                }}/>
+                
+                                <input  defaultValue={product.tags.toString()} type="text" className="form-control" placeholder="Enter tags" onChange={function(event){
+                                    readValue("tags",event.target.value);
+                                }}/>
+
+                                <input type="text" className="form-control" placeholder="cat"/>
+
+                                {/* <select className="form-control" onChange={function(event){
+                                    readValue("category",event.target.value);
+                                }}>
+                                    <option value="">choose category</option>
+                
+                                    {
+                                        categories.map(function(cat,index){
+                                            return(
+                                                <option key={index} value={cat._id}>{cat.name}</option>
+                                            )
+                                        })
+                                    }
+                                   
+                                </select> */}
+                
+                                <div>
+                                Approved
+                                <input  checked={product.approved} type="checkbox" onChange={function(event){
+                                    readValue("approved",event.target.checked);
+                                }}/>
+                                
+                                Prescriped
+                                <input checked={product.prescripton_request} type="checkbox" onChange={function(event){
+                                    readValue("prescription_request",event.target.checked);
+                                }}/>
+                
+                                <button className="btn btn-primary mt-2" onClick={function(){
+                                    update();
+                                }}>update</button>
+                
+                                </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                ):null
+            }
+
             
 
             <div className="panel-links">
@@ -156,8 +245,11 @@ function Viewproduct(){
                                         setproduct(product);
                                         setviewModalVisible(true);
                                       }}></i>
-                                      <i class="fa-solid fa-pen-to-square text-success"></i>
-                                      <i class="fa-solid fa-trash text-danger " onClick={function(){
+                                      <i class="fa-solid fa-pen-to-square text-success " onClick={function(){
+                                        setproduct(product);
+                                        setupdateVisible(true); 
+                                      }}></i>
+                                      <i class="fa-solid fa-trash text-danger" onClick={function(){
                                         deleteproduct(product._id,index);
                                       }}></i>
                                     </td>
