@@ -6,11 +6,11 @@ import path from "../path.json";
 function Viewproduct(){
 
     let [products,setproducts]=useState([]);
-
-
+    let [product,setproduct]=useState([]);
+    let [viewModalVisible,setviewModalVisible]=useState(false);
 
     useEffect(function(){
-        fetch("http://localhost:8000/product/allproducts",{
+        fetch(path.BASE_URL+path.ALL_PRODUCTS,{
             method:"GET"
         })
         .then(function(response){
@@ -26,6 +26,8 @@ function Viewproduct(){
             console.log(err);
         })
     },[])
+
+
 
     function deleteproduct(product_id,product_index){
 
@@ -51,6 +53,62 @@ function Viewproduct(){
 
     return (
         <div className="panel">
+            {/* view modal */}
+
+            {
+                viewModalVisible===true?(
+                    <div  className="view-product-modal" onClick={function(){
+                        setviewModalVisible(false);
+                    }}>
+                        <div className="view-modal" onClick={function(event){
+                            event.stopPropagation();
+                        }}>
+        
+                            <h5>{product.name}</h5>
+        
+                            <p>
+                                {product.description}
+                            </p>
+        
+                            <div>
+                                <h6>TAGS</h6>
+                                <p className="text-danger">{product.tags}</p>
+                            </div>
+
+                            <div>
+                                <h6>CATEGORY</h6>
+                                <p className="text-danger">{product.category.name}</p>
+                            </div>
+
+        
+                            <p>
+                                approved -
+                                <strong>{product.approved===true?"yes":"no"}</strong>
+                            </p>
+        
+                            <p>
+                                prescription -
+                                <strong>{product.prescripton_request===true?" yes":" no"}</strong>
+                            </p>
+
+                            {
+                                product.images.map(function(image,index){
+                                    return(
+                                        <img src={image} width={100} height={100}/>
+                                    );
+                                })
+                            }
+        
+        
+        
+                        </div>
+
+                    </div>
+
+                ):null
+            }
+
+            
 
             <div className="panel-links">
                 <ul className="nav">
@@ -94,7 +152,10 @@ function Viewproduct(){
                                     <td>{product.category.name}</td>
                                     <td>{product.price}</td>
                                     <td>
-                                      <i class="fa-solid fa-eye text-primart"></i>
+                                      <i class="fa-solid fa-eye text-primart" onClick={function(){
+                                        setproduct(product);
+                                        setviewModalVisible(true);
+                                      }}></i>
                                       <i class="fa-solid fa-pen-to-square text-success"></i>
                                       <i class="fa-solid fa-trash text-danger " onClick={function(){
                                         deleteproduct(product._id,index);

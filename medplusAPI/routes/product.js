@@ -61,7 +61,7 @@ router.post("/create_product",function(req,res){
         let newPath="./products/"+file.newFilename+"."+ext;
         let imagePath="http://localhost:8000/uploaded/products/"+file.newFilename+"."+ext;
 
-        if(ext==="JPG" || ext ==="JPEG" || ext==="PNG"){
+        if(ext==="JPG" || ext ==="JPEG" || ext==="PNG" || ext==="WEBP"){
             fs.writeFileSync(newPath,fileData);
             product.images.push(imagePath);
         }
@@ -72,7 +72,7 @@ router.post("/create_product",function(req,res){
     form.on("end",function(){
 
         product.tags=product.tags.split(",");
-        console.log(product);
+        // console.log(product);
 
         productModel.create(product)
         .then(function(info){
