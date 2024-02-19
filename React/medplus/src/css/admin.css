@@ -178,4 +178,10 @@
 
 .update-modal input,select{
     width:49% !important;
+    font-size: 13px;
+}
+
+.update-modal textarea{
+    height:80px;
+    font-size: 13px;
 }

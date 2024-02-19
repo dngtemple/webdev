@@ -2,5 +2,6 @@
     "BASE_URL":"http://localhost:8000/",
     "ADMIN_LOGIN":"admin/login",
     "PRODUCT_DELETE":"product/product_delete/",
-    "ALL_PRODUCTS":"product/allproducts"
+    "ALL_PRODUCTS":"product/allproducts",
+    "UPDATE_PRODUCT":"product/product_update/"
 }

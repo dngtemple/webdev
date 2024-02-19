@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, UNSAFE_FetchersContext } from "react-router-dom";
 
 import path from "../path.json";
 
@@ -9,6 +9,13 @@ function Viewproduct(){
     let [product,setproduct]=useState([]);
     let [viewModalVisible,setviewModalVisible]=useState(false);
     let [updateVisible,setupdateVisible]=useState(false);
+
+
+    let productUpdate=useRef([]);
+
+
+    let [categories,setcategories]=useState([]);
+
 
     useEffect(function(){
         fetch(path.BASE_URL+path.ALL_PRODUCTS,{
@@ -20,7 +27,7 @@ function Viewproduct(){
         .then(function(data){
             if(data.success===true){
                 setproducts(data.data);
-                console.log(products);
+                // console.log(products);
             }
         })
         .catch(function(err){
@@ -53,12 +60,73 @@ function Viewproduct(){
     }
 
     function readValue(property,value){
+        productUpdate.current[property]=value;
+
+    }
+
+    function setUpdate(pro){
+
+        // setproduct(product);
+        setupdateVisible(true);
+        productUpdate.current=pro
 
     }
 
     function update(){
+        fetch(path.BASE_URL+path.UPDATE_PRODUCT+productUpdate.current._id,{
+            method:"PUT",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(productUpdate.current)
+        })
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+
+            if(data.success===true){
+                
+
+                if(typeof productUpdate.current.category !== "object"){
+                    let category=categories.find(function(cat,index){
+                        return cat._id===productUpdate.current.category;
+                    })
+                    
+                    console.log(category);
+                    productUpdate.current.category=category;
+                }
+                
+
+                setupdateVisible(false);
+            }
+        })
+        .catch(function(err){
+            console.log(err);
+        })
 
     }
+
+
+    useEffect(function(){
+        fetch("http://localhost:8000/category/allcategory",{
+            method:"GET"
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            if(data.success===true){
+                setcategories(data.data);
+                // console.log(categories);
+            }
+           
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    },[])
 
     return (
         <div className="panel">
@@ -103,7 +171,7 @@ function Viewproduct(){
                             {
                                 product.images.map(function(image,index){
                                     return(
-                                        <img src={image} width={100} height={100}/>
+                                        <img key={index}src={image} width={100} height={100}/>
                                     );
                                 })
                             }
@@ -129,36 +197,35 @@ function Viewproduct(){
                             event.stopPropagation();
 
                         }}>
-                                <input defaultValue={product.name} type="text" placeholder="Enter name" className="form-control" onChange={function(event){
+                                <input defaultValue={productUpdate.current.name} type="text" placeholder="Enter name" className="form-control" onChange={function(event){
                                     readValue("name",event.target.value);
                                 }}/>
 
-                                <input defaultValue={product.price} type="Number" placeholder="Enter price"className="form-control" onChange={function(event){
+                                <input defaultValue={productUpdate.current.price} type="Number" placeholder="Enter price"className="form-control" onChange={function(event){
                                     readValue("price",event.target.value);
                                 }} />
 
-                                <input defaultValue={product.description} type="text" placeholder="Enter description"className="form-control" onChange={function(event){
+                                <textarea defaultValue={productUpdate.current.description} type="text" placeholder="Enter description"className="form-control" onChange={function(event){
                                     readValue("description",event.target.value);
                                 }}/>
 
-                                <input type="file" className="form-control" multiple onChange={function(event){
+                                {/* <input type="file" className="form-control" multiple onChange={function(event){
                                     
                                     for(let i = 0;i<event.target.files.length;i++){
                                         readValue("image"+i,event.target.files[i]);
                                     }
                                     
-                                }}/>
+                                }}/> */}
                 
-                                <input  defaultValue={product.tags.toString()} type="text" className="form-control" placeholder="Enter tags" onChange={function(event){
+                                <input  defaultValue={productUpdate.current.tags.toString()} type="text" className="form-control" placeholder="Enter tags" onChange={function(event){
                                     readValue("tags",event.target.value);
                                 }}/>
 
-                                <input type="text" className="form-control" placeholder="cat"/>
 
-                                {/* <select className="form-control" onChange={function(event){
+                                <select className="form-control" onChange={function(event){
                                     readValue("category",event.target.value);
                                 }}>
-                                    <option value="">choose category</option>
+                                    <option defaultValue={productUpdate.current.category._id}>{productUpdate.current.category.name}</option>
                 
                                     {
                                         categories.map(function(cat,index){
@@ -168,16 +235,17 @@ function Viewproduct(){
                                         })
                                     }
                                    
-                                </select> */}
-                
+                                </select>
+
+
                                 <div>
                                 Approved
-                                <input  checked={product.approved} type="checkbox" onChange={function(event){
+                                <input  defaultChecked={productUpdate.current.approved} type="checkbox" onChange={function(event){
                                     readValue("approved",event.target.checked);
                                 }}/>
                                 
                                 Prescriped
-                                <input checked={product.prescripton_request} type="checkbox" onChange={function(event){
+                                <input defaultChecked={productUpdate.current.prescription_request} type="checkbox" onChange={function(event){
                                     readValue("prescription_request",event.target.checked);
                                 }}/>
                 
@@ -186,6 +254,8 @@ function Viewproduct(){
                                 }}>update</button>
                 
                                 </div>
+                
+                               
 
 
                         </div>
@@ -241,15 +311,14 @@ function Viewproduct(){
                                     <td>{product.category.name}</td>
                                     <td>{product.price}</td>
                                     <td>
-                                      <i class="fa-solid fa-eye text-primart" onClick={function(){
+                                      <i className="fa-solid fa-eye text-primart" onClick={function(){
                                         setproduct(product);
                                         setviewModalVisible(true);
                                       }}></i>
-                                      <i class="fa-solid fa-pen-to-square text-success " onClick={function(){
-                                        setproduct(product);
-                                        setupdateVisible(true); 
+                                      <i className="fa-solid fa-pen-to-square text-success " onClick={function(){
+                                         setUpdate(product);
                                       }}></i>
-                                      <i class="fa-solid fa-trash text-danger" onClick={function(){
+                                      <i className="fa-solid fa-trash text-danger" onClick={function(){
                                         deleteproduct(product._id,index);
                                       }}></i>
                                     </td>
