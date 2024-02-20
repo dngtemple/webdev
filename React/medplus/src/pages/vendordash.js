@@ -1,16 +1,18 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link,Outlet } from "react-router-dom";
 
-function Admindash(){
+function VendorDashboard(){
     return (
+  
+
         <div className="admin-dashboard">
             <div className="admin-header">
                 <div className="admin-header-logo">
-                   <p>Admin Panel</p> 
+                   <p>vendor dashboard</p> 
                 </div>
 
                 <div className="admin-header-logout">
                   <i className="fa-regular fa-user"></i>
-                  clinton templeton
+                  vendor
 
                 </div>
 
@@ -18,18 +20,13 @@ function Admindash(){
 
             <div className="admin-dashboard-options" style={{fontSize:"13px"}}>
                 <div className="dashboard-options">
-                    <Link to={"/admindash/create"}>
+                    <Link to={"/vendordash/create"}>
                       <div className="dash_option options">products</div>
                     </Link>
                     
                     <div className="dash_option">customers</div>
-
-                    <Link to={"/admindash/vendors"}>
-                       <div className="dash_option">vendors</div>
-                    </Link>
-                    
                     <div className="dash_option">support</div>
-                    <div className="dash_option">prescription</div>
+
 
                 </div>
 
@@ -42,7 +39,9 @@ function Admindash(){
             </div>
 
         </div>
-    )
-};
 
-export default Admindash;
+    );
+
+}
+
+export default VendorDashboard;

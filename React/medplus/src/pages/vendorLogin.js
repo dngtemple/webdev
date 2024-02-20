@@ -1,38 +1,35 @@
-import { useState } from "react";
-import "../css/admin.css";
-
+import { useState, } from "react";
+import path from "../path.json";
 import { useNavigate } from "react-router-dom";
 
-import path from "../path.json";
 
+function VendorLogin(){
 
-function AdminLogin(){
     let navigate=useNavigate();
 
-    let admin={};
+    let vendorCred={};
     let [message,setmessage]=useState(null);
 
     function readValue(property,value){
-        admin[property]=value;
+        vendorCred[property]=value;
     }
-    // console.log(path);
 
     function summit(){
-        fetch(path.BASE_URL+path.ADMIN_LOGIN,{
+        fetch(path.BASE_URL+path.VENDOR_LOGIN,{
             method:"POST",
             headers:{
                 "content-type":"application/json"
             },
-            body:JSON.stringify(admin)
+            body:JSON.stringify(vendorCred)
         })
         .then(function(response){
             return response.json()
         })
         .then(function(data){
-            console.log(data);
+            // console.log(data);
 
             if(data.success===true){
-                navigate("/admindash");
+                navigate("/vendordash");
             }
             else{
 
@@ -51,10 +48,15 @@ function AdminLogin(){
         })
         
     }
+
+
+
+
+
     return(
         <div className="admin-login-container">
             <div className="admin-login">
-                <h4>Admin </h4>
+                <h4>Vendor Log In</h4>
 
                 <input className="form-control" type="text" placeholder="Enter email" onChange={function(event){
                     readValue("email",event.target.value)
@@ -80,6 +82,7 @@ function AdminLogin(){
             
         </div>
     )
+
 }
 
-export default AdminLogin;
+export default VendorLogin;

@@ -5,5 +5,9 @@
     "ALL_PRODUCTS":"product/allproducts",
     "UPDATE_PRODUCT":"product/product_update/",
     "UPLOADING_SINGLE_IMAGE":"product/update_image/",
-    "DELETING_SINGLE_IMAGE":"product/delete_image/"
+    "DELETING_SINGLE_IMAGE":"product/delete_image/",
+
+    "VENDOR_REGISTER":"vendor/register",
+    "VENDOR_LOGIN":"vendor/login",
+    "ALL_VENDORS":"vendor/get_all_vendors"
 }

@@ -86,6 +86,20 @@ router.post("/login",function(req,res){
 })
 
 
+// endpoint to get all vendors
+
+router.get("/get_all_vendors",function(req,res){
+    vendorModel.find()
+    .then(function(info){
+        res.send({success:true,info,message:"All vendors"});
+    })
+    .catch(function(err){
+        console.log(err);
+        res.send({success:false,message:"Error getting all vendors"})
+    })
+})
+
+
 // endpoint to update vendor
 router.put("/update/:vendor_id",function(req,res){
     let data=req.body;
