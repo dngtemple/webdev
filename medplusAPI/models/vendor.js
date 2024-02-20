@@ -14,18 +14,22 @@ const vendorSchema=mongoose.Schema({
         type:String,
         required:true,
     },
-    company_name:{
+    store_name:{
         type:String,
         required:true,
         unique:true,
     },
-    company_address:{
+    store_address:{
         type:String,
         required:true,
     },
     pan_number:{
         type:String,
         required:true,
+    },
+    pinCode:{
+        type:Number,
+        required:true
     },
     contact:{
         type:String,
