@@ -4,5 +4,6 @@
     "PRODUCT_DELETE":"product/product_delete/",
     "ALL_PRODUCTS":"product/allproducts",
     "UPDATE_PRODUCT":"product/product_update/",
-    "UPLOADING_SINGLE_IMAGE":"product/update_image/"
+    "UPLOADING_SINGLE_IMAGE":"product/update_image/",
+    "DELETING_SINGLE_IMAGE":"product/delete_image/"
 }

@@ -180,6 +180,46 @@ function Viewproduct(){
 
     }
 
+
+    // function for deleting one image as an update
+
+    function deleteOneImage(pro_id,imagePath){
+        fetch(path.BASE_URL+path.DELETING_SINGLE_IMAGE+pro_id,{
+            method:"PUT",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify({image:imagePath})
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+
+            if(data.success===true){
+                let tempData=[...products];
+
+                let product=tempData.find(function(pro,index){
+                    return pro._id === pro_id;
+                })
+
+                let index=product.images.findIndex(function(img,index){
+                    return img===imagePath;
+                })
+
+                product.images.splice(index,1);
+
+                setproducts(tempData);
+
+            }
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+
+    }
+
  
 
 
@@ -309,7 +349,9 @@ function Viewproduct(){
                                                 <div  key={index} className="update_image">
                                                     <img src={image} height={100} width={145}/>
 
-                                                    <i className="fa-solid fa-circle-xmark close"></i>
+                                                    <i className="fa-solid fa-circle-xmark close" onClick={function(){
+                                                        deleteOneImage(productUpdate.current._id,image);
+                                                    }}></i>
                                                 </div>
 
                                             )

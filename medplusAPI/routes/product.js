@@ -144,6 +144,46 @@ router.put("/update_image/:product_id",function(req,res){
 
 // endpoint to delete an image
 
+router.put("/delete_image/:product_id", async function(req,res){
+    let product_id=req.params.product_id;
+    let data=req.body;
+
+    let product= await productModel.findOne({_id:product_id});
+    console.log(product);
+
+    console.log(product.images)
+
+    let images=product.images
+
+
+    let index=images.findIndex(function(img,index){
+        return img===data.image;
+    })
+
+    images.splice(index,1);
+    product.images=images
+
+    productModel.updateOne({_id:product_id},product)
+    .then(function(info){
+
+        let imagesplit=data.image.split("/");
+        let imageName=imagesplit[imagesplit.length-1];
+
+        fs.unlinkSync("./products/"+imageName);
+        res.send({success:true,message:"Image successfully deleted"});
+    })
+    .catch(function(err){
+        console.log(err);
+        res.send({success:false,message:"Image not deleted deleted"});
+
+    })
+})
+
+
+
+
+
+
 // endpoint to update a product
 
 router.put("/product_update/:product_id",function(req,res){
