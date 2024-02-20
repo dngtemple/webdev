@@ -44,6 +44,7 @@
 
 /* css for admin dashboard*/
 
+
 .admin-dashboard{
     /* background-color: lightgray; */
     width: 100%;
@@ -107,7 +108,7 @@
 }
 
 .options{
-    margin-top:50px
+    margin-top:50px;
 }
 
 
@@ -184,4 +185,52 @@
 .update-modal textarea{
     height:80px;
     font-size: 13px;
+}
+
+
+.update_images_section{
+    width: 100%;
+    padding: 10px;
+    /* background-color: red; */
+    display: flex;
+    column-gap: 5px;
+}
+
+.update_image{
+    width: 150px;
+    padding:2px 0px;
+    /* background-color: green; */
+    position: relative;
+    border:1px solid lightblue
+}
+
+.close{
+    position: absolute;
+    top:-3px;
+    right:-3px;
+    color:red;
+    font-size: 18px;
+}
+
+.plus-section{
+    width:150px;
+    height:100px;
+    border-radius: 10px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus{
+    font-size:40px;
+    font-weight: 200;
+}
+
+.hidden_input{
+    display: none;
+}
+
+a{
+    text-decoration: none !important;
 }

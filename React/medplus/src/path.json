@@ -3,5 +3,6 @@
     "ADMIN_LOGIN":"admin/login",
     "PRODUCT_DELETE":"product/product_delete/",
     "ALL_PRODUCTS":"product/allproducts",
-    "UPDATE_PRODUCT":"product/product_update/"
+    "UPDATE_PRODUCT":"product/product_update/",
+    "UPLOADING_SINGLE_IMAGE":"product/update_image/"
 }

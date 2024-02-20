@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Admindash(){
     return (
@@ -18,7 +18,10 @@ function Admindash(){
 
             <div className="admin-dashboard-options">
                 <div className="dashboard-options">
-                    <div className="dash_option options">products</div>
+                    <Link to={"/admindash/create"}>
+                      <div className="dash_option options">products</div>
+                    </Link>
+                    
                     <div className="dash_option">customers</div>
                     <div className="dash_option">vendors</div>
                     <div className="dash_option">support</div>

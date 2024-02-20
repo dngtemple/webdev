@@ -7,16 +7,19 @@ function Viewproduct(){
 
     let [products,setproducts]=useState([]);
     let [product,setproduct]=useState([]);
+
     let [viewModalVisible,setviewModalVisible]=useState(false);
     let [updateVisible,setupdateVisible]=useState(false);
-
 
     let productUpdate=useRef([]);
 
 
+    let addNewImage=useRef();
+
+
     let [categories,setcategories]=useState([]);
 
-
+    // function to get all products
     useEffect(function(){
         fetch(path.BASE_URL+path.ALL_PRODUCTS,{
             method:"GET"
@@ -35,8 +38,29 @@ function Viewproduct(){
         })
     },[])
 
+    
+    // function to get all categories
+    useEffect(function(){
+        fetch("http://localhost:8000/category/allcategory",{
+            method:"GET"
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            if(data.success===true){
+                setcategories(data.data);
+                // console.log(categories);
+            }
+           
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    },[])
 
 
+    // function to delete a product
     function deleteproduct(product_id,product_index){
 
         fetch(path.BASE_URL+path.PRODUCT_DELETE+product_id,{
@@ -64,6 +88,13 @@ function Viewproduct(){
 
     }
 
+
+    // function of the plus working as input
+    function addNew(){
+        addNewImage.current.click();
+    }
+
+
     function setUpdate(pro){
 
         // setproduct(product);
@@ -72,6 +103,8 @@ function Viewproduct(){
 
     }
 
+
+    // function to update the feilds
     function update(){
         fetch(path.BASE_URL+path.UPDATE_PRODUCT+productUpdate.current._id,{
             method:"PUT",
@@ -109,24 +142,46 @@ function Viewproduct(){
     }
 
 
-    useEffect(function(){
-        fetch("http://localhost:8000/category/allcategory",{
-            method:"GET"
+    // function for updating adding a new image
+
+    function  updateImage(productID,file){
+        let formData=new FormData();
+
+        formData.append("image",file);
+
+        fetch(path.BASE_URL+path.UPLOADING_SINGLE_IMAGE+productID,{
+            method:"PUT",
+            body:formData
         })
         .then(function(response){
             return response.json();
         })
         .then(function(data){
+            // console.log(data);
+
             if(data.success===true){
-                setcategories(data.data);
-                // console.log(categories);
+
+                let tempData=[...products];
+
+                let product=tempData.find(function(pro,index){
+                    return pro._id === productID;
+                })
+
+                product.images.push(data.image);
+                setproducts(tempData);
+
+                // productUpdate.current.images.push(data.image);
             }
-           
         })
         .catch(function(err){
             console.log(err);
         })
-    },[])
+
+
+    }
+
+ 
+
 
     return (
         <div className="panel">
@@ -165,7 +220,7 @@ function Viewproduct(){
         
                             <p>
                                 prescription -
-                                <strong>{product.prescripton_request===true?" yes":" no"}</strong>
+                                <strong>{product.prescription_request===true?" yes":" no"}</strong>
                             </p>
 
                             {
@@ -208,14 +263,6 @@ function Viewproduct(){
                                 <textarea defaultValue={productUpdate.current.description} type="text" placeholder="Enter description"className="form-control" onChange={function(event){
                                     readValue("description",event.target.value);
                                 }}/>
-
-                                {/* <input type="file" className="form-control" multiple onChange={function(event){
-                                    
-                                    for(let i = 0;i<event.target.files.length;i++){
-                                        readValue("image"+i,event.target.files[i]);
-                                    }
-                                    
-                                }}/> */}
                 
                                 <input  defaultValue={productUpdate.current.tags.toString()} type="text" className="form-control" placeholder="Enter tags" onChange={function(event){
                                     readValue("tags",event.target.value);
@@ -254,6 +301,36 @@ function Viewproduct(){
                                 }}>update</button>
                 
                                 </div>
+
+                                <div className="update_images_section">
+                                    {
+                                        productUpdate.current.images.map(function(image,index){
+                                            return (
+                                                <div  key={index} className="update_image">
+                                                    <img src={image} height={100} width={145}/>
+
+                                                    <i className="fa-solid fa-circle-xmark close"></i>
+                                                </div>
+
+                                            )
+                                        })
+                                    }
+
+                                    <div className="plus-section" onClick={function(event){
+                                        addNew();
+                                       }}>
+                                      <i  className="fa-solid fa-plus plus" 
+                                      ></i>
+                                    </div>
+
+                                </div>
+
+
+                                <input ref={addNewImage}  className="hidden_input" type="file" onChange={function(event){
+                                        updateImage(productUpdate.current._id,event.target.files[0])
+                            
+                                }}/>
+
                 
                                
 

@@ -86,10 +86,63 @@ router.post("/create_product",function(req,res){
     })
 
 
-    
-     
-
 })
+
+// endpoint to update an image
+
+router.put("/update_image/:product_id",function(req,res){
+    const form=new formidable.IncomingForm();
+
+    let product_id=req.params.product_id;
+
+    let product=null;
+
+    productModel.findOne({_id:product_id})
+    .then(function(data){
+        product=data;
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+
+    form.parse(req,function(err,fields,files){
+        if(err===null){
+            console.log(files);
+
+            // if(files.image && files.image.filepath){
+
+                let fileData=fs.readFileSync(files.image[0].filepath);
+                let ext=files.image[0].originalFilename.split(".")[1].toUpperCase();
+        
+                let newPath="./products/"+files.image[0].newFilename+"."+ext;
+                let imagePath="http://localhost:8000/uploaded/products/"+files.image[0].newFilename+"."+ext;
+        
+                if(ext==="JPG" || ext ==="JPEG" || ext==="PNG" || ext==="WEBP"){
+                    fs.writeFileSync(newPath,fileData);
+                    product.images.push(imagePath);
+    
+                    productModel.updateOne({_id:product_id},product)
+                    .then(function(data){
+                        res.send({success:true,image:imagePath,message:"Image Updated Successfully"});
+                    })
+                    .catch(function(err){
+                        console.log(err);
+                        res.send({success:false,message:"Unsuccessful Image update"})
+                    })
+                } 
+
+            // }
+            // else{
+            //     res.send({success:false,message:"Invalid  Image file"});
+            // }
+            
+            
+        }
+    })
+})
+
+
+// endpoint to delete an image
 
 // endpoint to update a product
 
