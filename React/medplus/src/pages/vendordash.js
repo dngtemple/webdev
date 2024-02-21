@@ -23,6 +23,10 @@ function VendorDashboard(){
                     <Link to={"/vendordash/create"}>
                       <div className="dash_option options">products</div>
                     </Link>
+
+                    <Link to={"/vendordash/select"}>
+                       <div className="dash_option">Select products </div>
+                    </Link>
                     
                     <div className="dash_option">customers</div>
                     <div className="dash_option">support</div>

@@ -10,6 +10,7 @@ import VendorRegistration from './pages/vendor_reg';
 import VendorLogin from './pages/vendorLogin';
 import VendorDashboard from './pages/vendordash';
 import ViewVendors from './pages/allVendors';
+import VendorSelectProducts from './pages/ven_select_pro';
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
         <Route path="/vendorLogin" element={<VendorLogin/>}></Route>
         <Route path="/vendordash" element={<VendorDashboard/>}>
             <Route path='/vendordash/create' element={<Createproduct/>}></Route>
+
+            <Route path='/vendordash/select' element={<VendorSelectProducts/>}></Route>
         </Route>
 
         

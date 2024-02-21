@@ -241,3 +241,41 @@
 a{
     text-decoration: none !important;
 }
+
+
+/* css for vendor select products */
+
+.vendor_select_product{
+    width: 100%;
+    padding:10px;
+    background-color: lightgray;
+}
+
+.select_product{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    align-items: center;
+}
+
+.select-product-modal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.4);
+    top:0;
+    left:0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-modal{
+    width:60%;
+    padding:30px;
+    border-radius: 6px;
+    background-color: white;
+    display: flex;
+    /* flex-direction: column; */
+    column-gap: 10px;
+}
