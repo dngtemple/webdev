@@ -308,6 +308,10 @@ function Viewproduct(){
                                     readValue("tags",event.target.value);
                                 }}/>
 
+                                <input  defaultValue={productUpdate.current.discount} type="number" className="form-control" placeholder="Enter discount" onChange={function(event){
+                                    readValue("discount",event.target.value);
+                                }}/>
+
 
                                 <select className="form-control" onChange={function(event){
                                     readValue("category",event.target.value);

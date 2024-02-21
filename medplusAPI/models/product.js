@@ -31,6 +31,11 @@ const productSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"categorys",
     },
+    discount:{
+        type:Number,
+        required:true,
+        default:0
+    },
     approved:{
         type:Boolean,
         required:true,
