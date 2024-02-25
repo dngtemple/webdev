@@ -1,10 +1,44 @@
 import { useState } from "react";
 
+import path from "../path.json";
+
 
 function VendorSelectProducts(){
 
 
     let [selectproductvisible,setselectproductvisible]=useState(false);
+
+    let [searchResults,setsearchResults]=useState([]);
+
+
+
+    function searchProducts(value){
+        fetch(path.BASE_URL+path.VENDOR_SEARCH_PRODUCT+value,{
+            method:'GET'
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data.data);
+
+            if(data.success===true){
+
+                if(value.length!==""){
+                    setsearchResults(data.data)  
+                }
+                else{
+                    setsearchResults([]);
+                }
+
+            }
+            
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    }
+
     return (
         <div className="vendor_select_product">
 
@@ -16,10 +50,35 @@ function VendorSelectProducts(){
                     <div className="select-modal" onClick={function(event){
                         event.stopPropagation();
                     }}>
+
+                        <div className="searching">
+                            <input type="text" className="form-control" placeholder="Please start typing" onChange={function(event){
+                                searchProducts(event.target.value);
+                            }}/>
+
+                           
+                           {
+                             searchResults.length !==0 ?(
+                                <ul className="search_results">
+                                     {
+                                         searchResults.map(function(pro,index){
+                                             return (
+                                                 <li key={index}>{pro.name}</li>
+                                             );
+                                         })
+                                     }
+                                </ul>
+
+                             ):null
+                           }
+                           
+
+                        </div>
+
     
-                        <input type="text" className="form-control" placeholder="Please start typing"/>
+                       
     
-                        <input type="number" className="form-control" placeholder="Please enter quanity"/>
+                        <input type="number" className="form-control" placeholder="Please enter quanity" style={{width:"40%"}}/>
     
                         <button className="btn btn-primary">select</button>
     

@@ -9,5 +9,6 @@
 
     "VENDOR_REGISTER":"vendor/register",
     "VENDOR_LOGIN":"vendor/login",
-    "ALL_VENDORS":"vendor/get_all_vendors"
+    "ALL_VENDORS":"vendor/get_all_vendors",
+    "VENDOR_SEARCH_PRODUCT":"vendor/vendor_search_products/"
 }

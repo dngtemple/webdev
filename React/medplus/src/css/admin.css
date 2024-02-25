@@ -278,4 +278,20 @@ a{
     display: flex;
     /* flex-direction: column; */
     column-gap: 10px;
+    justify-content: space-between;
+}
+
+
+.search_results{
+    width:19%;
+    background-color: lightgray;
+    padding:4px;
+    list-style-type: none;
+    position: absolute;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.search_results li{
+    height: 30px;
 }

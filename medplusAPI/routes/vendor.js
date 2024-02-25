@@ -5,6 +5,7 @@ const vendorModel = require("../models/vendor");
 
 const bcryptjs=require("bcryptjs");
 const jsonwebtoken=require("jsonwebtoken");
+const productModel = require("../models/product");
 
 
 // endpoint to register
@@ -114,6 +115,22 @@ router.put("/update/:vendor_id",function(req,res){
         console.log(err);
         res.send({success:false,message:"Problems Updating  vendor"});
     })  
+})
+
+// endpoint for vendor to search a product 
+
+router.get("/vendor_search_products/:proname",function(req,res){
+    let proname=req.params.proname;
+
+    productModel.find({name:{$regex:proname,$options:"i"}}).limit(5)
+    .then(function(info){
+        res.send({success:true,message:"successfully got the data",data:info});
+    })
+    .catch(function(err){
+        res.send({success:false,message:"Cannot get the data"});
+    })
+
+
 })
 
 module.exports=router;

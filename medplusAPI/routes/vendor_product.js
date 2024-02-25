@@ -3,7 +3,7 @@ const router=express.Router();
 
 const vendorProductModel=require("../models/vendor-product");
 
-
+// endpoint to create vendor
 router.post("/vendorproduct",function(req,res){
     let data=req.body;
 
@@ -32,6 +32,8 @@ router.put("/vendorproduct/:id",function(req,res){
     })
 })
 
+
+// endpoint to delete vendor 
 router.delete("/vendorproduct/:id",function(req,res){
     let id=req.params.id;
 
