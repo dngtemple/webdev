@@ -63,7 +63,7 @@ router.post("/login",function(req,res){
                        
                         jsonwebtoken.sign({email:credentials.email},"secretkey",function(err,token){
                             if(err===null){
-                                res.send({success:true,token:token,email:user.email,userID:user._id});
+                                res.send({success:true,token:token,email:user.email,vendorID:user._id});
                             }
                         })
                     }

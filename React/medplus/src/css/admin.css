@@ -289,9 +289,12 @@ a{
     list-style-type: none;
     position: absolute;
     font-size: 14px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .search_results li{
     height: 30px;
+    cursor: pointer;
 }

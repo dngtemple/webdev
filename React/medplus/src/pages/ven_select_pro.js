@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import path from "../path.json";
 
@@ -7,36 +7,46 @@ function VendorSelectProducts(){
 
 
     let [selectproductvisible,setselectproductvisible]=useState(false);
-
     let [searchResults,setsearchResults]=useState([]);
 
+    let [selectedProduct,setselectedProduct]=useState();
+
+    let selected_product=useRef();
 
 
     function searchProducts(value){
-        fetch(path.BASE_URL+path.VENDOR_SEARCH_PRODUCT+value,{
-            method:'GET'
-        })
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data.data);
+        if(value !==""){
 
-            if(data.success===true){
+            fetch(path.BASE_URL+path.VENDOR_SEARCH_PRODUCT+value,{
+                method:'GET'
+            })
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data.data);
+ 
+                if(data.success===true){
+ 
+                    if(value.length!==""){
+                        setsearchResults(data.data)  
+                    }
+                    else{
+                        setsearchResults([]);
+                    }
+ 
+             }
+             
+         })
+         .catch(function(err){
+             console.log(err);
+         })
 
-                if(value.length!==""){
-                    setsearchResults(data.data)  
-                }
-                else{
-                    setsearchResults([]);
-                }
+        }
+        else{
+            setsearchResults([]);
+        }
 
-            }
-            
-        })
-        .catch(function(err){
-            console.log(err);
-        })
     }
 
     return (
@@ -52,7 +62,7 @@ function VendorSelectProducts(){
                     }}>
 
                         <div className="searching">
-                            <input type="text" className="form-control" placeholder="Please start typing" onChange={function(event){
+                            <input type="text" ref={selected_product} className="form-control" placeholder="Please start typing" onChange={function(event){
                                 searchProducts(event.target.value);
                             }}/>
 
@@ -63,7 +73,11 @@ function VendorSelectProducts(){
                                      {
                                          searchResults.map(function(pro,index){
                                              return (
-                                                 <li key={index}>{pro.name}</li>
+                                                 <li key={index} onClick={function(){
+                                                    setselectedProduct(pro);
+                                                    setsearchResults([]);
+                                                    selected_product.current.value=pro.name;
+                                                 }}>{pro.name}</li>
                                              );
                                          })
                                      }

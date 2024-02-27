@@ -29,7 +29,8 @@ function VendorLogin(){
             // console.log(data);
 
             if(data.success===true){
-                navigate("/vendordash");
+                localStorage.setItem("vendor_info",JSON.stringify(data));
+                navigate("/vendordash/select");
             }
             else{
 
