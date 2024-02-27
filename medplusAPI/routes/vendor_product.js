@@ -3,8 +3,8 @@ const router=express.Router();
 
 const vendorProductModel=require("../models/vendor-product");
 
-// endpoint to create vendor
-router.post("/vendorproduct",function(req,res){
+// endpoint to create vendorproduct
+router.post("/create_vendor_product",function(req,res){
     let data=req.body;
 
     vendorProductModel.create(data)

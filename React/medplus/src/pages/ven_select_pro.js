@@ -9,9 +9,12 @@ function VendorSelectProducts(){
     let [selectproductvisible,setselectproductvisible]=useState(false);
     let [searchResults,setsearchResults]=useState([]);
 
-    let [selectedProduct,setselectedProduct]=useState();
+    let selected_product_name=useRef();
 
-    let selected_product=useRef();
+    let vendorProduct=useRef({});
+    let vendorID=JSON.parse(localStorage.getItem("vendor_info")).vendorID;
+    
+    vendorProduct.current['vendor']=vendorID;
 
 
     function searchProducts(value){
@@ -24,7 +27,7 @@ function VendorSelectProducts(){
                 return response.json();
             })
             .then(function(data){
-                console.log(data.data);
+                // console.log(data.data);
  
                 if(data.success===true){
  
@@ -49,6 +52,27 @@ function VendorSelectProducts(){
 
     }
 
+    function createSelected(){
+        console.log(vendorProduct.current);
+
+        fetch(path.BASE_URL+path.CREATE_VENDOR_PRODUCT,{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(vendorProduct.current)
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    }
+
     return (
         <div className="vendor_select_product">
 
@@ -62,7 +86,7 @@ function VendorSelectProducts(){
                     }}>
 
                         <div className="searching">
-                            <input type="text" ref={selected_product} className="form-control" placeholder="Please start typing" onChange={function(event){
+                            <input type="text" ref={selected_product_name} className="form-control" placeholder="Please start typing" onChange={function(event){
                                 searchProducts(event.target.value);
                             }}/>
 
@@ -74,9 +98,9 @@ function VendorSelectProducts(){
                                          searchResults.map(function(pro,index){
                                              return (
                                                  <li key={index} onClick={function(){
-                                                    setselectedProduct(pro);
+                                                    vendorProduct.current['product']=pro._id;
                                                     setsearchResults([]);
-                                                    selected_product.current.value=pro.name;
+                                                    selected_product_name.current.value=pro.name;
                                                  }}>{pro.name}</li>
                                              );
                                          })
@@ -92,9 +116,14 @@ function VendorSelectProducts(){
     
                        
     
-                        <input type="number" className="form-control" placeholder="Please enter quanity" style={{width:"40%"}}/>
+                        <input type="number" className="form-control" placeholder="Please enter quanity" style={{width:"40%"}} onChange={function(event){
+                            vendorProduct.current['quantity']=event.target.value;
+                        }}/>
     
-                        <button className="btn btn-primary">select</button>
+                        <button className="btn btn-primary" onClick={function(){
+                            createSelected();
+                            setselectproductvisible(false);
+                        }}>select</button>
     
                     </div>
     

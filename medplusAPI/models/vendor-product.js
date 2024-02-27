@@ -4,11 +4,11 @@ const vendorProductSchema=mongoose.Schema({
 
     vendor:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"vendor"
+        ref:"vendors"
     },
     product:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"product"
+        ref:"products"
     },
     quantity:{
         type:Number,
