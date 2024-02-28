@@ -11,10 +11,15 @@ import VendorLogin from './pages/vendorLogin';
 import VendorDashboard from './pages/vendordash';
 import ViewVendors from './pages/allVendors';
 import VendorSelectProducts from './pages/ven_select_pro';
+import Demo from './component/demo';
 
 
 function App() {
   return (
+    <>
+    
+
+    {/* <Demo name="Temple"/>   intro to class based */}
 
     <BrowserRouter>
       <Routes>
@@ -45,6 +50,8 @@ function App() {
         
       </Routes>
     </BrowserRouter>
+
+    </>
   );
 }
 
