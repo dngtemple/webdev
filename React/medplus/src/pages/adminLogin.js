@@ -32,6 +32,7 @@ function AdminLogin(){
             console.log(data);
 
             if(data.success===true){
+                localStorage.setItem("admin_info",JSON.stringify(data));
                 navigate("/admindash");
             }
             else{

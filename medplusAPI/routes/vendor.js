@@ -63,7 +63,7 @@ router.post("/login",function(req,res){
                        
                         jsonwebtoken.sign({email:credentials.email},"secretkey",function(err,token){
                             if(err===null){
-                                res.send({success:true,token:token,email:user.email,vendorID:user._id});
+                                res.send({success:true,token:token,email:user.email,vendorID:user._id,role:"vendor"});
                             }
                         })
                     }
@@ -122,7 +122,7 @@ router.put("/update/:vendor_id",function(req,res){
 router.get("/vendor_search_products/:proname",function(req,res){
     let proname=req.params.proname;
 
-    productModel.find({name:{$regex:proname,$options:"i"}}).limit(5)
+    productModel.find({name:{$regex:proname,$options:"i"},approved:true}).limit(5)
     .then(function(info){
         res.send({success:true,message:"successfully got the data",data:info});
     })

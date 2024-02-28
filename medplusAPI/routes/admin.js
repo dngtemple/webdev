@@ -58,7 +58,7 @@ router.post("/login",function(req,res){
                        
                         jsonwebtoken.sign({email:credentials.email},"secretkey",function(err,token){
                             if(err===null){
-                                res.status(200).send({success:true,token:token,email:user.email,userID:user._id});
+                                res.status(200).send({success:true,token:token,email:user.email,userID:user._id,role:"admin"});
                             }
                         })
                     }

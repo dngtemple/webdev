@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, UNSAFE_FetchersContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import path from "../path.json";
 
@@ -15,6 +15,9 @@ function Viewproduct(){
 
 
     let addNewImage=useRef();
+
+    let role=useRef(JSON.parse(localStorage.getItem("admin_info"))).current;
+    
 
 
     let [categories,setcategories]=useState([]);
@@ -418,7 +421,12 @@ function Viewproduct(){
                     <th>Name</th>
                     <th>Category</th>
                     <th>Price</th>
-                    <th>Action</th>
+                    {
+                        role !==null && role.role==="admin"?(
+                          <th>Action</th>
+
+                        ):null
+                    }
                     </tr>
 
                 </thead>
@@ -430,21 +438,37 @@ function Viewproduct(){
                             return(
                                 <tr key={index}>
                                     <td>{index+1}</td>
-                                    <td>{product.name}</td>
+                                    {
+                                        product.approved===false?(
+                                            <td style={{color:"red"}}>{product.name}</td>
+
+                                        ):
+                                        <td>{product.name}</td>
+                                    }
+                                    
                                     <td>{product.category.name}</td>
                                     <td>{product.price}</td>
-                                    <td>
-                                      <i className="fa-solid fa-eye text-primart" onClick={function(){
-                                        setproduct(product);
-                                        setviewModalVisible(true);
-                                      }}></i>
-                                      <i className="fa-solid fa-pen-to-square text-success " onClick={function(){
-                                         setUpdate(product);
-                                      }}></i>
-                                      <i className="fa-solid fa-trash text-danger" onClick={function(){
-                                        deleteproduct(product._id,index);
-                                      }}></i>
-                                    </td>
+                                    {
+                                        role!==null && role.role==="admin"?(
+                                            <td>
+                                                <i className="fa-solid fa-eye text-primart" onClick={function(){
+                                                  setproduct(product);
+                                                  setviewModalVisible(true);
+                                                }}></i>
+                                                <i className="fa-solid fa-pen-to-square text-success " onClick={function(){
+                                                   setUpdate(product);
+                                                }}></i>
+                                                <i className="fa-solid fa-trash text-danger" onClick={function(){
+                                                  deleteproduct(product._id,index);
+                                                }}></i>
+
+                                                
+                                            </td>
+
+                                        ):null
+
+                                    }
+                                    
                                 </tr>
 
                             )

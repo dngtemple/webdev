@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, } from "react-router-dom";
 
 
@@ -14,6 +14,9 @@ function Createproduct(){
     }
 
     // console.log(formData);
+
+    let role=useRef(JSON.parse(localStorage.getItem("admin_info"))).current;
+    console.log(role);
 
 
     function create(){
@@ -42,7 +45,7 @@ function Createproduct(){
         .then(function(data){
             if(data.success===true){
                 setcategories(data.data);
-                console.log(categories);
+                // console.log(categories);
             }
            
         })
@@ -113,10 +116,17 @@ function Createproduct(){
                 </select>
 
                 <div>
-                Approved
-                <input type="checkbox" onChange={function(event){
-                    readValue("approved",event.target.checked);
-                }}/>
+                    {
+                      role !==null && role.role==="admin"?(
+                        <>
+                       Approved
+                       <input type="checkbox" onChange={function(event){
+                           readValue("approved",event.target.checked);
+                       }}/>
+                       </>
+                      ):null
+                    }
+                
                 
                 Prescriped
                 <input type="checkbox" onChange={function(event){
