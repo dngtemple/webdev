@@ -16,7 +16,7 @@ function Createproduct(){
     // console.log(formData);
 
     let role=useRef(JSON.parse(localStorage.getItem("admin_info"))).current;
-    console.log(role);
+    
 
 
     function create(){
@@ -80,7 +80,7 @@ function Createproduct(){
 
             <div className="panel_inputs">
                
-                <input type="text" placeholder="Enter name" className="form-control" onChange={function(event){
+                <input required type="text" placeholder="Enter name" className="form-control" onChange={function(event){
                     readValue("name",event.target.value);
                 }}/>
                 <input type="Number" placeholder="Enter price"className="form-control" onChange={function(event){
