@@ -60,20 +60,39 @@ function Createproduct(){
 
         <div className="panel">
 
-            <div className="panel-links">
-                <ul className="nav">
-                    <Link to={"/admindash/create"}>
-                      <li className="nav-link">create</li>
-                    </Link>
+            {
+                role !== null && role.role==="admin"?(
+                    <div className="panel-links">
+                        <ul className="nav">
+                            <Link to={"/admindash/create"}>
+                              <li className="nav-link">create</li>
+                            </Link>
+        
+                            <Link to={"/admindash/view"}>
+                             <li className="nav-link">view</li>
+                            </Link>
+                            <li className="nav-link">export</li>
+                            <li className="nav-link">overview</li>
+        
+                        </ul>
+                    </div>
 
-                    <Link to={"/admindash/view"}>
-                     <li className="nav-link">view</li>
-                    </Link>
-                    <li className="nav-link">export</li>
-                    <li className="nav-link">overview</li>
+                ):
+                <div className="panel-links">
+                        <ul className="nav">
+                            <Link to={"/vendordash/create"}>
+                              <li className="nav-link">create</li>
+                            </Link>
+        
+                            <Link to={"/vendordash/view"}>
+                             <li className="nav-link">view</li>
+                            </Link>
+                            
+                        </ul>
+                    </div>
+            }
 
-                </ul>
-            </div>
+            
 
 
             <h5>create product</h5>

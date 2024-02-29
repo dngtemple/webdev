@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Poppins:ital,wght@0,100;0,200;1,100;1,200&family=Roboto');
+
+
+.background{
+    width:100%;
+    min-height: 100vh;
+    /* background-color:#fbed72; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://images.pexels.com/photos/4210610/pexels-photo-4210610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.register{
+    width: 30%;
+    height: 80vh;
+    background-color: lightgray;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.register_form{
+    padding: 10px 20px;
+    width: 100%;
+    position: absolute;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.form input,select{
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+    height: 35px;
+    text-indent: 20px;
+    /* border: none; */
+    background-color: transparent;
+}
+
+.form button{
+    background-color: black;
+    color:white;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    cursor: pointer;
+    
+}
+
+.form button:hover{
+    background-color: white;
+    color: black;
+}

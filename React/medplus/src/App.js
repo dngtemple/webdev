@@ -40,6 +40,7 @@ function App() {
         <Route path="/vendorLogin" element={<VendorLogin/>}></Route>
         <Route path="/vendordash" element={<VendorDashboard/>}>
             <Route path='/vendordash/create' element={<Createproduct/>}></Route>
+            <Route path='/vendordash/view' element={<Viewproduct/>}></Route>
 
             <Route path='/vendordash/select' element={<VendorSelectProducts/>}></Route>
         </Route>
