@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro to object oriented programming</title>
+</head>
+<body>
+
+
+
+
+
+    <script>
+
+        class Demo{
+
+            name="Alves";
+            age=23;
+
+            printName(){
+                console.log(this.name);
+            }
+        }
+
+        class Data extends Demo{
+            studentID=48484848;
+            classID=3;
+        }
+
+        let s = new Demo();
+
+        console.log(s.name);
+        console.log(s.age);
+        s.printName();
+
+        let d=new Data();
+        console.log(d.name);
+
+        
+        
+
+
+
+    </script>
+    
+</body>
+</html>
