@@ -69,7 +69,7 @@
 
 .footer_section{
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     justify-content: center;
     padding:20px
@@ -83,7 +83,7 @@
 
 .foot{
     width:100%;
-    padding:5px;
+    /* padding:5px; */
     /* background-color: white; */
     display: flex;
     justify-content: space-between;
@@ -109,4 +109,47 @@
 
 .foot div>i{
     margin-right: 5px;
+}
+
+
+/* css for about */
+
+.about_section{
+   width: 100%;
+   padding: 10px;
+   /* background-color: black; */
+   display: flex;
+   justify-content: center;
+}
+
+.about_details{
+    width: 70%;
+    background-color: #ffff0080;
+    padding:20px;
+    font-size: 13px;
+}
+
+.about_icons{
+    width: 100%;
+    padding: 10px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.about{
+    width: 18%;
+    padding:10px;
+    background-color: white;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about i{
+    font-size: 30px;
 }
