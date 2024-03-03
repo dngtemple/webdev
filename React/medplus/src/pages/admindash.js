@@ -5,7 +5,7 @@ function Admindash(){
         <div className="admin-dashboard">
             <div className="admin-header">
                 <div className="admin-header-logo">
-                   <p>Admin Panel</p> 
+                   <p style={{color:"white"}}>Admin Panel</p> 
                 </div>
 
                 <div className="admin-header-logout">
