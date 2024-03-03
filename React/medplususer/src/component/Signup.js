@@ -1,4 +1,4 @@
-import React,{Component, createRef} from "react";
+import React,{Component,} from "react";
 import store from "../images/store.jpg";
 
 
@@ -34,6 +34,10 @@ class Signup extends Component{
         .then(function(data){
             console.log(data);
 
+            if(data.success===true){
+                this.formClear.reset();
+            }
+
         })
         .catch(function(err){
             console.log(err);
@@ -50,7 +54,7 @@ class Signup extends Component{
 
                         <h3 style={{fontWeight:200,textAlign:"center",fontSize:"25px"}}>Register</h3>
 
-                        <form ref={this.formClear}className="form">
+                        <form ref={this.formClear} className="form">
 
                         <input type="text" placeholder="Enter your name" onChange={(event)=>{
                             this.readValue("name",event.target.value);

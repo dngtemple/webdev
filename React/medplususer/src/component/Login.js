@@ -4,6 +4,41 @@ import store from "../images/store.jpg";
 
 class Login extends Component{
 
+    constructor(props){
+        super(props)
+
+        this.userCred=React.createRef()
+        this.userCred.current=({});
+    }
+
+    readValue=(property,value)=>{
+        this.userCred.current[property]=value;
+    }
+
+    login=()=>{
+
+        fetch("http://localhost:8000/user/login",{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(this.userCred.current)
+        })
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+
+    }
+
+
+
     render(){
         return(
             <div className="background">
@@ -17,13 +52,19 @@ class Login extends Component{
                         <form className="form">
 
 
-                        <input type="text" placeholder="Enter your email"/>
+                        <input type="text" placeholder="Enter your email" onChange={(event)=>{
+                            this.readValue("email",event.target.value);
+                        }}/>
 
-                        <input type="password" placeholder="Enter your password"/>
+                        <input type="password" placeholder="Enter your password" onChange={(event)=>{
+                            this.readValue("password",event.target.value);
+                        }}/>
 
                        
 
-                        <button>Log In</button>
+                        <button type="button" onClick={()=>{
+                            this.login();
+                        }}>Log In</button>
 
                         </form>
 

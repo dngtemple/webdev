@@ -63,3 +63,50 @@
     background-color: white;
     color: black;
 }
+
+
+/* css for footer */
+
+.footer_section{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding:20px
+}
+
+.footer{
+    width: 70%;
+    background-color: yellow;
+    padding: 10px;
+}
+
+.foot{
+    width:100%;
+    padding:5px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.foot ul{
+    width: 23%;
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    /* background-color: red; */
+}
+
+.foot ul>li{
+    height: 25px;
+}
+
+.foot div{
+    width: 23%;
+    
+}
+
+.foot div>i{
+    margin-right: 5px;
+}

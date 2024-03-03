@@ -4,6 +4,8 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Homepage from './component/Homepage';
 import Login from './component/Login';
 import Signup from './component/Signup';
+import Footer from './component/Footer';
+
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
           <Route path='/' element={<Homepage/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
+          <Route path='/footer' element={<Footer/>}></Route>
         </Routes>
       </BrowserRouter>
       
