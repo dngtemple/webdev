@@ -22,34 +22,34 @@ export default class About extends Component {
 
             <div className='about_icons'>
                 <div className='about'>
-                <i class="fa-solid fa-person-dots-from-line"></i>
+                <i className="fa-solid fa-person-dots-from-line"></i>
 
                 <p>Diagnosis</p>
 
                 </div>
 
                 <div className='about'>
-                <i class="fa-solid fa-bolt"></i>
+                <i className="fa-solid fa-bolt"></i>
                 
                 <p>Pharmacy</p>
 
                 </div>
 
                 <div className='about'>
-                <i class="fa-solid fa-virus-slash"></i>
+                <i className="fa-solid fa-virus-slash"></i>
 
                 <p>Treatment</p>
 
                 </div>
 
                 <div className='about'>
-                <i class="fa-solid fa-prescription-bottle-medical"></i>
+                <i className="fa-solid fa-prescription-bottle-medical"></i>
 
                 <p>Energy</p>
 
                 </div>
                 <div className='about'>
-                <i class="fa-solid fa-microscope"></i>
+                <i className="fa-solid fa-microscope"></i>
 
                 <p>Testing</p>
 

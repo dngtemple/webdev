@@ -117,7 +117,7 @@ router.put("/update_image/:product_id",function(req,res){
                 let newPath="./products/"+files.image[0].newFilename+"."+ext;
                 let imagePath="http://localhost:8000/uploaded/products/"+files.image[0].newFilename+"."+ext;
         
-                if(ext==="JPG" || ext ==="JPEG" || ext==="PNG" || ext==="WEBP"){
+                if(ext==="JPG" || ext ==="JPEG" || ext==="PNG" || ext==="WEBP" || ext==="AVIF"){
                     fs.writeFileSync(newPath,fileData);
                     product.images.push(imagePath);
     
@@ -247,6 +247,32 @@ router.put("/cart:id",function(req,res){
         res.send({success:false,message:"product update Issues"});
     })
 
+})
+
+// endpoint to get all products in user
+
+router.get("/users/products", async function(req,res){
+    let product_1={
+        title:"Pain and Relief",
+        products:[]
+    }
+
+    product_1.products = await productModel.find({tags:{$in:["Pain relief","Fever reducer"]}}).limit(4);
+
+    let product_2={
+        title:"Blood Pressure",
+        products:[]
+    }
+    product_2.products = await productModel.find({tags:{$in:["Hypertension","Blood pressure"]}}).limit(4);
+
+    let product_3={
+        title:"Anxiety",
+        products:[]
+    }
+    product_3.products = await productModel.find({tags:{$in:["Anxiety","Depression"]}}).limit(4);
+
+
+    res.send({success:true,product_1,product_2,product_3});
 })
 
 module.exports=router;

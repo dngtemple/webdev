@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
   render() {
     return (
-      <div className='footer_section'>
+      <footer className='footer_section'>
         <div className='footer'>
             <div className='foot'>
 
@@ -31,18 +31,18 @@ export default class Footer extends Component {
                 </ul>
 
                 <div>
-                <i class="fa-brands fa-instagram" style={{color:"red"}}></i>
-                <i class="fa-solid fa-x" style={{color:"black"}}></i>
-                <i class="fa-brands fa-facebook" style={{color:"blue"}}></i>
-                <i class="fa-brands fa-linkedin" style={{color:"blue"}}></i>
-                <i class="fa-brands fa-pinterest" style={{color:"red"}}></i>
+                <i className="fa-brands fa-instagram" style={{color:"red"}}></i>
+                <i className="fa-solid fa-x" style={{color:"white"}}></i>
+                <i className="fa-brands fa-facebook" style={{color:"blue"}}></i>
+                <i className="fa-brands fa-linkedin" style={{color:"blue"}}></i>
+                <i className="fa-brands fa-pinterest" style={{color:"red"}}></i>
 
                 <p style={{fontSize:"13px",marginTop:"5px"}}>
-                <i class="fa-solid fa-envelope"></i>medplus@support.com
+                <i className="fa-solid fa-envelope"></i>medplus@support.com
                 </p>
 
                 <p style={{fontSize:"13px",marginTop:"5px"}}>
-                <i class="fa-solid fa-phone"></i>
+                <i className="fa-solid fa-phone"></i>
                 +233 277 111 222
                 </p>
                 </div>
@@ -50,7 +50,7 @@ export default class Footer extends Component {
             </div>
 
         </div>
-      </div>
+      </footer>
     )
   }
 }
