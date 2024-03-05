@@ -107,7 +107,7 @@ router.put("/update_image/:product_id",function(req,res){
 
     form.parse(req,function(err,fields,files){
         if(err===null){
-            console.log(files);
+            // console.log(files);
 
             // if(files.image && files.image.filepath){
 
@@ -273,6 +273,27 @@ router.get("/users/products", async function(req,res){
 
 
     res.send({success:true,product_1,product_2,product_3});
+})
+
+
+// endpoint for user searching product
+router.get("/user_search_products/:proname",function(req,res){
+    let proname=req.params.proname;
+
+    productModel.find(
+        {$or:[
+            {tags:{$regex:proname,$options:"i"},approved:true},
+            {name:{$regex:proname,$options:"i"},approved:true}
+        ]}
+    ).limit(7)
+    .then(function(info){
+        res.send({success:true,message:"successfully got the data",data:info});
+    })
+    .catch(function(err){
+        res.send({success:false,message:"Cannot get the data"});
+    })
+
+
 })
 
 module.exports=router;

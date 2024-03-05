@@ -3,9 +3,9 @@ import About from "./About";
 import Footer from "./Footer";
 import Header from "./Header";
 import Banner from "./Banner";
-import CategoryHeader from "./CategoryHeader";
 import Products from "./Products";
 import { useState,useEffect } from "react";
+import Ourproducts from "./Ourproducts";
 
 
 function Homepage(){
@@ -40,11 +40,14 @@ function Homepage(){
       
       <Header/>
       <Banner/>
+
+      {/* this about is for our services */}
+      <About/>  
+
+      <Ourproducts/>
       <Products products={product_1}/>
       <Products products={product_2}/>
       <Products products={product_3}/>
-      <CategoryHeader/>
-      <About/>
       <Footer/>
 
       </>

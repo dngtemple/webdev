@@ -8,7 +8,6 @@ import Footer from './component/Footer';
 import About from './component/About';
 import Header from './component/Header';
 import Banner from './component/Banner';
-import CategoryHeader from './component/CategoryHeader';
 import Products from './component/Products';
 
 
@@ -27,7 +26,6 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/header' element={<Header/>}></Route>
           <Route path='/banner' element={<Banner/>}></Route>
-          <Route path='/category' element={<CategoryHeader/>}></Route>
           <Route path='/products' element={<Products/>}></Route>
         </Routes>
       </BrowserRouter>

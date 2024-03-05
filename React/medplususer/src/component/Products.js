@@ -6,16 +6,20 @@ export default class Products extends Component {
 
     console.log("Products:", this.props.products);
     return (
+      
+
       <section className='products_section'>
         <div className='products'>
              <div className='product_head'>
-                <h5>{this.props.products &&this.props.products.title}</h5>
+                <h3 style={{fontSize:"19px"}}>{this.props.products &&this.props.products.title}</h3>
 
                 <button>
                     View all
                 </button>
 
             </div>
+
+           
             <div className='product'>
             {
                 this.props.products && this.props.products.products && this.props.products.products.map((p,i)=>{

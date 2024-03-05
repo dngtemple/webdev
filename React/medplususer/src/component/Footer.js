@@ -32,7 +32,6 @@ export default class Footer extends Component {
 
                 <div>
                 <i className="fa-brands fa-instagram" style={{color:"red"}}></i>
-                <i className="fa-solid fa-x" style={{color:"white"}}></i>
                 <i className="fa-brands fa-facebook" style={{color:"blue"}}></i>
                 <i className="fa-brands fa-linkedin" style={{color:"blue"}}></i>
                 <i className="fa-brands fa-pinterest" style={{color:"red"}}></i>
@@ -44,6 +43,11 @@ export default class Footer extends Component {
                 <p style={{fontSize:"13px",marginTop:"5px"}}>
                 <i className="fa-solid fa-phone"></i>
                 +233 277 111 222
+                </p>
+
+                <p style={{fontSize:"13px",marginTop:"5px"}}>
+                <i className="fa-solid fa-phone"></i>
+                +233 277 333 444
                 </p>
                 </div>
 
