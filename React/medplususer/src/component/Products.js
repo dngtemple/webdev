@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default class Products extends Component {
 
-  render() {
+export default function Products(props){
 
-    console.log("Products:", this.props.products);
+    console.log("Products:",props.products);
     return (
       
 
       <section className='products_section'>
         <div className='products'>
              <div className='product_head'>
-                <h3 style={{fontSize:"19px"}}>{this.props.products &&this.props.products.title}</h3>
+                <h3 style={{fontSize:"19px"}}>{props.products && props.products.title}</h3>
 
                 <button>
                     View all
@@ -22,12 +22,14 @@ export default class Products extends Component {
            
             <div className='product'>
             {
-                this.props.products && this.props.products.products && this.props.products.products.map((p,i)=>{
+                props.products && props.products.products && props.products.products.map((p,i)=>{
                   return(
+                        // <Link to={"/products/"+p._id}>
+
                     <div key={i} className='pro'>
                         <img  src={p.images[0]}/>
 
-                        <h5 style={{textAlign:"center"}}>{p.name} - 
+                        <h5 style={{textAlign:"center","color":"black"}}>{p.name} - 
                         <i className="fa-solid fa-cedi-sign"> </i>
                          <span>{p.price}</span>
                         </h5>
@@ -45,10 +47,9 @@ export default class Products extends Component {
                           </button>
                           
                         </div>
-
-                        
-
                     </div>
+                    
+                  
                   )
                 })
             }
@@ -60,5 +61,5 @@ export default class Products extends Component {
 
       </section>
     )
-  }
+  
 }

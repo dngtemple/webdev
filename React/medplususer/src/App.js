@@ -9,13 +9,14 @@ import About from './component/About';
 import Header from './component/Header';
 import Banner from './component/Banner';
 import Products from './component/Products';
+import SingleProduct from './component/SingleProduct';
+
 
 
 
 function App() {
   return (
     <div className="App">
-
 
       <BrowserRouter>
         <Routes>
@@ -27,6 +28,7 @@ function App() {
           <Route path='/header' element={<Header/>}></Route>
           <Route path='/banner' element={<Banner/>}></Route>
           <Route path='/products' element={<Products/>}></Route>
+          <Route path='/products/:productID' element={<SingleProduct/>}></Route>
         </Routes>
       </BrowserRouter>
       

@@ -1,9 +1,16 @@
-import React, { Component } from 'react'
 
-export default class Header extends Component {
- 
+import { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Homepage from './Homepage';
+import Login from './Login';
 
-  searchResult=(value)=>{
+export default function Header(){
+
+  let [allsearch,setallsearch]=useState([])
+
+  function searchResult(value){
+    if(value!==""){
+
     fetch("http://localhost:8000/product/user_search_products/"+value,{
       method:"GET"
     })
@@ -12,26 +19,58 @@ export default class Header extends Component {
     })
     .then((data)=>{
       console.log(data)
+      setallsearch(data.data);
     })
     .catch((err)=>{
       console.log(err);
     })
+  }
+  else{
+    setallsearch([]);
+    
+  }
+
 
   }
 
 
-  render() {
+  
     return (
       <header className='header_section'>
         <div className='header'>
             <div className='logo_search'>
-                <h4 style={{lineHeight:"30px",marginRight:"40px"}}>MedPLUS</h4>
+                <Link to={"/"}>
+                  <h4 style={{lineHeight:"30px",marginRight:"40px"}}>MedPLUS</h4>
+                </Link>
 
                 <input type='search' placeholder='Type search' onChange={(event)=>{
-                  this.searchResult(event.target.value);
+                  searchResult(event.target.value);
                 }}/>
 
+
+                {
+                  allsearch.length!==0 ?(
+                    <div className='search_results'>
+                       <ul className='search_lists'>
+                        {
+                          allsearch.map((pro,i)=>{
+                            return(
+                              <li key={i} className='search_list'>{pro.name}</li>
+                            )
+                          })
+                        }
+                       </ul>
+
+                   </div>
+
+                  ):null
+                }
+
+                
+
             </div>
+
+            
 
 
 
@@ -39,8 +78,10 @@ export default class Header extends Component {
                 <i className='fa-solid fa-cart-shopping' style={{marginRight:"20px"}}></i>
 
                 <i className='fa-solid fa-user'></i>
-
-                <h5>Login / Register</h5>
+                
+                <Link to={"/login"}>
+                 <h5>Login / Register</h5>  
+                </Link>
 
             </div>
 
@@ -48,5 +89,5 @@ export default class Header extends Component {
 
       </header>
     )
-  }
+  
 }

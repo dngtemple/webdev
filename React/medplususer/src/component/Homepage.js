@@ -8,10 +8,12 @@ import { useState,useEffect } from "react";
 import Ourproducts from "./Ourproducts";
 
 
+
 function Homepage(){
   let [product_1,setproduct_1]=useState();
   let [product_2,setproduct_2]=useState();
   let [product_3,setproduct_3]=useState();
+  let [product_4,setproduct_4]=useState();
 
 
   useEffect(function(){
@@ -27,6 +29,7 @@ function Homepage(){
       setproduct_1(data.product_1);
       setproduct_2(data.product_2);
       setproduct_3(data.product_3);
+      setproduct_4(data.product_4);
 
     })
     .catch((err)=>{
@@ -48,6 +51,8 @@ function Homepage(){
       <Products products={product_1}/>
       <Products products={product_2}/>
       <Products products={product_3}/>
+      <Products products={product_4}/>
+
       <Footer/>
 
       </>
