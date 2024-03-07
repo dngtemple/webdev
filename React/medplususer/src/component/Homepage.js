@@ -6,6 +6,8 @@ import Banner from "./Banner";
 import Products from "./Products";
 import { useState,useEffect } from "react";
 import Ourproducts from "./Ourproducts";
+import Leader from "./Leader";
+import Gallery from "./Gallery";
 
 
 
@@ -47,12 +49,16 @@ function Homepage(){
       {/* this about is for our services */}
       <About/>  
 
-      <Ourproducts/>
+      <Ourproducts name={"Our Products"}/>
       <Products products={product_1}/>
       <Products products={product_2}/>
       <Products products={product_3}/>
       <Products products={product_4}/>
+       
+      <Ourproducts name={"Our Leadership"}/>
+      <Leader/>
 
+      <Gallery/>
       <Footer/>
 
       </>
