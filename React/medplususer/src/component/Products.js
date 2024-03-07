@@ -27,7 +27,11 @@ export default function Products(props){
                         // <Link to={"/products/"+p._id}>
 
                     <div key={i} className='pro'>
-                        <img  src={p.images[0]}/>
+                        <Link style={{width:"100%",height:"100%"}} to={"/products/"+p._id}>
+                         <img  src={p.images[0]}/>
+                        </Link>
+
+                        
 
                         <h5 style={{textAlign:"center","color":"black"}}>{p.name} - 
                         <i className="fa-solid fa-cedi-sign"> </i>

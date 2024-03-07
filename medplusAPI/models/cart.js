@@ -2,13 +2,13 @@ const mongoose=require("mongoose");
 
 const cartSchema=mongoose.Schema({
 
-    vendor_product:{
+    product:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"vendor_product"
+        ref:"products"
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"user"
+        ref:"users"
     },
     quantity:{
         type:Number,

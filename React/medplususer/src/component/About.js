@@ -5,7 +5,7 @@ export default class About extends Component {
     return (
       <div className='about_section'>
         <div className='about_details'> 
-            <h2 style={{textAlign:"center"}}>Services</h2>
+            <h2 style={{textAlign:"center"}}>Our Services</h2>
 
             <p style={{padding:" 20px 80px", fontSize:"13px",textAlign:"center"}}>
             At Medplus, we're dedicated to providing exceptional 

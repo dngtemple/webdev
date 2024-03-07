@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Homepage from './Homepage';
 import Login from './Login';
@@ -7,6 +7,8 @@ import Login from './Login';
 export default function Header(){
 
   let [allsearch,setallsearch]=useState([])
+
+  let clear=useRef();
 
   function searchResult(value){
     if(value!==""){
@@ -43,7 +45,7 @@ export default function Header(){
                   <h4 style={{lineHeight:"30px",marginRight:"40px"}}>MedPLUS</h4>
                 </Link>
 
-                <input type='search' placeholder='Type search' onChange={(event)=>{
+                <input ref={clear} type='search' placeholder='Type search' onChange={(event)=>{
                   searchResult(event.target.value);
                 }}/>
 
@@ -55,7 +57,12 @@ export default function Header(){
                         {
                           allsearch.map((pro,i)=>{
                             return(
-                              <li key={i} className='search_list'>{pro.name}</li>
+                              <Link to={"/products/"+pro._id}>
+                              <li key={i} className='search_list' onClick={function(){
+                                setallsearch([]);
+                                clear.current.value="";
+                              }}>{pro.name}</li>
+                              </Link>
                             )
                           })
                         }

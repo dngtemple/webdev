@@ -28,6 +28,7 @@ function Login() {
         .then(function(data){
             console.log(data);
             if(data.success===true){
+                localStorage.setItem("medplus_user",JSON.stringify(data));
                navigate("/")
             }
 

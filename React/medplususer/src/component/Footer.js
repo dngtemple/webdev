@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Footer extends Component {
+
+ 
+
   render() {
     return (
       <footer className='footer_section'>
@@ -18,9 +21,27 @@ export default class Footer extends Component {
                 <ul >
                     <li style={{fontWeight:"bold"}}>Quick Access</li>
                     <li>Cart</li>
-                    <li>Products</li>
-                    <li>About</li>
-                    <li>Home</li>
+                    <li onClick={()=>{
+                      window.scrollTo({
+                        top:800,
+                        behavior:'smooth'
+                      });
+                    }}>Products</li>
+                    <li onClick={()=>{
+                      window.scrollTo({
+                        top:500,
+                        behavior:'smooth'
+                      });
+
+                    }}>About</li>
+
+                  
+                    <li onClick={()=>{
+                      window.scrollTo({
+                        top:0,
+                        behavior:'smooth'
+                      });
+                    }}>Home</li>
                 </ul>
 
                 <ul>
@@ -37,16 +58,16 @@ export default class Footer extends Component {
                 <i className="fa-brands fa-pinterest" style={{color:"red"}}></i>
 
                 <p style={{fontSize:"13px",marginTop:"5px"}}>
-                <i className="fa-solid fa-envelope"></i>medplus@support.com
+                <i className="fa-solid fa-envelope"></i> medplus@support.com
                 </p>
 
                 <p style={{fontSize:"13px",marginTop:"5px"}}>
-                <i className="fa-solid fa-phone"></i>
+                <i className="fa-solid fa-phone"></i> 
                 +233 277 111 222
                 </p>
 
                 <p style={{fontSize:"13px",marginTop:"5px"}}>
-                <i className="fa-solid fa-phone"></i>
+                <i className="fa-solid fa-phone"></i> 
                 +233 277 333 444
                 </p>
                 </div>
