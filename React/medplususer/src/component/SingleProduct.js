@@ -115,36 +115,34 @@ export default function SingleProduct() {
             }
           </ul>
 
+          <div className="discount_section">
+            <p style={{color:"green",fontSize:"14px",fontFamily:"segoe ui"}}>Discount of: {single.discount}% Off</p>
 
-          <div className="single_price">
-
-            <div className="discount_price">
-               <div style={{color:"black"}}>Discount of {single.discount}% off </div>
-               
-               <div>
-
-                <h5 style={{textDecoration:"line-through", color:"red"}}>
-                <i  style={{textDecoration:"line-through", color:"red"}} className="fa-solid fa-cedi-sign"> </i>
-                   {single.price}
-                </h5>
             
-               <h4 style={{color:"green",fontSize:"14px"}}>
-               <i style={{color:"green"}} className="fa-solid fa-cedi-sign"> </i>
-               {single.price -(single.discount/100*(single.price))}
+              <p style={{color:"red",textDecoration:"line-through"}}>{single.price} -</p>
 
-               </h4>
-               
-               </div>
-            </div>
+              <h5 style={{fontSize:"14px"}}><i className="fa-solid fa-cedi-sign"></i>{single.price - (single.discount / 100) * single.price}</h5>
             
-            <div className="add_buy">
-              <button onClick={function(){
-                AddCart()
-              }}>Add</button>
-              <button>Buy</button>
-            </div>
 
           </div>
+
+
+          <div className="single_buttons">
+            <input type="number" defaultValue={1} placeholder="Enter quantity"/>
+
+            <div>
+            <button onClick={function(){
+              AddCart();
+            }}>Add</button>
+            <button>Buy</button>
+
+            </div>
+            
+
+          </div>
+
+
+          
 
         </div>
 

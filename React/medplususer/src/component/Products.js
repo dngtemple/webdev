@@ -26,7 +26,7 @@ export default function Products(props){
                         // <Link to={"/products/"+p._id}>
 
                     <div key={i} className='pro'>
-                      <div style={{height:"100%",width:"100%",position:"absolute",opacity:"0.7"}}>
+                      <div style={{height:"100%",width:"100%",position:"absolute",}}>
                         <img src={p.images[0]} style={{height:"100%",width:"100%"}}/>
 
                       </div>

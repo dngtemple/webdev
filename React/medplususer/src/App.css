@@ -497,7 +497,7 @@ a{
 
 .single_image{
     width: 100%;
-    height: 200px;
+    height: 300px;
     /* background-color: red; */
     display: flex;
     justify-content: space-around;
@@ -505,33 +505,51 @@ a{
 
 .single_details{
     width: 100%;
-    height: 200px;
+    height: 360px;
     background-color:#a19a9a;
     padding:20px
 }
 
-.single_price{
-    margin-top: 5px;
-    width: 100%;
-    background-color: white;
-    padding:5px;
+.discount_section{
+    width: 30%;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    font-size: 12px;
+    font-size: 13px;
 }
 
-.add_buy{
-    width: 50%;
-    /* background-color: rebeccapurple; */
+.single_buttons{
+    width: 30%;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding:20px
+
 }
 
-.add_buy button{
-   border-radius: 5px;
-   height: 30px;
-   outline: none;
-   width: 20%;
-   border: none;
-   background-color: black;
-   color:white;
-   margin-left: 5px;
+.single_buttons input{
+    width: 90%;
+    height: 20px;
+    text-indent: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.single_buttons button{
+    outline: none;
+    background-color: black;
+    color: white;
+    width: 70px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+
 }
