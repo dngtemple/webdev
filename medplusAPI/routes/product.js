@@ -257,25 +257,25 @@ router.get("/users/products", async function(req,res){
         products:[]
     }
 
-    product_1.products = await productModel.find({tags:{$in:["Pain relief","Fever reducer"]}}).limit(4);
+    product_1.products = await productModel.find({tags:{$in:["Pain relief","Fever reducer"]}}).limit(5);
 
     let product_2={
         title:"Antihypertensives",
         products:[]
     }
-    product_2.products = await productModel.find({tags:{$in:["Hypertension","Blood pressure"]}}).limit(4);
+    product_2.products = await productModel.find({tags:{$in:["Hypertension","Blood pressure"]}}).limit(5);
 
     let product_3={
         title:"Antidepressants",
         products:[]
     }
-    product_3.products = await productModel.find({tags:{$in:["Anxiety","Depression"]}}).limit(4);
+    product_3.products = await productModel.find({tags:{$in:["Anxiety","Depression"]}}).limit(5);
 
     let product_4={
         title:"Bronchodilators",
         products:[]
     }
-    product_4.products = await productModel.find({tags:{$in:["Asthma","COPD"]}}).limit(4);
+    product_4.products = await productModel.find({tags:{$in:["Asthma","COPD"]}}).limit(5);
 
 
     res.send({success:true,product_1,product_2,product_3,product_4});

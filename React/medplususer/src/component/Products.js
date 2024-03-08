@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 
 export default function Products(props){
@@ -27,30 +26,25 @@ export default function Products(props){
                         // <Link to={"/products/"+p._id}>
 
                     <div key={i} className='pro'>
-                        <Link style={{width:"100%",height:"100%"}} to={"/products/"+p._id}>
-                         <img  src={p.images[0]}/>
+                      <div style={{height:"100%",width:"100%",position:"absolute",opacity:"0.7"}}>
+                        <img src={p.images[0]} style={{height:"100%",width:"100%"}}/>
+
+                      </div>
+
+                      <div className="prod_details">
+
+                        <h5>{p.name}</h5>
+
+                        <p>
+                          <i className="fa-solid fa-cedi-sign"></i>
+                          {p.price}
+                        </p>
+                        
+                        <Link to={"/products/"+p._id}>
+                         <div>View more</div>
                         </Link>
 
-                        
-
-                        <h5 style={{textAlign:"center","color":"black"}}>{p.name} - 
-                        <i className="fa-solid fa-cedi-sign"> </i>
-                         <span>{p.price}</span>
-                        </h5>
-
-                        <div style={{width:"100%",display:"flex",alignSelf:"flex-end"}}>
-                          <button style={{width:"50%",height:"25px",outline:"none"}}>
-                            <i className='fa-solid fa-minus'></i>
-                          </button>
-
-                          {/* <div style={{width:"40%"}}>Add</div> */}
-
-                          <button style={{width:"50%",height:"25px",outline:"none"}}>
-                          <i className='fa-solid fa-plus'></i>
-
-                          </button>
-                          
-                        </div>
+                      </div>
                     </div>
                     
                   
