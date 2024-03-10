@@ -231,6 +231,9 @@ router.post("/cart",function(req,res){
     })
 })
 
+// endpoint to find if item is in  cart 
+router.get("singleitem_cart",function(req,res){})
+
 
 // endpoint for removing from cart
 
