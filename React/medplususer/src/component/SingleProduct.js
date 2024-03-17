@@ -1,14 +1,14 @@
 import { useEffect,useState } from "react";
 import Header from "./Header";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "./Footer";
 
 
 export default function SingleProduct() {
 
   const params=useParams()
-  console.log(params.productID);
+  // console.log(params.productID);
 
   let [single,setsingle]=useState({});
 
@@ -17,6 +17,11 @@ export default function SingleProduct() {
 
   let userID=JSON.parse(localStorage.getItem("medplus_user")).userID;
   // console.log(userID);
+
+
+  // checking if product is in cart
+
+  let [cart,setcart]=useState(false);
 
 
   useEffect(function(){
@@ -75,12 +80,33 @@ export default function SingleProduct() {
       return response.json()
     })
     .then(function(data){
-      console.log(data);
+      // console.log(data);
     })
     .catch(function(err){
       console.log(err)
     })
   }
+
+  function ProductInCart(){
+    fetch(`http://localhost:8000/product/singleitem_cart/${single._id}/${userID}`,{
+      method:"GET"
+    })
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+      console.log(data);
+
+      if(data.success===true){
+        setcart(data.cart)
+      }
+    })
+    .catch(function(err){
+      console.log(err)
+    })
+  }
+
+  
 
   return (
     <div className="flex_single">
@@ -108,7 +134,7 @@ export default function SingleProduct() {
             {
               single.tags?.map(function(tag,i){
                 return(
-                <li style={{fontSize:"12px"}}>{tag}</li>
+                <li key={i} style={{fontSize:"12px"}}>{tag}</li>
                   
                 )
               })
@@ -131,10 +157,23 @@ export default function SingleProduct() {
             <input type="number" defaultValue={1} placeholder="Enter quantity"/>
 
             <div>
-            <button onClick={function(){
-              AddCart();
-            }}>Add</button>
-            <button>Buy</button>
+            
+
+            {
+              cart===true?(
+                <button>Remove</button>
+              ):
+              <button onClick={function(){
+                AddCart();
+                ProductInCart();
+              }}>Add</button>
+
+
+            }
+
+            <Link to={"/cart"}>
+             <button>Buy</button>  
+            </Link>
 
             </div>
             

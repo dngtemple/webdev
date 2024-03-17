@@ -339,7 +339,7 @@
     height: 220px;
     /* background-color: red; */
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
 .pro{
@@ -352,6 +352,7 @@
     transition: .3s;
     position: relative;
     overflow: hidden;
+    margin-right: 1%;
 }
 
 .prod_details{

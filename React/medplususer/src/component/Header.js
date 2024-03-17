@@ -1,8 +1,8 @@
 
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import Homepage from './Homepage';
-import Login from './Login';
+// import Homepage from './Homepage';
+// import Login from './Login';
 
 export default function Header(){
 
@@ -82,9 +82,13 @@ export default function Header(){
 
 
             <div className='logout'>
-                <i className='fa-solid fa-cart-shopping' style={{marginRight:"20px"}}></i>
+                <Link to={"/cart"}>
+                 <i className='fa-solid fa-cart-shopping' style={{marginRight:"20px"}}></i>
+                </Link>
 
+                <Link to={"/login"}>
                 <i className='fa-solid fa-user'></i>
+                </Link>
                 
                 <Link to={"/login"}>
                  <h5>Login / Register</h5>  

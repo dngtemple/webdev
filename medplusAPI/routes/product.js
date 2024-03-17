@@ -232,7 +232,38 @@ router.post("/cart",function(req,res){
 })
 
 // endpoint to find if item is in  cart 
-router.get("singleitem_cart",function(req,res){})
+router.get("/singleitem_cart/:product_id/:user_id",function(req,res){
+
+    let pro=req.params.product_id;
+    let user=req.params.user_id;
+
+    cartModel.findOne({product:pro,user:user})
+    .then(function(info){
+        if(info !== null){
+           res.send({success:true,cart:true,message:"product is in cart"})   
+ 
+        }
+    })
+    .catch(function(err){
+        res.send({success:false, message:"Product not found in cart"});
+    })
+
+})
+
+
+// endpoint to get data from cart
+
+router.get("/get_cart_data/:user_id",function(req,res){
+   let userID=req.params.user_id;
+
+   cartModel.find({user:userID}).populate("product")
+   .then(function(info){
+    res.send({success:true,data:info});
+   })
+   .catch(function(err){
+    res.send({success:false,message:"couldn't get cart data"})
+   })
+})
 
 
 // endpoint for removing from cart
