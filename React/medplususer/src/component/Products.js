@@ -11,11 +11,19 @@ export default function Products(props){
         <div className='products'>
              <div className='product_head'>
                 <h3 style={{fontSize:"19px"}}>{props.products && props.products.title}</h3>
+    
 
-                <button>
+                {
+                  props && props.cart===true?(
+                    <button>
+                      Proceed to buy
+                    </button>
+                  ):
+                  <button>
                     View all
-                </button>
-
+                  </button>
+                }
+                
             </div>
 
            
@@ -41,7 +49,13 @@ export default function Products(props){
                         </p>
                         
                         <Link to={"/products/"+p._id}>
-                         <div>View more</div>
+
+                          {
+                            props && props.cart===true?(
+                              <div>Remove</div>
+                            ):
+                            <div>View more</div>
+                          }
                         </Link>
 
                       </div>

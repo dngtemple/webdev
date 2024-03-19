@@ -43,7 +43,7 @@ export default function Cart() {
 
     {/* <Ourproducts name={"Cart"}/> */}
 
-       <Products products={allcartproducts}/>
+       <Products products={allcartproducts} cart={true}/>
 
     <Footer/>
 

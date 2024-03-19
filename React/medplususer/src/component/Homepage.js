@@ -50,10 +50,10 @@ function Homepage(){
       <About/>  
 
       <Ourproducts name={"Our Products"}/>
-      <Products products={product_1}/>
-      <Products products={product_2}/>
-      <Products products={product_3}/>
-      <Products products={product_4}/>
+      <Products products={product_1} cart={false}/>
+      <Products products={product_2} cart={false}/>
+      <Products products={product_3} cart={false}/>
+      <Products products={product_4} cart={false}/>
        
       <Ourproducts name={"Our Leadership"}/>
       <Leader/>
