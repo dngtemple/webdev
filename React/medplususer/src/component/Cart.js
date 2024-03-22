@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Products from "./Products";
-import Ourproducts from "./Ourproducts";
+
 
 
 export default function Cart() {

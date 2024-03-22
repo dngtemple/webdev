@@ -239,8 +239,10 @@ router.get("/singleitem_cart/:product_id/:user_id",function(req,res){
 
     cartModel.findOne({product:pro,user:user})
     .then(function(info){
+        let present=false;
         if(info !== null){
-           res.send({success:true,cart:true,message:"product is in cart"})   
+            present=true;
+           res.send({success:true,present,message:"product is in cart"})   
  
         }
     })

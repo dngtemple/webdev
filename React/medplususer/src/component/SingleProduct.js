@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect,useRef,useState } from "react";
 import Header from "./Header";
 
 import { Link, useParams } from "react-router-dom";
@@ -21,7 +21,7 @@ export default function SingleProduct() {
 
   // checking if product is in cart
 
-  let [cart,setcart]=useState(false);
+  let [presentInCart,setpresentInCart]=useState(false);
 
 
   useEffect(function(){
@@ -81,13 +81,17 @@ export default function SingleProduct() {
     })
     .then(function(data){
       // console.log(data);
+      if(data.success===true){
+        setpresentInCart(true)
+      }
     })
     .catch(function(err){
       console.log(err)
     })
   }
 
-  function ProductInCart(){
+
+  useEffect(function(){
     fetch(`http://localhost:8000/product/singleitem_cart/${single._id}/${userID}`,{
       method:"GET"
     })
@@ -98,13 +102,33 @@ export default function SingleProduct() {
       console.log(data);
 
       if(data.success===true){
-        setcart(data.cart)
+        setpresentInCart(data.present);
       }
     })
     .catch(function(err){
       console.log(err)
     })
-  }
+
+  },[single])
+
+  // function ProductInCart(){
+  //   fetch(`http://localhost:8000/product/singleitem_cart/${single._id}/${userID}`,{
+  //     method:"GET"
+  //   })
+  //   .then(function(response){
+  //     return response.json()
+  //   })
+  //   .then(function(data){
+  //     console.log(data);
+
+  //     if(data.success===true){
+  //       setpresentInCart(data.present);
+  //     }
+  //   })
+  //   .catch(function(err){
+  //     console.log(err)
+  //   })
+  // }
 
   
 
@@ -160,13 +184,13 @@ export default function SingleProduct() {
             
 
             {
-              cart===true?(
-                <button>Remove</button>
+              presentInCart===false?(
+                <button onClick={function(){
+                  AddCart();
+                  // ProductInCart();
+                }}>Add</button>
               ):
-              <button onClick={function(){
-                AddCart();
-                ProductInCart();
-              }}>Add</button>
+              <button disabled style={{backgroundColor:"gray"}}>Added</button>
 
 
             }
