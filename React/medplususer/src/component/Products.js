@@ -1,7 +1,38 @@
+import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
+
 export default function Products(props){
+
+  let [products,setproducts]=useState(props.products.products)
+
+
+  function removeFromCart(id){
+    fetch("http://localhost:8000/product/cart/"+id,{
+      method:"DELETE"
+    })
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(data){
+      console.log(data);
+      if(data.success===true){
+        let tempData=[...products];
+
+        let index=tempData.findIndex(function(a,i){
+          return id === a._id
+        })
+
+        tempData.splice(index,1);
+
+        setproducts(tempData)
+      }
+    })
+    .catch(function(err){
+      console.log(err);
+    })
+  }
 
     console.log("Products:",props.products);
     return (
@@ -29,7 +60,7 @@ export default function Products(props){
            
             <div className='product'>
             {
-                props.products && props.products.products && props.products.products.map((p,i)=>{
+                products.map((p,i)=>{
                   return(
                         // <Link to={"/products/"+p._id}>
 
@@ -48,15 +79,19 @@ export default function Products(props){
                           {p.price}
                         </p>
                         
-                        <Link to={"/products/"+p._id}>
+                        
 
                           {
-                            props && props.cart===true?(
-                              <div>Remove</div>
+                            props && props.cart===false?(
+                              <Link to={"/products/"+p._id}>
+                              <div>View more</div>
+                              </Link>
                             ):
-                            <div>View more</div>
+                            <div style={{marginLeft:"-4%"}} onClick={function(){
+                              removeFromCart(p.cartID);
+                            }}>Remove</div>
                           }
-                        </Link>
+                        
 
                       </div>
                     </div>

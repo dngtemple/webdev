@@ -9,7 +9,7 @@ export default function Cart() {
 
   let userID=JSON.parse(localStorage.getItem("medplus_user")).userID;
 
-  let [allcartproducts,setallcartproducts]=useState();
+  let [allcartproducts,setallcartproducts]=useState([]);
 
 
   useEffect(function(){
@@ -24,6 +24,7 @@ export default function Cart() {
 
       if(data.success===true){
         let products=data.data.map(function(p,i){
+            p.product.cartID=p._id;
             return p.product
         })
 
@@ -41,9 +42,13 @@ export default function Cart() {
     <>
     <Header/>
 
-    {/* <Ourproducts name={"Cart"}/> */}
+ 
+       {
+        Object.keys(allcartproducts).length!==0?(
+         <Products products={allcartproducts} cart={true}/>
+        ):null
+       }
 
-       <Products products={allcartproducts} cart={true}/>
 
     <Footer/>
 

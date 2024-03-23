@@ -68,6 +68,12 @@ export default function SingleProduct() {
   // },[single])
 
 
+  useEffect(function(){
+
+    ProductInCart();
+  })
+
+
   function AddCart(){
     fetch("http://localhost:8000/product/cart",{
       method:"POST",
@@ -91,7 +97,9 @@ export default function SingleProduct() {
   }
 
 
-  useEffect(function(){
+  
+
+  function ProductInCart(){
     fetch(`http://localhost:8000/product/singleitem_cart/${single._id}/${userID}`,{
       method:"GET"
     })
@@ -108,27 +116,7 @@ export default function SingleProduct() {
     .catch(function(err){
       console.log(err)
     })
-
-  },[single])
-
-  // function ProductInCart(){
-  //   fetch(`http://localhost:8000/product/singleitem_cart/${single._id}/${userID}`,{
-  //     method:"GET"
-  //   })
-  //   .then(function(response){
-  //     return response.json()
-  //   })
-  //   .then(function(data){
-  //     console.log(data);
-
-  //     if(data.success===true){
-  //       setpresentInCart(data.present);
-  //     }
-  //   })
-  //   .catch(function(err){
-  //     console.log(err)
-  //   })
-  // }
+  }
 
   
 

@@ -241,10 +241,9 @@ router.get("/singleitem_cart/:product_id/:user_id",function(req,res){
     .then(function(info){
         let present=false;
         if(info !== null){
-            present=true;
-           res.send({success:true,present,message:"product is in cart"})   
- 
+            present=true;   
         }
+        res.send({success:true,present,message:"product is in cart"})
     })
     .catch(function(err){
         res.send({success:false, message:"Product not found in cart"});
@@ -270,17 +269,16 @@ router.get("/get_cart_data/:user_id",function(req,res){
 
 // endpoint for removing from cart
 
-router.put("/cart:id",function(req,res){
-    let data=req.body;
+router.delete("/cart/:id",function(req,res){
     let id=req.params.id;
 
-    cartModelModel.updateOne({_id:id},data)
+    cartModel.deleteOne({_id:id})
     .then(function(info){
-        res.send({success:true,message:"product Successfully updated"});
+        res.send({success:true,message:"product Successfully deleted"});
     })
     .catch(function(err){
         console.log(err);
-        res.send({success:false,message:"product update Issues"});
+        res.send({success:false,message:"product delete Issues"});
     })
 
 })

@@ -17,6 +17,8 @@ function Homepage(){
   let [product_3,setproduct_3]=useState();
   let [product_4,setproduct_4]=useState();
 
+  let [products,setproducts]=useState([]);
+
 
   useEffect(function(){
     fetch("http://localhost:8000/product/users/products",{
@@ -27,6 +29,7 @@ function Homepage(){
     })
     .then((data)=>{
       console.log(data);
+      setproducts(data)
 
       setproduct_1(data.product_1);
       setproduct_2(data.product_2);
@@ -50,10 +53,20 @@ function Homepage(){
       <About/>  
 
       <Ourproducts name={"Our Products"}/>
-      <Products products={product_1} cart={false}/>
-      <Products products={product_2} cart={false}/>
-      <Products products={product_3} cart={false}/>
-      <Products products={product_4} cart={false}/>
+
+      {
+        Object.keys(products).length!==0?(
+          <>
+            <Products products={product_1} cart={false}/>
+            <Products products={product_2} cart={false}/>
+            <Products products={product_3} cart={false}/>
+            <Products products={product_4} cart={false}/>
+
+          </>
+
+        ):null
+      }
+      
        
       <Ourproducts name={"Our Leadership"}/>
       <Leader/>
