@@ -18,6 +18,7 @@ const supportRouter=require("./routes/support");
 const userRouter=require("./routes/user");
 const vendorProductRouter=require("./routes/vendor_product");
 const vendorRouter=require("./routes/vendor");
+const paymentRouter=require("./routes/payment")
 
 mongoose.connect("mongodb://127.0.0.1:27017/medplus")
 .then(function(){
@@ -33,6 +34,8 @@ app.use("/support",supportRouter);
 app.use("/user",userRouter);
 app.use("/vendorProduct",vendorProductRouter),
 app.use("/vendor",vendorRouter);
+app.use("/payment",paymentRouter);
+
 
 
 

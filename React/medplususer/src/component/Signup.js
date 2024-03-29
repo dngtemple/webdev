@@ -1,32 +1,27 @@
-import React,{Component,} from "react";
+
 import store from "../images/store.jpg";
+import {useRef } from "react";
+import {useNavigate} from "react-router-dom"
 
 
-class Signup extends Component{
+function Signup(){
+    const navigate=useNavigate();
 
-    constructor(props){
-        super(props);
-        this.user=React.createRef();
-        this.user.current={};
+    let user=useRef({});
 
-        this.formClear=React.createRef();
-
-
+    function readValue(property,value){
+        user.current[property]=value;
     }
 
-    readValue=(property,value)=>{
-        this.user.current[property]=value;
-    }
-
-    createUser=()=>{
-        console.log(this.user.current);
+    function createUser(){
+        console.log(user.current);
 
         fetch("http://localhost:8000/user/register",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
             },
-            body:JSON.stringify(this.user.current)
+            body:JSON.stringify(user.current)
         })
         .then(function(response){
             return response.json();
@@ -35,7 +30,7 @@ class Signup extends Component{
             console.log(data);
 
             if(data.success===true){
-                this.formClear.reset();
+                navigate("/login")
             }
 
         })
@@ -44,7 +39,7 @@ class Signup extends Component{
         })
     }
 
-    render(){
+    
         return(
             <div className="background">
                 <div className="register">
@@ -54,26 +49,26 @@ class Signup extends Component{
 
                         <h3 style={{fontWeight:200,textAlign:"center",fontSize:"25px"}}>Register</h3>
 
-                        <form ref={this.formClear} className="form">
+                        <form  className="form">
 
                         <input type="text" placeholder="Enter your name" onChange={(event)=>{
-                            this.readValue("name",event.target.value);
+                            readValue("name",event.target.value);
                         }}/>
 
                         <input type="text" placeholder="Enter your email" onChange={(event)=>{
-                            this.readValue("email",event.target.value);
+                            readValue("email",event.target.value);
                         }}/>
 
                         <input type="password" placeholder="Enter your password" onChange={(event)=>{
-                            this.readValue("password",event.target.value);
+                            readValue("password",event.target.value);
                         }}/>
 
                         <input type="text" placeholder="Enter your contact" onChange={(event)=>{
-                            this.readValue("contact",event.target.value);
+                            readValue("contact",event.target.value);
                         }}/>
 
                         <select onChange={(event)=>{
-                            this.readValue("gender",event.target.value);
+                            readValue("gender",event.target.value);
                         }}>
                             <option value="">Please select your gender</option>
                             <option value="Male">Male</option>
@@ -82,7 +77,7 @@ class Signup extends Component{
                         </select>
 
                         <button type="button" onClick={()=>{
-                            this.createUser();
+                            createUser();
                         }}>Sign Up</button>
 
                         </form>
@@ -114,7 +109,7 @@ class Signup extends Component{
 
             </div>
         )
-    }
+    
 }
 
 export default Signup;

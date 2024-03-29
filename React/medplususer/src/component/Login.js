@@ -1,34 +1,36 @@
-import React,{Component} from "react";
+
 import store from "../images/store.jpg";
+import {useRef } from "react";
+import {useNavigate} from "react-router-dom"
 
 
-class Login extends Component{
+function Login() {
+    const navigate=useNavigate();
 
-    constructor(props){
-        super(props)
+    let userCred=useRef({});
 
-        this.userCred=React.createRef()
-        this.userCred.current=({});
+    function readValue(property,value){
+        userCred.current[property]=value;
     }
 
-    readValue=(property,value)=>{
-        this.userCred.current[property]=value;
-    }
-
-    login=()=>{
+    function login(){
 
         fetch("http://localhost:8000/user/login",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
             },
-            body:JSON.stringify(this.userCred.current)
+            body:JSON.stringify(userCred.current)
         })
         .then(function(response){
             return response.json();
         })
         .then(function(data){
             console.log(data);
+            if(data.success===true){
+                localStorage.setItem("medplus_user",JSON.stringify(data));
+               navigate("/")
+            }
 
         })
         .catch(function(err){
@@ -39,7 +41,7 @@ class Login extends Component{
 
 
 
-    render(){
+   
         return(
             <div className="background">
                 <div className="register" style={{height:"60vh"}}>
@@ -53,17 +55,17 @@ class Login extends Component{
 
 
                         <input type="text" placeholder="Enter your email" onChange={(event)=>{
-                            this.readValue("email",event.target.value);
+                            readValue("email",event.target.value);
                         }}/>
 
                         <input type="password" placeholder="Enter your password" onChange={(event)=>{
-                            this.readValue("password",event.target.value);
+                            readValue("password",event.target.value);
                         }}/>
 
                        
 
                         <button type="button" onClick={()=>{
-                            this.login();
+                            login();
                         }}>Log In</button>
 
                         </form>
@@ -79,7 +81,9 @@ class Login extends Component{
 
                         <p style={{fontSize:"13px",marginTop:"20px"}}>
                           Don't have an account?
-                           <span style={{color:"blue",cursor:"pointer"}}>  Sign Up</span>
+                           <span style={{color:"blue",cursor:"pointer"}} onClick={function(){
+                            navigate("/signup");
+                           }}>  Sign Up</span>
                           
                         </p>
 
@@ -95,7 +99,7 @@ class Login extends Component{
 
             </div>
         )
-    }
+
 }
 
 export default Login;

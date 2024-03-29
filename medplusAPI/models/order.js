@@ -6,7 +6,6 @@ const orderSchema=mongoose.Schema({
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:"vendor_product"
-
         }
     ],
     user:{

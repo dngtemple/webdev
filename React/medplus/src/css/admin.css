@@ -64,6 +64,9 @@
     display: flex;
     justify-content: space-between;
     color:white;
+    position: fixed;
+    height: 30px;
+    z-index: 200;
 
 }
 
@@ -71,6 +74,9 @@
     width:15%;
     text-align: center;
     line-height: 4vh;
+    /* color: white; */
+    color:black;
+
 }
 
 .admin-header-logout{
@@ -79,6 +85,7 @@
     text-align: center;
     line-height: 4vh;
     font-size: 11px;
+    
 }
 
 .admin-dashboard-options{
@@ -93,6 +100,8 @@
     background-color: black;
     display: flex;
     flex-direction: column;
+    position: fixed;
+
 }
 
 .dash_option{
@@ -118,9 +127,11 @@
 
 
 .dash_display{
+    margin-left:15% ;
     padding:10px 30px;
     width:85%;
     height: 100%;
+    margin-top: 30px;
 }
 
 .panel h5{

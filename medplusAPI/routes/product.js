@@ -107,7 +107,7 @@ router.put("/update_image/:product_id",function(req,res){
 
     form.parse(req,function(err,fields,files){
         if(err===null){
-            console.log(files);
+            // console.log(files);
 
             // if(files.image && files.image.filepath){
 
@@ -117,7 +117,7 @@ router.put("/update_image/:product_id",function(req,res){
                 let newPath="./products/"+files.image[0].newFilename+"."+ext;
                 let imagePath="http://localhost:8000/uploaded/products/"+files.image[0].newFilename+"."+ext;
         
-                if(ext==="JPG" || ext ==="JPEG" || ext==="PNG" || ext==="WEBP"){
+                if(ext==="JPG" || ext ==="JPEG" || ext==="PNG" || ext==="WEBP" || ext==="AVIF"){
                     fs.writeFileSync(newPath,fileData);
                     product.images.push(imagePath);
     
@@ -231,21 +231,108 @@ router.post("/cart",function(req,res){
     })
 })
 
+// endpoint to find if item is in  cart 
+router.get("/singleitem_cart/:product_id/:user_id",function(req,res){
+
+    let pro=req.params.product_id;
+    let user=req.params.user_id;
+
+    cartModel.findOne({product:pro,user:user})
+    .then(function(info){
+        let present=false;
+        if(info !== null){
+            present=true;   
+        }
+        res.send({success:true,present,message:"product is in cart"})
+    })
+    .catch(function(err){
+        res.send({success:false, message:"Product not found in cart"});
+    })
+
+})
+
+
+// endpoint to get data from cart
+
+router.get("/get_cart_data/:user_id",function(req,res){
+   let userID=req.params.user_id;
+
+   cartModel.find({user:userID}).populate("product")
+   .then(function(info){
+    res.send({success:true,data:info});
+   })
+   .catch(function(err){
+    res.send({success:false,message:"couldn't get cart data"})
+   })
+})
+
 
 // endpoint for removing from cart
 
-router.put("/cart:id",function(req,res){
-    let data=req.body;
+router.delete("/cart/:id",function(req,res){
     let id=req.params.id;
 
-    cartModelModel.updateOne({_id:id},data)
+    cartModel.deleteOne({_id:id})
     .then(function(info){
-        res.send({success:true,message:"product Successfully updated"});
+        res.send({success:true,message:"product Successfully deleted"});
     })
     .catch(function(err){
         console.log(err);
-        res.send({success:false,message:"product update Issues"});
+        res.send({success:false,message:"product delete Issues"});
     })
+
+})
+
+// endpoint to get all products in user
+
+router.get("/users/products", async function(req,res){
+    let product_1={
+        title:"Pain and Relief",
+        products:[]
+    }
+
+    product_1.products = await productModel.find({tags:{$in:["Pain relief","Fever reducer"]}}).limit(5);
+
+    let product_2={
+        title:"Antihypertensives",
+        products:[]
+    }
+    product_2.products = await productModel.find({tags:{$in:["Hypertension","Blood pressure"]}}).limit(5);
+
+    let product_3={
+        title:"Antidepressants",
+        products:[]
+    }
+    product_3.products = await productModel.find({tags:{$in:["Anxiety","Depression"]}}).limit(5);
+
+    let product_4={
+        title:"Bronchodilators",
+        products:[]
+    }
+    product_4.products = await productModel.find({tags:{$in:["Asthma","COPD"]}}).limit(5);
+
+
+    res.send({success:true,product_1,product_2,product_3,product_4});
+})
+
+
+// endpoint for user searching product
+router.get("/user_search_products/:proname",function(req,res){
+    let proname=req.params.proname;
+
+    productModel.find(
+        {$or:[
+            {tags:{$regex:proname,$options:"i"},approved:true},
+            {name:{$regex:proname,$options:"i"},approved:true}
+        ]}
+    ).limit(7)
+    .then(function(info){
+        res.send({success:true,message:"successfully got the data",data:info});
+    })
+    .catch(function(err){
+        res.send({success:false,message:"Cannot get the data"});
+    })
+
 
 })
 
