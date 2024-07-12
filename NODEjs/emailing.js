@@ -10,7 +10,7 @@ let transporter=nodemailer.createTransport({
 
 let mailbody={
     from:"maryturneru42@gmail.com",
-    bcc:"donnahaytempleton1230@gmail.com , marycodes22@gmail.com",
+    to:"donnahaytempleton1230@gmail.com , marycodes22@gmail.com",
     subject:"testing email",
     text:"This is a testing email logics and functionality"
 }
